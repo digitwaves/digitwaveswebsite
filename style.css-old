@@ -1,0 +1,290 @@
+/*
+* Theme Name: DigitWaves
+* Theme URI: https://digitwaves.com
+* Author: Charles Martin
+* Author URI: https://digitwaves.com
+* Description: Digit Waves is the freelance website for Charles Martin.
+* Tags: digital, website design, web developments, Los Angeles, web 
+* Version: 2.0
+Text Domain: digitwaves
+*/
+/***************************************************************************
+* 1.0 	Normalize
+* 2.0 	Header
+* 	2.1	Navigation
+* 3.0	Body
+* 	3.1	Body - Six Panel Row
+* 	3.2	Body - Computer Row
+*   3.3	Body - Three Boxes
+*	3.4 Body - Parallax
+*   3.5 Body - Coffee, Pad, and Mouse Row
+* 4.0	Footer
+* 5.0 	Miscellaneous
+* 6.0   CMS
+*   6.1 Services
+*	6.2 Contacts
+*	6.3 About
+*   6.4 E-commerce
+* 	6.6 UX
+*   6.7 Product Enhancement
+* 7.0	Contact
+* 8.0   Progressive Websites
+***************************************************************************/
+
+/***************************************************************************
+* 1.0 	Normalize
+***************************************************************************/
+ul, li { list-style: none;}
+
+.container2{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	margin: auto;
+}
+.elementor-7 .elementor-element.elementor-element-b308d75 {
+    text-align: center;
+    color: #525252;
+    font-family: "Roboto", Sans-serif !important;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.1px;
+}
+
+
+.elementor-icon-box-title span,
+.elementor-heading-title {
+    line-height: 1.5;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !important;
+}
+
+#footer-bottom{
+	background: #f0f0f0;
+}
+.full-width{ 
+	width: 90%;
+	margin: auto; 
+}
+
+.large-font{ font-size: large; }
+#menu-main li{ padding-left: 15px; }
+.elementor-7 .elementor-element.elementor-element-3d20c778 .elementor-image-box-wrapper .elementor-image-box-img,
+.elementor-7 .elementor-element.elementor-element-6a827fc0 .elementor-image-box-wrapper .elementor-image-box-img,
+.elementor-7 .elementor-element.elementor-element-649385c2 .elementor-image-box-wrapper .elementor-image-box-img {
+    width: 50% !important;
+}
+
+/***************************************************************************
+* 2.0 	Header
+***************************************************************************/
+header{
+	/*position: fixed;
+    z-index: 9999;
+    background: #fff;*/
+    width: 100%;
+}
+#logo a img{
+	width: 85%;
+    margin: 5px 0;
+}
+
+.menu-item a {
+    color: #006e75;
+    font-weight: 500 !important;
+	font-size: 16px;
+	transition: color .25s ease;
+}
+.elementor-7 .elementor-element.elementor-element-6821fa5 .elementor-heading-title{
+    color: #006e75 !important;
+}
+#menu-main{
+	display: flex;
+}
+
+.menu-item a:hover{
+	color: #d85935;
+	transition: color .25s ease;
+}
+
+
+.page-id-22 li#menu-item-23 a,
+.page-id-7 li.menu-item-699 a,
+.page-id-25 li#menu-item-26 a,
+.page-id-606 li#menu-item-609 a{
+	color: #d85935 !important;
+}
+
+
+.bottom-footer-col p{
+	font-size: 14px;
+	font-weight: 600;
+}
+
+/***************************************************************************
+*   3.3	Body - Three Boxes
+***************************************************************************/
+.elementor-element-649385c2 .elementor-image-box-title{ padding-top: 11px; }
+.page-id-7 .elementor-column-gap-default>.elementor-column>.elementor-element-populated{ padding: 0 !important;}
+section[data-id="b29960f"] .elementor-image-box-description{
+	font-weight: 400 !important;
+    color: var( --e-global-color-text ) !important;
+}
+/***************************************************************************
+* 4.0	Footer
+***************************************************************************/
+.bottom-footer-col ul{ display: flex; }
+.bottom-footer-col ul li{ padding-left: 15px; }
+.bottom-footer-col ul li a{ 
+	color: #d85935;
+	transition: color .25s ease;
+}
+.bottom-footer-col ul li a:hover{ 
+	color: #B84C2D; 
+	transition: color .25s ease;
+}
+.center-bottom-footer{ 
+	padding-left: 5% !important;
+    width: 56% !important;
+    margin: 0;
+}
+
+#wpfront-scroll-top-container{ bottom: 80px !important;}
+
+
+/***************************************************************************
+* 6.1 Servces
+***************************************************************************/
+.page-id-25 .elementor-column-gap-default>.elementor-column>.elementor-element-populated{ padding: 0 !important;}
+
+section[data-id="688e12a"] .elementor-icon-box-title {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !important;
+    font-size: 2em !important;
+    font-weight: 400 !important;
+}
+
+section[data-id="688e12a"] p{
+	font-family: 'Roboto', sans-serif !important;
+	line-height: 35px;
+	letter-spacing: 0.1px;
+    font-weight: 300 !important;
+}
+
+
+.elementor-element-3ebbb3a {
+    height: auto !important;
+    overflow: hidden;
+}
+
+.elementor-25 .elementor-element.elementor-element-602cb5e8:not(.elementor-motion-effects-element-type-background){ background-color: inherit !important; }
+
+.elementor-25 .elementor-element.elementor-element-1585914b:not(.elementor-motion-effects-element-type-background),
+.elementor-25 .elementor-element.elementor-element-7fdaf64 > .elementor-background-overlay {
+    background-color: #006e75 !important;
+}
+
+.elementor-25 .elementor-element.elementor-element-7af818e5 .elementor-icon-box-title{ color: #006e75 !important; }
+
+
+.elementor-25 .elementor-element.elementor-element-7af818e5 .elementor-icon-box-title { margin-bottom: 20px !important; }
+
+/***************************************************************************
+*	6.2 Contacts
+***************************************************************************/
+.elementor-element-96a7dba{
+	border: solid 1px #ccc;
+    border-radius: 5px;
+    margin: 0 15px;
+	margin-right: 60px
+}
+
+.elementor-element-96a7dba a{ 
+	color:#d85935;
+	transition: color ease .25s;
+ }
+.elementor-element-96a7dba a:hover{ 
+	color:#B84C2D; 
+	transition: color ease .25s;
+}
+
+.page-id-22 .wpforms-field{ color: #333 !important;}
+
+
+/***************************************************************************
+* 6.3 About
+***************************************************************************/
+.page-id-19 .elementor-column-gap-default>.elementor-column>.elementor-element-populated{ padding: 0 !important; }
+.page-id-19 .elementor-widget-container img{ width: 100% !important; }
+.elementor-606 .elementor-element.elementor-element-4463d50e { margin-top: 0 !important; }
+.page-id-606 .elementor-column-gap-default>.elementor-column>.elementor-element-populated{ padding: 0 !important;}
+
+
+/***************************************************************************
+* 7.0 Contact
+***************************************************************************/
+
+a.email{
+	color: #fff !important;
+	transition: color .25s ease;
+}
+a.email:hover{
+	color: #B84C2D !important; 
+	transition: color .25s ease;
+}
+#form-field-field_ea5206a{ padding: 0 !important;}
+.elementor-element-3668894f{ margin-bottom: 25px;}
+div.wpforms-container-full {
+	margin-top: 0 !important;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    margin-left: 25px;
+    padding: 25px;
+}
+.elementor-widget-google_maps iframe { height: 450px !important; }
+.home .wpforms-field label{color: #fff;}
+.wpforms-submit{
+	background: #d85935 !important;
+	color: #fff !important;
+	border: 0 !important;
+	padding: 10px 25px;
+	font-weight: 700;
+	transition: background .25s ease;
+}
+.wpforms-submit:hover{
+	background: #B84C2D !important; 
+	transition: background .25s ease;
+}
+	input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+    color: #d85935 !important;
+}
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #d85935 !important;
+    -webkit-box-shadow: 0 1px 0 0 #d85935 !important;
+    box-shadow: 0 1px 0 0 #d85935 !important;
+}
+div.wpforms-container-full .wpforms-form label.wpforms-error{ color: red !important; }
+.elementor-element.elementor-element-2b9b3ab8 h3 { text-transform: capitalize !important;}
+
+/***************************************************************************
+* 8.0   Progressive Websites
+***************************************************************************/
+@media (min-width: 1000px){
+	.elementor-element-3ebbb3a {
+    	height: 650px !important;
+	}
+}
+
+@media (max-width: 767px){
+	.elementor-25 .elementor-element.elementor-element-688e12a {
+    	border: 0 !important;
+		margin: 0 !important;
+	}
+	.elementor-25 .elementor-element.elementor-element-562eaf3a > .elementor-element-populated{
+		border: 0 !important;
+	}
+	#logo a img{
+		width: 100% !important;
+	}
+	#menu-main{ display: none !important;border: solid 1px orange !important;}
+}

@@ -1,0 +1,467 @@
+/*
+* Theme Name: DigitWaves
+* Theme URI: https://digitwaves.com
+* Author: Charles Martin
+* Author URI: https://digitwaves.com
+* Description: Digit Waves is the freelance website for Charles Martin.
+* Tags: digital, website design, web developments, Los Angeles, web 
+* Version: 2.0
+Text Domain: digitwaves
+*/
+/***************************************************************************
+* 1.0 	Normalize
+* 2.0 	Header
+* 	2.1	Navigation
+* 3.0	Body
+* 	3.1	Body - Six Panel Row
+* 	3.2	Body - Computer Row
+*   3.3	Body - Three Boxes
+*	3.4 Body - Parallax
+*   3.5 Body - Coffee, Pad, and Mouse Row
+* 4.0	Footer
+* 5.0 	Miscellaneous
+* 6.0   CMS
+*   6.1 Services
+*	6.2 Contacts
+*	6.3 About
+*   6.4 E-commerce
+* 	6.6 UX
+*   6.7 Product Enhancement
+* 7.0	Contact
+* 8.0   Progressive Websites
+***************************************************************************/
+
+/***************************************************************************
+* 1.0 	Normalize
+***************************************************************************/
+.container2{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	margin: auto;
+}
+.elementor-button{ border-radius: 50px !important; }
+.elementor-element-688e12a{ 
+	width: 100%; 
+	margin: auto;
+}
+
+.elementor-7 .elementor-element.elementor-element-b308d75 {
+    text-align: center;
+    color: #525252;
+    font-family: "Roboto", Sans-serif !important;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.1px;
+}
+
+
+.elementor-icon-box-title span,
+.elementor-heading-title {
+    line-height: 1.5;
+    font-family: "Roboto","Segoe UI",Cantarell,"Helvetica Neue",sans-serif !important;
+}
+.elementor-7 .elementor-element.elementor-element-3d20c778 .elementor-image-box-wrapper .elementor-image-box-img,
+.elementor-7 .elementor-element.elementor-element-6a827fc0 .elementor-image-box-wrapper .elementor-image-box-img,
+.elementor-7 .elementor-element.elementor-element-649385c2 .elementor-image-box-wrapper .elementor-image-box-img {
+    width: 50% !important;
+}
+#footer-bottom{
+	background: #f0f0f0;
+}
+.full-width{ 
+	width: 90%;
+	margin: auto; 
+}
+
+.large-font{ font-size: large; }
+#menu-main li{ padding-left: 15px; }
+ul, li { list-style: none;}
+
+
+/***************************************************************************
+* 2.0 	Header
+***************************************************************************/
+
+.elementor-heading-title{ font-family: 'Roboto', sans-serif; }
+
+header{
+	/*position: fixed;*/
+    z-index: 9999;
+    background: #fff;
+    width: 100%;
+}
+#logo a img{
+	width: 85%;
+    margin: 5px 0;
+}
+
+.menu-item a {
+    color: #555;
+    font-weight: 400 !important;
+	font-size: 15px;
+	transition: color .25s ease;
+	font-family: 'Roboto',sans-serif;
+}
+#menu-main{
+	display: flex;
+}
+
+.menu-item a:hover{
+	color: #006e75;
+	transition: color .25s ease;
+}
+
+
+.page-id-22 li#menu-item-23 a,
+.page-id-7 li.menu-item-699 a,
+.page-id-25 li#menu-item-26 a,
+.page-id-606 li#menu-item-609 a{
+	color: #006e75 !important;
+}
+
+
+.bottom-footer-col p{
+	font-size: 14px;
+	font-weight: 600;
+}
+
+
+/***************************************************************************
+* 	2.1	Navigation
+***************************************************************************/
+#rmp-container-846{
+	opacity: .8;
+	max-width: 100% !important;
+	background-color: #006e75 !important;
+}
+#rmp-menu-846{
+    width: 220px !important;
+    position: absolute !important;
+    left: 50%;
+    margin-left: -100px !important;
+    top: 30%;
+}
+#rmp-menu-wrap-846 .rmp-menu-item-link { 
+	text-align: center;
+	height: 60px !important;
+	line-height: 2;
+	color: #fff;
+	font-size: 35px;
+}
+#rmp_menu_trigger-846 {
+    top: 5px !important;
+	position: absolute !important;
+    cursor: pointer;
+}
+#rmp_menu_trigger-846:hover .responsive-menu-pro-inner,
+#rmp_menu_trigger-846 .responsive-menu-pro-inner::after,
+#rmp_menu_trigger-846:hover .responsive-menu-pro-inner::before {
+    background-color: #006e75 !important;
+	transition: .25s ease background;
+}
+#rmp-menu-wrap-846 .rmp-menu-item-link:hover {
+    color: #fff;
+    font-size: 40px;
+}
+.elementor-7 .elementor-element.elementor-element-6821fa5 .elementor-heading-title{color: #006e75 !important;}
+
+.wpfront-scroll-top-container img{ width: 40px !important;}
+/***************************************************************************
+*   3.3	Body - Three Boxes
+***************************************************************************/
+.elementor-element-649385c2 .elementor-image-box-title{ padding-top: 11px; }
+.page-id-7 .elementor-column-gap-default>.elementor-column>.elementor-element-populated{ padding: 0 !important;}
+section[data-id="b29960f"] .elementor-image-box-description{
+	font-weight: 400 !important;
+    color: var( --e-global-color-text ) !important;
+}
+/***************************************************************************
+* 4.0	Footer
+***************************************************************************/
+.bottom-footer-col ul{ display: flex; }
+.bottom-footer-col ul li{ padding-left: 15px; }
+.bottom-footer-col ul li a{ 
+	color: #006e75;
+	transition: color .25s ease;
+}
+.bottom-footer-col ul li a:hover{ 
+	color: #555;
+	transition: color .25s ease;
+}
+.center-bottom-footer{ 
+	padding-left: 5% !important;
+    width: 56% !important;
+    margin: 0;
+}
+
+#wpfront-scroll-top-container{ 
+	bottom: 80px !important;
+}
+#wpfront-scroll-top-container > img{ 
+	width: 40px !important;
+	height: 40px !important;
+}
+
+/***************************************************************************
+* 6.1 Services
+***************************************************************************/
+.page-id-25 .elementor-column-gap-default>.elementor-column>.elementor-element-populated{ padding: 0 !important;}
+.elementor-element-688e12a .elementor-col-33{ padding: 0 15px; }
+section[data-id="688e12a"] .elementor-icon-box-title {
+    font-family: 'Roboto',"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif !important;
+    font-size: 2em !important;
+    font-weight: 400 !important;
+}
+
+section[data-id="688e12a"] p{
+	font-family: 'Roboto', sans-serif !important;
+	line-height: 35px;
+	letter-spacing: 0.1px;
+    font-weight: 300 !important;
+}
+
+
+.elementor-element-3ebbb3a {
+    height: 300px !important;
+    overflow: hidden;
+}
+
+.elementor-25 .elementor-element.elementor-element-602cb5e8:not(.elementor-motion-effects-element-type-background){ background-color: inherit !important; }
+
+.elementor-25 .elementor-element.elementor-element-1585914b:not(.elementor-motion-effects-element-type-background),
+
+.elementor-25 .elementor-element.elementor-element-7af818e5 .elementor-icon-box-title { margin-bottom: 20px !important; }
+
+/***************************************************************************
+*	6.2 Contacts
+***************************************************************************/
+
+.elementor-element-b4d26ab img{ width: 100% !important; }
+.elementor-element-3668894f{ height: 275px !important;}
+.elementor-element-96a7dba{
+	border: solid 1px #ccc;
+    border-radius: 5px;
+    margin: 0 15px;
+	margin-right: 60px
+}
+
+.elementor-element-96a7dba a{ 
+	color:#006e75;
+	transition: color ease .25s;
+ }
+.elementor-element-96a7dba a:hover{ 
+	color:#555; 
+	transition: color ease .25s;
+}
+
+.page-id-22 .wpforms-field{ color: #555 !important;}
+
+
+/***************************************************************************
+* 6.3 About
+***************************************************************************/
+.page-id-19 .elementor-column-gap-default>.elementor-column>.elementor-element-populated{ padding: 0 !important; }
+.page-id-19 .elementor-widget-container img{ width: 100% !important; }
+.elementor-606 .elementor-element.elementor-element-4463d50e { margin-top: 0 !important; }
+.page-id-606 .elementor-column-gap-default>.elementor-column>.elementor-element-populated{ padding: 0 !important;}
+
+
+/***************************************************************************
+* 7.0 Contact
+***************************************************************************/
+/*div[data-id="7753c905"] .elementor-widget-wrap{ width: 96% !important;}*/
+a.email{
+	color: #fff !important;
+	transition: color .25s ease;
+}
+a.email:hover{
+	color: #555!important; 
+	transition: color .25s ease;
+}
+#form-field-field_ea5206a{ padding: 0 !important;}
+div.wpforms-container-full {
+	margin-top: 0 !important;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    margin-left: 0;
+    padding: 25px;
+}
+.elementor-widget-google_maps iframe { height: 450px !important; }
+.home .wpforms-field label{color: #fff;}
+.wpforms-submit{
+	background: #d85935 !important;
+	color: #fff !important;
+	border: 0 !important;
+	padding: 10px 25px;
+	font-weight: 700;
+	transition: background .25s ease;
+}
+.wpforms-submit:hover{
+	background: #B84C2D !important; 
+	transition: background .25s ease;
+}
+	input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+    color: #d85935 !important;
+}
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #d85935 !important;
+    -webkit-box-shadow: 0 1px 0 0 #d85935 !important;
+    box-shadow: 0 1px 0 0 #d85935 !important;
+}
+div.wpforms-container-full .wpforms-form label.wpforms-error{ color: red !important; }
+.elementor-element.elementor-element-2b9b3ab8 h3 { text-transform: capitalize !important;}
+
+/***************************************************************************
+* 8.0   Progressive Websites
+***************************************************************************/
+@media (max-width: 1024px){
+	.elementor-element-92e76af ul li{
+		margin-bottom: 25px !important;
+	}
+	.elementor-25 .elementor-element.elementor-element-638e4740 .elementor-heading-title {
+		font-size: 40px !important;
+		font-weight: 400 !important;
+		font-family:'Roboto', sans-serif !important;
+	}
+	.elementor-25 .elementor-element.elementor-element-688e12a {
+		margin-top: 25px !important;
+		margin-bottom: 25px !important;
+	}
+	.elementor-606 .elementor-element.elementor-element-419dc0e6 {
+		margin-top: 15% !important;
+	}
+	.elementor-606 .elementor-element.elementor-element-31fc6db6 > .elementor-element-populated {
+		text-align: center;
+		padding: 0 !important;
+	}
+	.elementor-22 .elementor-element.elementor-element-4b23902 {
+		margin-top: 0 !important;
+	}
+	.elementor-606 .elementor-element.elementor-element-690fbf70 {
+		margin-top: 50px !important;
+	}
+	.elementor-606 .elementor-element.elementor-element-31fc6db6 > .elementor-element-populated {
+		padding: 50px 0 0 0 !important;
+    }
+   .elementor-element-33f4f263{
+		display: block;
+		margin: 50px auto;
+   }
+   .elementor-606 .elementor-element.elementor-element-740ba67c img {
+		width: 75%;
+		display: block;
+		margin: auto;
+	}
+	.elementor-606 .elementor-element.elementor-element-1f88728b img {
+		max-width: 80% !important;;
+	}
+}
+
+@media (min-width: 1000px){
+	.elementor-element-3ebbb3a {
+    	height: 500px !important;
+	}
+}
+@media (min-width: 767px){
+    #rmp_menu_trigger-846{ display: none !important; }
+	.elementor-element-688e12a{ 
+		width: 80%; 
+		margin: auto;
+	}
+		
+}
+
+@media (min-width: 767px) and (max-width: 1024px){
+	.elementor-element-1f88728b img{
+		display: block;
+		margin: auto;
+		margin-top: 100px;
+		margin: 0px auto 0 50px !important;
+	}
+	.elementor-606 .elementor-element.elementor-element-690fbf70 > .elementor-container > .elementor-column > .elementor-widget-wrap {
+		align-content: unset !important;
+		align-items: center !important;
+	}
+}
+
+@media (max-width: 767px){
+
+	
+	.elementor-7 .elementor-element.elementor-element-22f57f8c {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	
+	}
+	
+	.elementor-25 .elementor-element.elementor-element-602cb5e8 {
+		padding: 50px 15px !important;
+	}
+	.elementor-25 .elementor-element.elementor-element-28a11c7 .elementor-field-group{
+		width: 50%;
+    	margin: auto;
+	}
+	.elementor-606 .elementor-element.elementor-element-4463d50e {
+		padding: 0 !important;
+	}
+
+	.elementor-606 .elementor-element.elementor-element-1f1b2e69 {
+		margin-top: 0 !important;
+	}	
+	.elementor-606 .elementor-element.elementor-element-3d96996 .elementor-inline-items .elementor-icon-list-item:not(:last-child):after {
+		border-left-width: 0px !important;
+	}
+	.elementor-element-690fbf70 .elementor-column {
+		width: auto !important;
+	}
+	.elementor-606 .elementor-element.elementor-element-1f88728b img{ margin-top: 80px !important;}
+	.elementor-22 .elementor-element.elementor-element-e50c39e > .elementor-element-populated,
+	.elementor-22 .elementor-element.elementor-element-50f8a9d6,
+	.elementor-22 .elementor-element.elementor-element-4b23902 {
+		margin-top: 0 !important; 
+	}
+	.elementor-7 .elementor-element.elementor-element-1a2f3f09 > .elementor-background-overlay {
+		background-size: auto !important; 
+	}
+	.center-bottom-footer {
+		width: auto !important;
+		margin: 0;
+	}
+	.container2 {
+		display: flex;
+		justify-content: center !important;
+		align-items: center;
+	}
+	.elementor-7 .elementor-element.elementor-element-29bd0ba {
+		padding: 0px 25px 100px 25px !important; 
+	}
+	.elementor-25 .elementor-element.elementor-element-688e12a {
+    	border: 0 !important;
+		margin: 0 !important;
+	}
+	.elementor-25 .elementor-element.elementor-element-562eaf3a > .elementor-element-populated{
+		border: 0 !important;
+	}
+	#logo a img{
+		width: 100% !important;
+	}
+	#menu-main{ display: none !important;border: solid 1px orange !important;}
+	.elementor-7 .elementor-element.elementor-element-2e65a81{margin-top: 0 !important; }
+	.elementor-7 .elementor-element.elementor-element-29bd0ba,
+	.elementor-7 .elementor-element.elementor-element-29bd0ba {
+		padding: 0px 20px 50px 20px !important;
+		margin-top: 0 !important;
+	}
+	.elementor-22 .elementor-element.elementor-element-4b23902{ margin-bottom: 50px !important; }
+	.elementor-7 .elementor-element.elementor-element-22f57f8c {
+		padding: 0px 20px 50px 20px !important;
+	}
+	.elementor-606 .elementor-element.elementor-element-1f88728b img {
+		height: auto !important;
+	}
+
+
+	
+}
