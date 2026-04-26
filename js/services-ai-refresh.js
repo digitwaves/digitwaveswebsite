@@ -331,12 +331,60 @@
         });
     }
 
+    function setupServicesPage() {
+        if (!document.body || !document.body.classList.contains('page-id-25') || document.body.classList.contains('dw-services-page-ready')) {
+            return;
+        }
+
+        document.body.classList.add('dw-services-page-ready');
+
+        var pageRoot = document.querySelector('.page-id-25 .elementor-25') || document.querySelector('.elementor-25');
+        if (!pageRoot) {
+            return;
+        }
+
+        var sections = pageRoot.querySelectorAll('.elementor-top-section');
+        if (!sections.length) {
+            return;
+        }
+
+        var aiSection = findServicesSection();
+        if (aiSection) {
+            aiSection.classList.add('dw-services-primary');
+        }
+
+        Array.prototype.forEach.call(sections, function (section, index) {
+            var text = normalizeText(section.textContent || '');
+
+            if (index === 0) {
+                section.classList.add('dw-services-hero');
+            }
+
+            if (/featured portfolio site|gt real estate|gold titan real estate/.test(text)) {
+                section.classList.add('dw-services-legacy-hide');
+            }
+
+            if (/digit waves services/.test(text) && !section.classList.contains('digitwaves-ai-services-section')) {
+                section.classList.add('dw-services-legacy-hide');
+            }
+
+            if (/leave a message|contact you immediately/.test(text)) {
+                section.classList.add('dw-services-legacy-hide');
+            }
+
+            if (/development process|hand crafted by digit waves/.test(text)) {
+                section.classList.add('dw-services-secondary');
+            }
+        });
+    }
+
     function boot(attempt) {
         var isReady = updateServicesSection();
 
         setupScrollReveal();
         setupMobileMenuRefinement();
         setupWorkPage();
+        setupServicesPage();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {

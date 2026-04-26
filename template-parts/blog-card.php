@@ -14,7 +14,9 @@ $primary_category = !empty($categories) ? $categories[0]->name : '';
 
     <div class="post-card-body">
         <?php if ($primary_category) : ?>
-            <div class="post-category"><?php echo esc_html($primary_category); ?></div>
+            <a class="post-category" href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>">
+                <?php echo esc_html($primary_category); ?>
+            </a>
         <?php endif; ?>
 
         <div class="post-meta">

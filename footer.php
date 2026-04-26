@@ -1,13 +1,15 @@
 </div><!--end page-->	
 <div id="footer-bottom">
 	<div class="container2 center-bottom-footer">						
-		<div class="bottom-footer-col left first">		
-			<p>Digit Waves &copy;<?= date('Y');?></p>			
+		<div class="bottom-footer-col bottom-footer-brand">		
+			<span class="bottom-footer-eyebrow">Digit Waves</span>
+			<p class="bottom-footer-title">AI systems, automation, and modern digital operations.</p>
+			<p class="bottom-footer-copy">&copy;<?= date('Y');?> Digit Waves. Built with strategy, design, and implementation in mind.</p>			
 		</div>						
-		<div class="bottom-footer-col">								
+		<div class="bottom-footer-col bottom-footer-social">								
 			<ul>									
-				<li><a href="https://www.facebook.com/Digit-Waves-214232226044250/" target="_blank" ><i class="fab large-font fa-facebook-f"></i></a></li>									
-				<li class="no-padding-right"><a href="https://twitter.com/DigitWaves" target="_blank" ><i class="fab large-font fa-twitter"></i></a></li>								
+				<li><a href="https://www.facebook.com/Digit-Waves-214232226044250/" target="_blank" rel="noopener noreferrer" aria-label="Digit Waves on Facebook"><i class="fab fa-facebook-f"></i></a></li>									
+				<li class="no-padding-right"><a href="https://twitter.com/DigitWaves" target="_blank" rel="noopener noreferrer" aria-label="Digit Waves on Twitter"><i class="fab fa-twitter"></i></a></li>								
 			</ul>											
 		</div>					
 	</div>				
@@ -36,7 +38,20 @@
 		}
 
         function getHeroBottomOffset() {
-            var $hero = $('.home .elementor-top-section:first-of-type, .home .elementor-section-wrap > .elementor-top-section:first-of-type, .home .elementor-location-single .elementor-top-section:first-of-type, .home rs-module-wrap:first, .home .rev_slider_wrapper:first, .home .rev_slider:first').filter(':visible').first();
+            var heroSelectors = [
+                '.page-id-25 .dw-services-hero',
+                '.page-id-1024 .dw-work-hero',
+                '.category-hero',
+                '.articles-hero',
+                '.home .dw-premium-hero',
+                '.home .elementor-top-section:first-of-type',
+                '.home .elementor-section-wrap > .elementor-top-section:first-of-type',
+                '.home .elementor-location-single .elementor-top-section:first-of-type',
+                '.home rs-module-wrap:first',
+                '.home .rev_slider_wrapper:first',
+                '.home .rev_slider:first'
+            ];
+            var $hero = $(heroSelectors.join(', ')).filter(':visible').first();
 
             if (!$hero.length) {
                 return 80;
@@ -56,7 +71,7 @@
         }
 
         toggleHeaderState();
-        $(window).on('scroll resize', toggleHeaderState);
+        $(window).on('load scroll resize', toggleHeaderState);
 	})(jQuery);		 
 </script>		 
 <?php wp_footer(); ?>	
