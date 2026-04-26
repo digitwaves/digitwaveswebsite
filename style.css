@@ -1247,6 +1247,62 @@ h3.elementor-image-box-title a:hover{color: #006E75 !important;}
     #rmp_menu_trigger-846 .responsive-menu-pro-inner::before,
     #rmp_menu_trigger-846 .responsive-menu-pro-inner::after {
         background-color: var(--dw-accent-strong) !important;
+        width: 22px !important;
+        height: 2.5px !important;
+        border-radius: 999px !important;
+        left: 0 !important;
+        opacity: 1 !important;
+        display: block !important;
+        transform-origin: 50% 50% !important;
+        transition:
+            background-color 0.22s ease,
+            transform 0.22s ease,
+            top 0.22s ease,
+            opacity 0.22s ease !important;
+    }
+
+    #rmp_menu_trigger-846 .responsive-menu-pro-inner {
+        top: 50% !important;
+        margin-top: -1.25px !important;
+        transform: none !important;
+    }
+
+    #rmp_menu_trigger-846 .responsive-menu-pro-inner::before {
+        top: -7px !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+
+    #rmp_menu_trigger-846 .responsive-menu-pro-inner::after {
+        top: 7px !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+
+    #rmp_menu_trigger-846.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner,
+    #rmp_menu_trigger-846.rmp-menu-trigger-open .responsive-menu-pro-inner {
+        background-color: transparent !important;
+        transform: none !important;
+    }
+
+    #rmp_menu_trigger-846.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner::before,
+    #rmp_menu_trigger-846.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner::after,
+    #rmp_menu_trigger-846.rmp-menu-trigger-open .responsive-menu-pro-inner::before,
+    #rmp_menu_trigger-846.rmp-menu-trigger-open .responsive-menu-pro-inner::after {
+        top: 0 !important;
+        bottom: auto !important;
+        background-color: #ffffff !important;
+        opacity: 1 !important;
+    }
+
+    #rmp_menu_trigger-846.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner::before,
+    #rmp_menu_trigger-846.rmp-menu-trigger-open .responsive-menu-pro-inner::before {
+        transform: rotate(45deg) !important;
+    }
+
+    #rmp_menu_trigger-846.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner::after,
+    #rmp_menu_trigger-846.rmp-menu-trigger-open .responsive-menu-pro-inner::after {
+        transform: rotate(-45deg) !important;
     }
 
     #rmp-container-846,
@@ -2414,15 +2470,18 @@ h3.elementor-image-box-title a:hover{color: #006E75 !important;}
             transform 0.28s ease;
     }
 
+    #rmp_menu_trigger-846.rmp-menu-trigger-boring.is-active,
+    #rmp_menu_trigger-846.rmp-menu-trigger-open,
     body.dw-mobile-menu-open #rmp_menu_trigger-846 {
         background: rgba(255, 255, 255, 0.16);
         border-color: rgba(255, 255, 255, 0.18);
         box-shadow: 0 18px 36px rgba(7, 21, 33, 0.22);
     }
 
-    body.dw-mobile-menu-open #rmp_menu_trigger-846 .responsive-menu-pro-inner,
-    body.dw-mobile-menu-open #rmp_menu_trigger-846 .responsive-menu-pro-inner::before,
-    body.dw-mobile-menu-open #rmp_menu_trigger-846 .responsive-menu-pro-inner::after {
+    #rmp_menu_trigger-846.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner::before,
+    #rmp_menu_trigger-846.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner::after,
+    #rmp_menu_trigger-846.rmp-menu-trigger-open .responsive-menu-pro-inner::before,
+    #rmp_menu_trigger-846.rmp-menu-trigger-open .responsive-menu-pro-inner::after {
         background-color: #ffffff !important;
     }
 

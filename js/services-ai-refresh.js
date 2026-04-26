@@ -248,14 +248,14 @@
         });
 
         function isMenuOpen() {
-            var style = window.getComputedStyle(container);
-            var triggerExpanded = trigger.getAttribute('aria-expanded');
-            var triggerActive = /active|open/i.test(trigger.className);
-            var containerVisible = style.display !== 'none' &&
-                style.visibility !== 'hidden' &&
-                parseFloat(style.opacity || '1') > 0.01;
+            var triggerExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            var triggerActive = trigger.classList.contains('is-active') ||
+                trigger.classList.contains('rmp-menu-trigger-open');
+            var containerOpen = container.classList.contains('rmp-menu-open') ||
+                menuWrap.classList.contains('rmp-menu-open') ||
+                menu.classList.contains('rmp-menu-open');
 
-            return containerVisible && (triggerExpanded === 'true' || triggerActive || style.pointerEvents !== 'none');
+            return triggerExpanded || triggerActive || containerOpen;
         }
 
         function syncMenuState() {
