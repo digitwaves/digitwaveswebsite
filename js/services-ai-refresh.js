@@ -283,11 +283,60 @@
         window.setTimeout(syncMenuState, 420);
     }
 
+    function setupWorkPage() {
+        if (!document.body || !document.body.classList.contains('page-id-1024') || document.body.classList.contains('dw-work-page-ready')) {
+            return;
+        }
+
+        var root = document.querySelector('.page-id-1024 .elementor-1024') || document.querySelector('.elementor-1024');
+        if (!root) {
+            return;
+        }
+
+        document.body.classList.add('dw-work-page-ready');
+
+        var sections = root.querySelectorAll('.elementor-top-section');
+        if (!sections.length) {
+            return;
+        }
+
+        sections[0].classList.add('dw-work-hero');
+
+        Array.prototype.forEach.call(sections, function (section, index) {
+            if (index === 0) {
+                return;
+            }
+
+            var container = section.querySelector(':scope > .elementor-container') ||
+                section.querySelector(':scope > .elementor-row') ||
+                section.firstElementChild;
+
+            if (!container || !container.children || !container.children.length) {
+                return;
+            }
+
+            var columns = Array.prototype.filter.call(container.children, function (child) {
+                return child.classList.contains('elementor-column') || child.classList.contains('elementor-top-column');
+            });
+
+            if (columns.length < 2) {
+                return;
+            }
+
+            section.classList.add('dw-work-grid');
+
+            columns.forEach(function (column) {
+                column.classList.add('dw-work-card');
+            });
+        });
+    }
+
     function boot(attempt) {
         var isReady = updateServicesSection();
 
         setupScrollReveal();
         setupMobileMenuRefinement();
+        setupWorkPage();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {

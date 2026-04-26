@@ -80,6 +80,7 @@ function load_more_posts() {
 
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
+            set_query_var('dw_is_featured_card', false);
             get_template_part('template-parts/blog-card');
         endwhile;
     endif;
