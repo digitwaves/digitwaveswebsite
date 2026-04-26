@@ -8,7 +8,8 @@ jQuery(function ($) {
 
         $.post(blog_ajax.ajax_url, {
             action: 'load_more_posts',
-            page: page
+            page: page,
+            category_id: blog_ajax.category_id || 0
         }, function (response) {
             if (response) {
                 $('#blog-container').append(response);

@@ -63,7 +63,8 @@ function digitwaves_stylesheets(){
     );
 
     wp_localize_script('infinite-scroll', 'blog_ajax', [
-        'ajax_url' => admin_url('admin-ajax.php')
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'category_id' => is_category() ? get_queried_object_id() : 0
     ]);
 }
 add_action('wp_enqueue_scripts','digitwaves_stylesheets');
@@ -71,12 +72,19 @@ add_action('wp_enqueue_scripts','digitwaves_stylesheets');
 // AJAX handler
 function load_more_posts() {
     $paged = intval($_POST['page']);
+    $category_id = isset($_POST['category_id']) ? intval($_POST['category_id']) : 0;
 
-    $query = new WP_Query([
+    $args = [
         'post_type' => 'post',
         'posts_per_page' => 8,
         'paged' => $paged
-    ]);
+    ];
+
+    if ($category_id > 0) {
+        $args['cat'] = $category_id;
+    }
+
+    $query = new WP_Query($args);
 
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
