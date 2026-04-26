@@ -226,10 +226,68 @@
         });
     }
 
+    function setupMobileMenuRefinement() {
+        if (!document.body || document.body.classList.contains('dw-mobile-menu-ready')) {
+            return;
+        }
+
+        var container = document.getElementById('rmp-container-846');
+        var menuWrap = document.getElementById('rmp-menu-wrap-846');
+        var menu = document.getElementById('rmp-menu-846');
+        var trigger = document.getElementById('rmp_menu_trigger-846');
+
+        if (!container || !menuWrap || !menu || !trigger) {
+            return;
+        }
+
+        document.body.classList.add('dw-mobile-menu-ready');
+
+        var links = menuWrap.querySelectorAll('.rmp-menu-item-link');
+        Array.prototype.forEach.call(links, function (link, index) {
+            link.style.setProperty('--dw-menu-delay', (70 + (index * 55)) + 'ms');
+        });
+
+        function isMenuOpen() {
+            var style = window.getComputedStyle(container);
+            var triggerExpanded = trigger.getAttribute('aria-expanded');
+            var triggerActive = /active|open/i.test(trigger.className);
+            var containerVisible = style.display !== 'none' &&
+                style.visibility !== 'hidden' &&
+                parseFloat(style.opacity || '1') > 0.01;
+
+            return containerVisible && (triggerExpanded === 'true' || triggerActive || style.pointerEvents !== 'none');
+        }
+
+        function syncMenuState() {
+            var isOpen = isMenuOpen();
+            document.body.classList.toggle('dw-mobile-menu-open', isOpen);
+        }
+
+        syncMenuState();
+
+        if ('MutationObserver' in window) {
+            var observer = new MutationObserver(syncMenuState);
+            observer.observe(container, {
+                attributes: true,
+                attributeFilter: ['class', 'style', 'aria-hidden']
+            });
+            observer.observe(trigger, {
+                attributes: true,
+                attributeFilter: ['class', 'style', 'aria-expanded']
+            });
+        }
+
+        window.addEventListener('resize', syncMenuState);
+        window.addEventListener('orientationchange', syncMenuState);
+        window.setTimeout(syncMenuState, 120);
+        window.setTimeout(syncMenuState, 420);
+    }
+
     function boot(attempt) {
         var isReady = updateServicesSection();
 
         setupScrollReveal();
+        setupMobileMenuRefinement();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {
