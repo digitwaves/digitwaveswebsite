@@ -369,3 +369,18 @@ If it starts feeling busy, the answer is almost always:
 - fewer blocks
 - stronger image choice
 - more spacing
+
+## Motion
+
+Simple fade/reveal animation is handled in:
+
+- `js/services-ai-refresh.js`
+
+The About page uses light reveal timing only:
+
+- hero image fades from the left
+- hero copy fades from the right
+- statement, CTA, and closeout fade upward
+- story copy/image stagger lightly
+
+Keep motion subtle and avoid adding Elementor animation effects on top of this.

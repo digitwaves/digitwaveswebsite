@@ -149,6 +149,16 @@
         }
     }
 
+    function revealNow(node) {
+        if (!node) {
+            return;
+        }
+
+        window.setTimeout(function () {
+            node.classList.add('is-visible');
+        }, 80);
+    }
+
     function setupScrollReveal() {
         if (!document.body || document.body.classList.contains('dw-reveal-ready')) {
             return;
@@ -195,9 +205,16 @@
         });
 
         if (document.body.classList.contains('page-id-606')) {
-            addRevealClass(document.querySelector('.dw-about-hero-media'), 'dw-reveal-left', 40);
-            addRevealClass(document.querySelector('.dw-about-hero-copy'), 'dw-reveal-right', 120);
-            addRevealClass(document.querySelector('.dw-about-statement-title'), 'dw-reveal-up', 60);
+            var aboutHeroMedia = document.querySelector('.dw-about-hero-media');
+            var aboutHeroCopy = document.querySelector('.dw-about-hero-copy');
+            var aboutStatement = document.querySelector('.dw-about-statement-title');
+
+            addRevealClass(aboutHeroMedia, 'dw-reveal-left', 40);
+            addRevealClass(aboutHeroCopy, 'dw-reveal-right', 120);
+            addRevealClass(aboutStatement, 'dw-reveal-up', 60);
+            revealNow(aboutHeroMedia);
+            revealNow(aboutHeroCopy);
+            revealNow(aboutStatement);
             addRevealClass(document.querySelector('.dw-about-story-copy-wrap'), 'dw-reveal-left', 60);
             addRevealClass(document.querySelector('.dw-about-story-media'), 'dw-reveal-right', 140);
             addRevealClass(document.querySelector('.dw-about-cta-title'), 'dw-reveal-up', 40);
@@ -391,6 +408,32 @@
         });
     }
 
+    function setupContactPage() {
+        if (!document.body || !document.body.classList.contains('page-id-22') || document.body.classList.contains('dw-contact-page-ready')) {
+            return;
+        }
+
+        document.body.classList.add('dw-contact-page-ready');
+
+        var pageRoot = document.querySelector('.page-id-22 .elementor-22') || document.querySelector('.elementor-22');
+        if (!pageRoot) {
+            return;
+        }
+
+        var sections = pageRoot.querySelectorAll('.elementor-top-section');
+        if (!sections.length) {
+            return;
+        }
+
+        sections[0].classList.add('dw-contact-hero');
+
+        Array.prototype.forEach.call(sections, function (section) {
+            if (section.querySelector('.elementor-widget-google_maps') || section.querySelector('.wpforms-container')) {
+                section.classList.add('dw-contact-action');
+            }
+        });
+    }
+
     function boot(attempt) {
         var isReady = updateServicesSection();
 
@@ -398,6 +441,7 @@
         setupMobileMenuRefinement();
         setupWorkPage();
         setupServicesPage();
+        setupContactPage();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {
