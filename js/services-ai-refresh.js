@@ -194,6 +194,19 @@
             });
         });
 
+        if (document.body.classList.contains('page-id-606')) {
+            addRevealClass(document.querySelector('.dw-about-hero-media'), 'dw-reveal-left', 40);
+            addRevealClass(document.querySelector('.dw-about-hero-copy'), 'dw-reveal-right', 120);
+            addRevealClass(document.querySelector('.dw-about-statement-title'), 'dw-reveal-up', 60);
+            addRevealClass(document.querySelector('.dw-about-story-copy-wrap'), 'dw-reveal-left', 60);
+            addRevealClass(document.querySelector('.dw-about-story-media'), 'dw-reveal-right', 140);
+            addRevealClass(document.querySelector('.dw-about-cta-title'), 'dw-reveal-up', 40);
+            addRevealClass(document.querySelector('.dw-about-cta-copy'), 'dw-reveal-up', 100);
+            addRevealClass(document.querySelector('.dw-about-cta .elementor-button-wrapper'), 'dw-reveal-up', 160);
+            addRevealClass(document.querySelector('.dw-about-closeout-title'), 'dw-reveal-up', 60);
+            addRevealClass(document.querySelector('.dw-about-closeout-copy'), 'dw-reveal-up', 120);
+        }
+
         var revealNodes = document.querySelectorAll('.dw-reveal');
         if (!revealNodes.length) {
             return;
