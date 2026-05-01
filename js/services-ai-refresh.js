@@ -224,6 +224,37 @@
             addRevealClass(document.querySelector('.dw-about-closeout-copy'), 'dw-reveal-up', 120);
         }
 
+        if (document.body.classList.contains('page-id-25')) {
+            var serviceSections = document.querySelectorAll(
+                '.page-id-25 .dw-services-hero, ' +
+                '.page-id-25 .dw-services-intro, ' +
+                '.page-id-25 .dw-services-lanes, ' +
+                '.page-id-25 .dw-services-fit-check, ' +
+                '.page-id-25 .dw-services-start, ' +
+                '.page-id-25 .dw-services-ai-layer, ' +
+                '.page-id-25 .dw-services-cta'
+            );
+
+            Array.prototype.forEach.call(serviceSections, function (section) {
+                addRevealClass(section, 'dw-reveal-up', 0);
+            });
+
+            Array.prototype.forEach.call(document.querySelectorAll('.page-id-25 .dw-services-start-step'), function (item, index) {
+                addRevealClass(item, 'dw-reveal-up', 70 + (index * 80));
+            });
+
+            Array.prototype.forEach.call(document.querySelectorAll('.page-id-25 .dw-service-detail-card'), function (item, index) {
+                addRevealClass(item, 'dw-reveal-up', 90 + (index * 110));
+            });
+
+            addRevealClass(document.querySelector('.page-id-25 .dw-services-lanes-copy'), 'dw-reveal-left', 60);
+            addRevealClass(document.querySelector('.page-id-25 .dw-services-lanes-art'), 'dw-reveal-right', 120);
+            addRevealClass(document.querySelector('.page-id-25 .dw-services-fit-visual'), 'dw-reveal-left', 60);
+            addRevealClass(document.querySelector('.page-id-25 .dw-services-fit-copy'), 'dw-reveal-right', 120);
+            addRevealClass(document.querySelector('.page-id-25 .dw-services-ai-copy'), 'dw-reveal-left', 60);
+            addRevealClass(document.querySelector('.page-id-25 .dw-services-ai-terms'), 'dw-reveal-right', 120);
+        }
+
         var revealNodes = document.querySelectorAll('.dw-reveal');
         if (!revealNodes.length) {
             return;

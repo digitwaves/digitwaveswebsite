@@ -15,3 +15,7 @@
 - Build outbound lead-generation system.
 - Build social automation workflow.
 - Continue Yoast SEO setup and page optimization.
+
+## After SEO-Optimized Site
+
+- Build an end-to-end automated growth pipeline: cold DM outreach, offer flow, lead qualification, project-start workflow, follow-up system, and handoff into the Digit Waves project process.

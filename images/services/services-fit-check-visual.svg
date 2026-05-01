@@ -1,0 +1,58 @@
+<svg width="900" height="720" viewBox="0 0 900 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Digit Waves fit check visual</title>
+  <desc id="desc">An abstract fit check dashboard showing business needs, digital systems, and AI support being evaluated before choosing a practical solution.</desc>
+  <rect width="900" height="720" rx="64" fill="#071827"/>
+  <circle cx="710" cy="150" r="210" fill="#2BC0CB" fill-opacity="0.16"/>
+  <circle cx="170" cy="560" r="210" fill="#0097A7" fill-opacity="0.12"/>
+  <path d="M148 152H752" stroke="#7EE5FF" stroke-opacity="0.12" stroke-width="2"/>
+  <path d="M148 568H752" stroke="#7EE5FF" stroke-opacity="0.12" stroke-width="2"/>
+  <g opacity="0.9">
+    <rect x="132" y="118" width="236" height="168" rx="30" fill="#0D2A3D" stroke="#7EE5FF" stroke-opacity="0.18" stroke-width="2"/>
+    <rect x="168" y="158" width="136" height="14" rx="7" fill="#EDF6FB" fill-opacity="0.86"/>
+    <rect x="168" y="196" width="164" height="10" rx="5" fill="#2BC0CB" fill-opacity="0.46"/>
+    <rect x="168" y="224" width="112" height="10" rx="5" fill="#2BC0CB" fill-opacity="0.30"/>
+    <circle cx="318" cy="236" r="20" fill="#2BC0CB" fill-opacity="0.18"/>
+    <path d="M308 236l7 7 15-18" stroke="#7EE5FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g opacity="0.9">
+    <rect x="532" y="118" width="236" height="168" rx="30" fill="#0D2A3D" stroke="#7EE5FF" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M588 226V182H632V226H588ZM668 226V154H712V226H668Z" stroke="#7EE5FF" stroke-width="8" stroke-linejoin="round" stroke-opacity="0.78"/>
+    <path d="M586 246H714" stroke="#2BC0CB" stroke-width="8" stroke-linecap="round" stroke-opacity="0.7"/>
+    <circle cx="610" cy="158" r="9" fill="#2BC0CB"/>
+    <circle cx="690" cy="126" r="9" fill="#7EE5FF"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="246" y="242" width="408" height="244" rx="42" fill="#F6FBFC"/>
+    <circle cx="450" cy="364" r="82" fill="#0097A7" fill-opacity="0.10"/>
+    <path d="M398 364c22-34 82-34 104 0" stroke="#0097A7" stroke-width="10" stroke-linecap="round"/>
+    <path d="M410 394c22 22 58 22 80 0" stroke="#2BC0CB" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="450" cy="338" r="18" fill="#071827"/>
+    <path d="M450 270v-40M450 498v-40M336 364h-44M608 364h-44" stroke="#2BC0CB" stroke-width="7" stroke-linecap="round" stroke-opacity="0.52"/>
+    <circle cx="450" cy="230" r="12" fill="#2BC0CB" fill-opacity="0.62"/>
+    <circle cx="450" cy="498" r="12" fill="#0097A7" fill-opacity="0.5"/>
+    <circle cx="292" cy="364" r="12" fill="#2BC0CB" fill-opacity="0.46"/>
+    <circle cx="608" cy="364" r="12" fill="#0097A7" fill-opacity="0.44"/>
+  </g>
+  <g opacity="0.9">
+    <rect x="132" y="440" width="236" height="168" rx="30" fill="#0D2A3D" stroke="#7EE5FF" stroke-opacity="0.18" stroke-width="2"/>
+    <rect x="174" y="486" width="42" height="42" rx="10" stroke="#7EE5FF" stroke-width="7" stroke-opacity="0.74"/>
+    <rect x="244" y="486" width="42" height="42" rx="10" stroke="#7EE5FF" stroke-width="7" stroke-opacity="0.74"/>
+    <rect x="209" y="544" width="42" height="42" rx="10" stroke="#7EE5FF" stroke-width="7" stroke-opacity="0.74"/>
+    <path d="M216 506h28M265 528v16" stroke="#2BC0CB" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g opacity="0.9">
+    <rect x="532" y="440" width="236" height="168" rx="30" fill="#0D2A3D" stroke="#7EE5FF" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M594 512c0-30 24-54 54-54s54 24 54 54-24 54-54 54" stroke="#7EE5FF" stroke-width="8" stroke-linecap="round" stroke-opacity="0.74"/>
+    <path d="M648 488v30l24 16" stroke="#2BC0CB" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M626 566h44" stroke="#2BC0CB" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <path d="M368 202C400 202 418 228 430 252" stroke="#7EE5FF" stroke-opacity="0.22" stroke-width="7" stroke-linecap="round"/>
+  <path d="M532 202C500 202 482 228 470 252" stroke="#7EE5FF" stroke-opacity="0.22" stroke-width="7" stroke-linecap="round"/>
+  <path d="M368 524C400 524 418 500 430 476" stroke="#7EE5FF" stroke-opacity="0.22" stroke-width="7" stroke-linecap="round"/>
+  <path d="M532 524C500 524 482 500 470 476" stroke="#7EE5FF" stroke-opacity="0.22" stroke-width="7" stroke-linecap="round"/>
+  <defs>
+    <filter id="softShadow" x="190" y="190" width="520" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="28" stdDeviation="24" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+</svg>

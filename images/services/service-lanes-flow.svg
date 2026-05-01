@@ -1,0 +1,40 @@
+<svg width="900" height="720" viewBox="0 0 900 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Digit Waves service lanes flow</title>
+  <desc id="desc">An abstract visual showing a website, workflow, and AI layer connecting into one clear operating path.</desc>
+  <rect width="900" height="720" rx="64" fill="#F6FBFC"/>
+  <circle cx="704" cy="138" r="186" fill="#2BC0CB" fill-opacity="0.10"/>
+  <circle cx="178" cy="586" r="176" fill="#0097A7" fill-opacity="0.08"/>
+  <path d="M142 372C219 284 297 240 376 240C484 240 520 326 625 326C681 326 729 300 770 248" stroke="#0097A7" stroke-width="10" stroke-linecap="round" stroke-opacity="0.24"/>
+  <path d="M142 424C225 352 304 316 380 316C486 316 516 388 620 388C674 388 724 366 770 322" stroke="#2BC0CB" stroke-width="10" stroke-linecap="round" stroke-opacity="0.32"/>
+  <g filter="url(#shadow)">
+    <rect x="120" y="132" width="246" height="162" rx="26" fill="white"/>
+    <rect x="148" y="164" width="190" height="18" rx="9" fill="#081B2B" fill-opacity="0.84"/>
+    <rect x="148" y="202" width="132" height="12" rx="6" fill="#0097A7" fill-opacity="0.36"/>
+    <rect x="148" y="232" width="164" height="12" rx="6" fill="#0097A7" fill-opacity="0.20"/>
+    <rect x="148" y="260" width="86" height="12" rx="6" fill="#0097A7" fill-opacity="0.28"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="534" y="128" width="238" height="178" rx="30" fill="#071827"/>
+    <path d="M588 238V194H632V238H588ZM664 238V166H708V238H664Z" stroke="#7EE5FF" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M586 258H710" stroke="#2BC0CB" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="620" cy="158" r="10" fill="#2BC0CB"/>
+    <circle cx="696" cy="128" r="10" fill="#7EE5FF"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="210" y="430" width="484" height="164" rx="34" fill="white"/>
+    <circle cx="292" cy="512" r="40" fill="#0097A7" fill-opacity="0.12"/>
+    <path d="M272 512H312M292 492V532" stroke="#0097A7" stroke-width="8" stroke-linecap="round"/>
+    <rect x="360" y="470" width="252" height="18" rx="9" fill="#081B2B" fill-opacity="0.86"/>
+    <rect x="360" y="512" width="286" height="12" rx="6" fill="#0097A7" fill-opacity="0.22"/>
+    <rect x="360" y="544" width="210" height="12" rx="6" fill="#0097A7" fill-opacity="0.18"/>
+  </g>
+  <path d="M366 214H500" stroke="#0097A7" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 16" stroke-opacity="0.42"/>
+  <path d="M476 512H694" stroke="#2BC0CB" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 16" stroke-opacity="0.34"/>
+  <circle cx="450" cy="214" r="12" fill="#2BC0CB" fill-opacity="0.38"/>
+  <circle cx="718" cy="512" r="12" fill="#0097A7" fill-opacity="0.28"/>
+  <defs>
+    <filter id="shadow" x="60" y="68" width="772" height="590" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#071827" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+</svg>
