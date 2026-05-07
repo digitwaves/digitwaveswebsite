@@ -71,7 +71,7 @@ Heading:
 
 Body:
 
-`We design, integrate, and automate AI solutions that streamline operations, elevate customer experience, and create measurable business leverage.`
+`DigitWaves helps small businesses get seen, get more leads, answer customer questions, and follow up faster using practical AI and better marketing content.`
 
 Primary button:
 
@@ -98,27 +98,27 @@ Copy:
 
 Title 1:
 
-`Business-First Strategy`
+`Web Design That Wins Trust`
 
 Text 1:
 
-`AI solutions aligned to growth, efficiency, and customer experience.`
+`Give people a clear, polished website that explains what you offer and makes it easy to contact you.`
 
 Title 2:
 
-`Custom Integrations`
+`AI-Enabled Websites`
 
 Text 2:
 
-`Connected systems built around your workflow, tools, and data.`
+`Add a smart chatbot so visitors can quickly look up services, FAQs, pricing, booking details, and next steps.`
 
 Title 3:
 
-`Practical Automation`
+`UGC Ads & Short Videos`
 
 Text 3:
 
-`Less manual overhead, clearer operations, and smarter execution.`
+`Create simple ad ideas, TikToks, Reels, and YouTube Shorts that help more people notice your business.`
 
 ## 3. Services
 
@@ -141,31 +141,31 @@ Section heading:
 
 Intro:
 
-`We help companies move from AI curiosity to practical execution with systems that are useful, elegant, and scalable.`
+`No tech lecture. Just practical help with getting seen, getting leads, answering customer questions, and following up faster.`
 
 Card 1 title:
 
-`AI Strategy & Experience Design`
+`Smart Website Chatbots`
 
 Card 1 text:
 
-`We identify where AI creates real value across your customer journey, internal workflows, and digital platforms.`
+`Let visitors ask questions on your site and quickly find services, prices, FAQs, booking details, or next steps.`
 
 Card 2 title:
 
-`Custom AI Integrations`
+`Lead-Getting Ads`
 
 Card 2 text:
 
-`We connect AI tools to your website, CRM, scheduling, support, and operational stack for seamless execution.`
+`Create clear offers, landing pages, and Facebook or Instagram ad campaigns that help more people contact you.`
 
 Card 3 title:
 
-`Workflow Automation`
+`Short-Form Content`
 
 Card 3 text:
 
-`We automate repetitive tasks, reduce friction, and build systems that let your team focus on higher-value work.`
+`Turn your business into simple posts, TikToks, Reels, and YouTube Shorts ideas that keep you visible online.`
 
 ## 4. Process
 
@@ -188,31 +188,31 @@ Heading:
 
 Body:
 
-`Our process makes AI adoption practical, clear, and commercially useful. We focus on systems that fit your business, not trend-driven add-ons.`
+`We start with what you want more of: calls, bookings, sales, visibility, or fewer repetitive tasks. Then we build the simplest useful version first.`
 
 Step 1:
 
 `Discover`
 
-`Audit goals, workflows, friction points, and opportunities.`
+`Look at what you sell, who you serve, and where customers get stuck.`
 
 Step 2:
 
 `Design`
 
-`Define the right AI experience, architecture, and priorities.`
+`Choose the best first move: a chatbot, ads, short-form content, better website copy, or lead follow-up.`
 
 Step 3:
 
 `Integrate`
 
-`Connect tools, content, operations, and customer touchpoints.`
+`Set it up around the tools you already use, like your website, email, forms, or social pages.`
 
 Step 4:
 
 `Optimize`
 
-`Refine performance, usability, and long-term value.`
+`Improve the copy, answers, ads, and follow-up based on what people actually do.`
 
 ## 5. Why Digit Waves
 
@@ -235,18 +235,18 @@ Heading:
 
 Body:
 
-`We combine strategic thinking with hands-on implementation to help businesses adopt AI in ways that feel useful, modern, and scalable.`
+`DigitWaves keeps the tech in the background and focuses on what business owners care about: getting found, getting trusted, and getting contacted.`
 
 List items:
 
-- `Strategy paired with execution`
-- `Modern customer experiences built with purpose`
-- `AI systems designed around business outcomes`
-- `Flexible consulting for growing teams`
+- `Clear offers people understand`
+- `Content that makes your business easier to notice`
+- `Smart website help for common customer questions`
+- `Follow-up that keeps leads from going cold`
 
 Closing line:
 
-`The result is a smarter digital operation with less friction and more clarity.`
+`The result is marketing that feels clearer, faster, and easier to keep moving.`
 
 ## 6. Final CTA
 
@@ -265,7 +265,7 @@ Copy:
 
 Heading:
 
-`Ready to Build an AI-Driven Business Advantage?`
+`Ready to Make Your Marketing Easier?`
 
 Body:
 

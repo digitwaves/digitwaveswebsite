@@ -1,19 +1,19 @@
 (function () {
     var aiServices = [
         {
-            title: 'AI Experience Design',
-            description: 'Craft intelligent web experiences with conversational flows, adaptive content, and UX built for discovery.',
-            iconClasses: ['fas', 'fa-brain']
+            title: 'Smart Website Chatbots',
+            description: 'Let visitors ask questions on your site and quickly find services, prices, FAQs, booking details, or next steps.',
+            iconClasses: ['fas', 'fa-comments']
         },
         {
-            title: 'Custom AI Integrations',
-            description: 'Connect assistants, knowledge bases, and business tools into one seamless system your team can actually use.',
-            iconClasses: ['fas', 'fa-robot']
+            title: 'Lead-Getting Ads',
+            description: 'Create clear offers, landing pages, and Facebook or Instagram ad campaigns that help more people contact you.',
+            iconClasses: ['fas', 'fa-bullhorn']
         },
         {
-            title: 'Intelligent Automation',
-            description: 'Automate repetitive tasks, reporting, and handoffs so your operation moves faster with less manual overhead.',
-            iconClasses: ['fas', 'fa-project-diagram']
+            title: 'Short-Form Content',
+            description: 'Turn your business into simple posts, TikToks, Reels, and YouTube Shorts ideas that keep you visible online.',
+            iconClasses: ['fas', 'fa-play-circle']
         }
     ];
 
@@ -96,7 +96,7 @@
             return;
         }
 
-        heading.textContent = 'AI Services';
+        heading.textContent = 'Simple Ways AI Can Help You Get More Customers';
         heading.classList.add('digitwaves-ai-services-heading');
 
         var container = heading.closest('.elementor-widget-container') || heading.parentElement;
@@ -106,7 +106,7 @@
 
         var intro = document.createElement('p');
         intro.className = 'digitwaves-ai-services-intro';
-        intro.textContent = 'From AI-powered websites to smart automation, we build digital systems that help teams move faster, personalize better, and scale with clarity.';
+        intro.textContent = 'No tech lecture. Just practical help with getting seen, getting leads, answering customer questions, and following up faster.';
         container.appendChild(intro);
     }
 
@@ -465,6 +465,83 @@
         });
     }
 
+    function setupHomepageMarketingTrust() {
+        if (!document.body || !document.body.classList.contains('home')) {
+            return;
+        }
+
+        var section = document.querySelector('.home .dw-premium-trust');
+        if (!section) {
+            return;
+        }
+
+        document.body.classList.add('dw-home-trust-copy-ready');
+
+        var heading = section.querySelector('.dw-trust-title .elementor-heading-title') ||
+            section.querySelector('.elementor-widget-heading .elementor-heading-title');
+
+        if (heading) {
+            heading.textContent = 'AI Help That Makes Your Marketing Easier';
+
+            var headingContainer = heading.closest('.elementor-widget-container') || heading.parentElement;
+            if (headingContainer && !headingContainer.querySelector('.dw-trust-intro')) {
+                var intro = document.createElement('p');
+                intro.className = 'dw-trust-intro';
+                intro.textContent = 'Use AI to explain what you do, show up in more places, answer common questions, and keep good leads from slipping away.';
+                headingContainer.appendChild(intro);
+            }
+        }
+
+        var cards = [
+            {
+                title: 'Web Design That Wins Trust',
+                description: 'Give people a clear, polished website that explains what you offer and makes it easy to contact you.',
+                iconClass: 'fas fa-laptop-code'
+            },
+            {
+                title: 'AI-Enabled Websites',
+                description: 'Add a smart chatbot so visitors can quickly look up services, FAQs, pricing, booking details, and next steps.',
+                iconClass: 'fas fa-comments'
+            },
+            {
+                title: 'UGC Ads & Short Videos',
+                description: 'Create simple ad ideas, TikToks, Reels, and YouTube Shorts that help more people notice your business.',
+                iconClass: 'fas fa-video'
+            }
+        ];
+
+        var stats = section.querySelectorAll('.dw-stat');
+        Array.prototype.forEach.call(stats, function (stat, index) {
+            var copy = cards[index];
+            if (!copy) {
+                return;
+            }
+
+            stat.classList.add('dw-market-card');
+            stat.setAttribute('data-market-card', String(index + 1));
+
+            var title = stat.querySelector('.elementor-heading-title') || stat.querySelector('h3') || stat.querySelector('h4');
+            var text = stat.querySelector('.elementor-text-editor p') || stat.querySelector('.elementor-widget-text-editor p') || stat.querySelector('p');
+            var imageBox = stat.querySelector('.elementor-image');
+            var imageWidget = stat.querySelector('.elementor-widget-image');
+
+            if (title) {
+                title.textContent = copy.title;
+            }
+
+            if (text) {
+                text.textContent = copy.description;
+            }
+
+            if (imageBox && !imageBox.querySelector('.dw-market-icon')) {
+                imageBox.innerHTML = '<i class="' + copy.iconClass + ' dw-market-icon" aria-hidden="true"></i>';
+            } else if (imageWidget && !imageWidget.querySelector('.dw-market-icon')) {
+                var container = imageWidget.querySelector('.elementor-widget-container') || imageWidget;
+                container.innerHTML = '<div class="elementor-image"><i class="' + copy.iconClass + ' dw-market-icon" aria-hidden="true"></i></div>';
+            }
+        });
+    }
+
     function boot(attempt) {
         var isReady = updateServicesSection();
 
@@ -473,6 +550,7 @@
         setupWorkPage();
         setupServicesPage();
         setupContactPage();
+        setupHomepageMarketingTrust();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {

@@ -46,6 +46,16 @@ function digitwaves_stylesheets(){
 
 	wp_enqueue_script('jquery');
 
+    if (is_page(606)) {
+        wp_enqueue_script(
+            'dw-contact-header-reveal',
+            get_template_directory_uri() . '/js/contact-header-reveal.js',
+            [],
+            filemtime(get_stylesheet_directory() . '/js/contact-header-reveal.js'),
+            true
+        );
+    }
+
     wp_enqueue_script(
         'services-ai-refresh',
         get_template_directory_uri() . '/js/services-ai-refresh.js',
