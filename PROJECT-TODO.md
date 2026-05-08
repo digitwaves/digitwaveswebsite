@@ -21,6 +21,7 @@
 ## Lower Priority
 
 - Set up GitHub to Hostinger webhook deployment.
+- Explore Zendesk message automation: when someone sends a Zendesk message, capture the lead/conversation details into the DigitWaves Google Sheet and send a notification/message alert.
 - Plan AI chatbot, AI phone assistant, and AI email replier.
 - Create Digit Waves LinkedIn account.
 - Add footer LinkedIn social icon once the LinkedIn URL exists.

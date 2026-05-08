@@ -120,52 +120,41 @@ Text 3:
 
 `Create simple ad ideas, TikToks, Reels, and YouTube Shorts that help more people notice your business.`
 
-## 3. Services
+## 3. Marketing Showcase
 
 Elementor:
 
-- One intro row
-- One three-column row beneath it
-- This should be the only card-heavy section
+- One full-width dark showcase section
+- Left side: market-focused headline, short copy, CTA
+- Right side: animated UI/UX mockup
+- Do not use three service boxes here
 
 Classes:
 
 - Section: `dw-premium-section dw-premium-services`
-- Each card column/widget: `dw-service-card`
+- JS applies: `dw-marketing-showcase`
 
 Copy:
 
-Section heading:
+Eyebrow:
 
-`What We Build`
+`Marketing that feels alive`
 
-Intro:
+Heading:
 
-`No tech lecture. Just practical help with getting seen, getting leads, answering customer questions, and following up faster.`
+`Turn Website Visitors Into Real Leads`
 
-Card 1 title:
+Body:
 
-`Smart Website Chatbots`
+`Give people a clear offer, useful answers, strong visuals, and an easy next step before their attention disappears.`
 
-Card 1 text:
+Button:
 
-`Let visitors ask questions on your site and quickly find services, prices, FAQs, booking details, or next steps.`
+`View Featured Work`
 
-Card 2 title:
+Small support line:
 
-`Lead-Getting Ads`
-
-Card 2 text:
-
-`Create clear offers, landing pages, and Facebook or Instagram ad campaigns that help more people contact you.`
-
-Card 3 title:
-
-`Short-Form Content`
-
-Card 3 text:
-
-`Turn your business into simple posts, TikToks, Reels, and YouTube Shorts ideas that keep you visible online.`
+`Website design • Short videos • Smart answers • Follow-up`
 
 ## 4. Process
 
@@ -220,33 +209,30 @@ Elementor:
 
 - Two columns
 - Left side heading and paragraph
-- Right side icon list or stacked short statements
+- Right side image/visual, no hover list
 
 Classes:
 
 - Section: `dw-premium-section dw-premium-proof`
-- Right-side list widget: `dw-proof-list`
+- Right-side image wrapper: `dw-market-proof-visual`
+
+Image:
+
+`images/home/dw-marketing-fit-visual.png`
 
 Copy:
 
 Heading:
 
-`Why Businesses Choose Digit Waves`
+`Marketing That Fits the Way You Work`
 
 Body:
 
-`DigitWaves keeps the tech in the background and focuses on what business owners care about: getting found, getting trusted, and getting contacted.`
-
-List items:
-
-- `Clear offers people understand`
-- `Content that makes your business easier to notice`
-- `Smart website help for common customer questions`
-- `Follow-up that keeps leads from going cold`
+`DigitWaves helps turn your website, content, and follow-up into a clearer path from first glance to booked conversation.`
 
 Closing line:
 
-`The result is marketing that feels clearer, faster, and easier to keep moving.`
+`The result is marketing that feels easier to trust, easier to find, and easier to act on.`
 
 ## 6. Final CTA
 
@@ -269,11 +255,11 @@ Heading:
 
 Body:
 
-`Let’s identify the highest-impact opportunities for AI across your website, operations, and customer experience.`
+`Let us help you sharpen your website, create content people notice, and turn more interested visitors into real conversations.`
 
 Button:
 
-`Schedule a Consultation`
+`Book a Strategy Call`
 
 ## Visual Direction
 

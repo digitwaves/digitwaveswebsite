@@ -64,6 +64,10 @@ function digitwaves_stylesheets(){
         true
     );
 
+    wp_localize_script('services-ai-refresh', 'digitwavesTheme', [
+        'assetBaseUrl' => trailingslashit(get_template_directory_uri()),
+    ]);
+
     wp_enqueue_script(
         'infinite-scroll',
         get_template_directory_uri() . '/js/infinite-scroll.js',

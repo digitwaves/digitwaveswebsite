@@ -1,4 +1,21 @@
 (function () {
+    function getThemeAssetUrl(path) {
+        var cleanPath = path.replace(/^\/+/, '');
+
+        if (window.digitwavesTheme && window.digitwavesTheme.assetBaseUrl) {
+            return window.digitwavesTheme.assetBaseUrl.replace(/\/?$/, '/') + cleanPath;
+        }
+
+        var scripts = document.querySelectorAll('script[src*="/js/services-ai-refresh.js"]');
+        var script = scripts.length ? scripts[scripts.length - 1] : null;
+
+        if (script && script.src) {
+            return script.src.split('?')[0].replace('/js/services-ai-refresh.js', '/' + cleanPath);
+        }
+
+        return '/wp-content/themes/DigitWaves/' + cleanPath;
+    }
+
     var aiServices = [
         {
             title: 'Smart Website Chatbots',
@@ -542,6 +559,157 @@
         });
     }
 
+    function setupHomepageProofSection() {
+        if (!document.body || !document.body.classList.contains('home')) {
+            return;
+        }
+
+        var section = document.querySelector('.home .dw-premium-proof');
+        if (!section) {
+            return;
+        }
+
+        section.classList.add('dw-market-proof');
+
+        var heading = section.querySelector('.elementor-heading-title');
+        if (heading) {
+            heading.textContent = 'Marketing That Fits the Way You Work';
+        }
+
+        var leftColumn = section.querySelector('.elementor-top-column:first-child') ||
+            section.querySelector('.elementor-column:first-child');
+        var paragraphs = leftColumn ?
+            leftColumn.querySelectorAll('.elementor-widget-text-editor p, .elementor-text-editor p, p') :
+            [];
+
+        if (paragraphs[0]) {
+            paragraphs[0].textContent = 'DigitWaves helps turn your website, content, and follow-up into a clearer path from first glance to booked conversation.';
+        }
+
+        if (paragraphs.length > 1 && paragraphs[paragraphs.length - 1]) {
+            paragraphs[paragraphs.length - 1].textContent = 'The result is marketing that feels easier to trust, easier to find, and easier to act on.';
+        }
+
+        var rightColumn = section.querySelector('.elementor-top-column:last-child') ||
+            section.querySelector('.elementor-column:last-child');
+        var rightWrap = rightColumn ? (
+            rightColumn.querySelector('.elementor-widget-wrap') ||
+            rightColumn.querySelector('.elementor-column-wrap') ||
+            rightColumn.querySelector('.elementor-element-populated') ||
+            rightColumn
+        ) : null;
+
+        if (rightWrap && !rightWrap.querySelector('.dw-market-proof-visual')) {
+            rightWrap.innerHTML =
+                '<div class="dw-market-proof-visual">' +
+                    '<img src="' + getThemeAssetUrl('images/home/dw-marketing-fit-visual.png') + '" alt="Website, social content, customer answers, and lead follow-up shown as one marketing workflow">' +
+                '</div>';
+        }
+    }
+
+    function setupHomepageMarketingShowcase() {
+        if (!document.body || !document.body.classList.contains('home')) {
+            return;
+        }
+
+        var sections = document.querySelectorAll('.home .dw-premium-services');
+        if (!sections.length) {
+            return;
+        }
+
+        var showcaseSection = null;
+
+        Array.prototype.some.call(sections, function (section) {
+            var heading = section.querySelector('.elementor-heading-title');
+            var text = normalizeText(heading ? heading.textContent : '');
+
+            if (/see what better marketing|what we build/.test(text)) {
+                showcaseSection = section;
+                return true;
+            }
+
+            return false;
+        });
+
+        if (!showcaseSection) {
+            showcaseSection = sections[0];
+        }
+
+        if (showcaseSection.classList.contains('dw-marketing-showcase')) {
+            return;
+        }
+
+        var nextSection = showcaseSection.nextElementSibling;
+        if (nextSection && nextSection.classList.contains('dw-premium-services')) {
+            nextSection.classList.add('dw-marketing-showcase-hidden');
+        }
+
+        showcaseSection.classList.add('dw-marketing-showcase');
+
+        var container = showcaseSection.querySelector('.elementor-container') ||
+            showcaseSection.querySelector('.elementor-row') ||
+            showcaseSection;
+
+        container.innerHTML =
+            '<div class="dw-showcase-copy">' +
+                '<p class="dw-showcase-eyebrow">Marketing that feels alive</p>' +
+                '<h2>Turn Website Visitors Into Real Leads</h2>' +
+                '<p class="dw-showcase-lede">Give people a clear offer, useful answers, strong visuals, and an easy next step before their attention disappears.</p>' +
+                '<div class="dw-showcase-actions">' +
+                    '<a class="dw-showcase-button" href="/work/">View Featured Work</a>' +
+                    '<span>Website design • Short videos • Smart answers • Follow-up</span>' +
+                '</div>' +
+            '</div>' +
+            '<div class="dw-showcase-ui" aria-label="Animated marketing website preview">' +
+                '<div class="dw-ui-browser">' +
+                    '<div class="dw-ui-topbar"><span></span><span></span><span></span></div>' +
+                    '<div class="dw-ui-hero">' +
+                        '<div class="dw-ui-badge">Local offer</div>' +
+                        '<div class="dw-ui-title"></div>' +
+                        '<div class="dw-ui-line dw-ui-line-short"></div>' +
+                        '<div class="dw-ui-cta"></div>' +
+                    '</div>' +
+                    '<div class="dw-ui-grid">' +
+                        '<div class="dw-ui-card dw-ui-card-video"><div class="dw-ui-play"></div><div></div><div></div></div>' +
+                        '<div class="dw-ui-card dw-ui-card-chat"><div></div><div></div><div></div></div>' +
+                        '<div class="dw-ui-card dw-ui-card-lead"><div></div><div></div><div></div></div>' +
+                    '</div>' +
+                    '<div class="dw-ui-flow">' +
+                        '<span></span><span></span><span></span><span></span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="dw-ui-float dw-ui-float-chat">Question answered</div>' +
+                '<div class="dw-ui-float dw-ui-float-lead">New lead ready</div>' +
+                '<div class="dw-ui-float dw-ui-float-growth">More people noticed</div>' +
+            '</div>';
+    }
+
+    function setupHomepageCtaSection() {
+        if (!document.body || !document.body.classList.contains('home')) {
+            return;
+        }
+
+        var section = document.querySelector('.home .dw-premium-cta');
+        if (!section) {
+            return;
+        }
+
+        var heading = section.querySelector('.elementor-heading-title');
+        if (heading) {
+            heading.textContent = 'Ready to Make Your Marketing Easier?';
+        }
+
+        var paragraph = section.querySelector('.elementor-widget-text-editor p, .elementor-text-editor p, p');
+        if (paragraph) {
+            paragraph.textContent = 'Let us help you sharpen your website, create content people notice, and turn more interested visitors into real conversations.';
+        }
+
+        var buttonText = section.querySelector('.elementor-button-text');
+        if (buttonText) {
+            buttonText.textContent = 'Book a Strategy Call';
+        }
+    }
+
     function boot(attempt) {
         var isReady = updateServicesSection();
 
@@ -551,6 +719,9 @@
         setupServicesPage();
         setupContactPage();
         setupHomepageMarketingTrust();
+        setupHomepageMarketingShowcase();
+        setupHomepageProofSection();
+        setupHomepageCtaSection();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {
