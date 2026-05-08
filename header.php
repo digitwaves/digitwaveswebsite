@@ -29,7 +29,7 @@
 <header>				
 	<div class="container2">					
 	<div id="logo">
-    <a href="/"><img src="https://digitwaves.com/wp-content/uploads/2026/04/logo-dw-octagon-white-inner-1.png" alt="Digit Waves logo"/></a>							
+    <a href="/"><img src="https://digitwaves.com/wp-content/uploads/2026/05/logo-dw-octagon-white-inner-gradient.png" alt="Digit Waves logo"/></a>							
 	</div>										
 	<?php wp_nav_menu(array('theme_location' => 'primary'));?>
 	
