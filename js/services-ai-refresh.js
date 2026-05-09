@@ -498,13 +498,13 @@
             section.querySelector('.elementor-widget-heading .elementor-heading-title');
 
         if (heading) {
-            heading.textContent = 'AI Help That Makes Your Marketing Easier';
+            heading.textContent = 'Practical Marketing Support for Busy Local Teams';
 
             var headingContainer = heading.closest('.elementor-widget-container') || heading.parentElement;
             if (headingContainer && !headingContainer.querySelector('.dw-trust-intro')) {
                 var intro = document.createElement('p');
                 intro.className = 'dw-trust-intro';
-                intro.textContent = 'Use AI to explain what you do, show up in more places, answer common questions, and keep good leads from slipping away.';
+                intro.textContent = 'AI marketing for small businesses should make it easier to get noticed, answer customer questions, and turn website visitors into real leads.';
                 headingContainer.appendChild(intro);
             }
         }
@@ -602,7 +602,7 @@
         if (rightWrap && !rightWrap.querySelector('.dw-market-proof-visual')) {
             rightWrap.innerHTML =
                 '<div class="dw-market-proof-visual">' +
-                    '<img src="' + getThemeAssetUrl('images/home/dw-marketing-fit-visual.png') + '" alt="Website, social content, customer answers, and lead follow-up shown as one marketing workflow">' +
+                    '<img src="' + getThemeAssetUrl('images/home/dw-marketing-fit-visual.png') + '" alt="AI marketing for small businesses with website content, customer answers, and lead follow-up">' +
                 '</div>';
         }
     }

@@ -101,48 +101,43 @@ Add another section heading before project fields:
 
 ```html
 <h3>Your project</h3>
-<p>A few details so the first reply can be useful.</p>
+<p>Plain language is perfect. You do not need to know the technical answer yet.</p>
 ```
 
 10. What do you need help with?
-   - Type: Checkboxes
+   - Type: Paragraph Text
    - Required: Yes
+   - Sheet column: used by Codex to write `Summary`
+   - Placeholder:
+     `Example: I need my website to explain what I do better, and I want help getting more leads from content or follow-up.`
+   - Keep this as the main project field. This should do the heavy lifting instead of making visitors pick too many radio buttons.
+
+11. Services needed
+   - Type: Checkboxes
+   - Required: No
    - Sheet column: `Interest`
+   - Description:
+     `Optional. Pick any that sound close.`
    - Options:
-     - Website redesign
-     - AI automation
-     - RAG / internal knowledge search
-     - Tool integrations
-     - Customer support AI
-     - Workflow cleanup
+     - Website design or redesign
+     - AI-enabled website / smart chatbot
+     - UGC ads or short videos
+     - Instagram / TikTok / YouTube content
+     - Brand voice / messaging
+     - Lead follow-up or posting workflow
      - Not sure yet
 
-11. Best fit right now
-   - Type: Dropdown
-   - Required: Yes
-   - Sheet column: `Project Type`
-   - Options:
-     - New website or redesign
-     - Add AI to an existing website
-     - Automate a repetitive workflow
-     - Connect tools that do not talk to each other
-     - Build a searchable knowledge system
-     - I need help figuring this out
+Do not show these as public fields:
 
-12. Do you already know you need RAG or internal knowledge search?
-   - Type: Radio Buttons
-   - Required: Yes
-   - Sheet column: `AI/RAG Need`
-   - Options:
-     - Yes, that is part of the project
-     - Maybe, I want to talk it through
-     - Not sure what that means yet
-     - No, I need something simpler
-   - If radio buttons do not display correctly after cache clear, use Dropdown.
+- `Project Type`
+- `AI/RAG Need`
 
-13. Budget range
+Reason:
+Those choices are too technical and make the form feel like homework. Codex/n8n can infer project type later from the open message and selected services.
+
+12. Budget range
    - Type: Dropdown
-   - Required: Yes
+   - Required: No
    - Sheet column: `Budget/Timeline`
    - Options:
      - Under $1,000
@@ -151,29 +146,15 @@ Add another section heading before project fields:
      - $7,500+
      - Not sure yet
 
-14. Timeline
+13. Timeline
     - Type: Dropdown
-    - Required: Yes
+    - Required: No
     - Sheet column: `Budget/Timeline`
     - Options:
       - ASAP
       - This month
       - 1-3 months
       - Just exploring
-
-Add one final section heading before the open message:
-
-```html
-<h3>What feels messy?</h3>
-<p>Plain language is perfect. You do not need to know the technical answer yet.</p>
-```
-
-15. Tell me what feels slow, messy, or unclear
-    - Type: Paragraph Text
-    - Required: Yes
-    - Sheet column: used by Codex to write `Summary`
-    - Placeholder:
-      `Example: We need our website redesigned, and we want customers or staff to search our documents without asking us the same questions over and over.`
 
 ## Internal Sheet Columns
 
@@ -229,6 +210,69 @@ Lead automation rule:
 - Only add messages to the Google Sheet when they look like a real business inquiry.
 - Label suspicious messages as `Lead Review` or `Possible Spam`.
 - Do not send phone/message alerts for obvious spam.
+
+## Contact Page SEO
+
+Use the Contact page to rank for branded/contact intent, not a broad keyword. Keep the page helpful, direct, and easy to skim.
+
+Focus keyphrase:
+`Contact DigitWaves`
+
+SEO title:
+`Contact DigitWaves | AI Marketing Help for Small Businesses`
+
+Meta description:
+`Contact DigitWaves for website help, AI marketing, smart customer answers, content ideas, and simple lead follow-up.`
+
+Slug:
+`contact`
+
+Recommended visible H1:
+`Contact DigitWaves`
+
+If the page keeps the current visual headline, use this as the first intro line or an H2 so Yoast can still find the phrase:
+
+`Contact DigitWaves when your website, content, or follow-up feels unclear. Send the rough version, and I will reply with the clearest next step.`
+
+Short page intro:
+
+`You do not need a finished plan. Tell me what feels slow, unclear, repetitive, or hard to explain. I will read it, sort out the likely next step, and reply with a practical path forward.`
+
+Helpful text block below the form:
+
+```html
+<h2>Contact DigitWaves for practical marketing help</h2>
+<p>DigitWaves helps small businesses make their marketing easier to understand, easier to find, and easier to act on. That can mean a clearer website, better content ideas, short-form video direction, smart customer answers, or a simple follow-up path so good leads do not slip away.</p>
+<p>If you are not sure what you need yet, that is fine. Send what feels messy or unclear. I will look at your website, your message, and your goals, then reply with the simplest next step.</p>
+<p>You can also review the <a href="/services/">services</a>, see recent <a href="/work/">featured work</a>, or read practical <a href="/articles/">articles</a> before reaching out.</p>
+<p>Useful resource: <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google Search Central SEO Starter Guide</a>.</p>
+```
+
+Optional accordion copy if Yoast still complains about text length:
+
+```html
+<h3>What can you ask about?</h3>
+<p>You can contact DigitWaves about a website that needs clearer messaging, a homepage that does not explain the offer fast enough, short-form content ideas, better customer answers, or a follow-up process that feels scattered.</p>
+<h3>What happens after you send the form?</h3>
+<p>I read the message first, look for the main problem, and reply with a practical next step. The goal is not to bury you in technical options. The goal is to help you understand what would make your marketing easier to trust, easier to find, and easier to act on.</p>
+<h3>What if you are not sure what you need?</h3>
+<p>That is completely fine. A rough message is enough. Tell me what feels slow, messy, repetitive, or unclear, and I will help sort the request into a website, content, smart customer answer, or lead follow-up direction.</p>
+```
+
+Image suggestion:
+
+- Add one small image near the right-side contact panel or near the thank-you path.
+- Use the DigitWaves logo, a simple marketing workflow visual, or the homepage marketing visual.
+- Alt text:
+  `Contact DigitWaves for AI marketing and website help`
+
+Yoast red notes:
+
+- `Text length`: Contact pages are naturally shorter, but the helpful text block above gives Yoast enough real copy without stuffing the page.
+- `Outbound links`: The Google Search Central link is enough.
+- `Internal links`: Link to Services, Work, and Articles.
+- `Images`: Add one relevant image with the alt text above.
+- `Keyphrase in introduction/subheading`: Use the first intro line and H2 above.
 
 ## Phone / Message Alerts
 
@@ -301,6 +345,51 @@ Production hosting rule:
 Use this after submit:
 
 `Thanks. I will review this and reply with the clearest next step. If it looks like a fit, we can schedule a short strategy call.`
+
+## Redirect / Thank-You Page
+
+Create a page for the form redirect:
+
+Title:
+`Thanks, I Got Your Message`
+
+Slug:
+`contact-thank-you`
+
+WPForms confirmation type:
+`Go to URL (Redirect)`
+
+Redirect URL:
+`https://digitwaves.com/contact-thank-you/`
+
+SEO setting:
+Set this page to `noindex` if the SEO plugin allows it. This page is for visitors after they submit, not a search landing page.
+
+Elementor structure:
+
+1. Section class:
+   `dw-thankyou-hero`
+2. Inner container class:
+   `dw-thankyou-card`
+3. Heading widget:
+   `Thanks, I got your message.`
+4. Text widget:
+   `I will review what you sent and reply with the clearest next step. If it looks like a good fit, we can schedule a short strategy call.`
+5. Small process row class:
+   `dw-thankyou-steps`
+6. Process labels:
+   - `Review`
+   - `Reply`
+   - `Next step`
+7. Button row class:
+   `dw-thankyou-actions`
+8. Buttons:
+   - `View Featured Work` -> `/work/`
+   - `Back to Home` -> `/`
+
+Optional short copy below the buttons:
+
+`While you wait, you can look through recent work or read a few practical articles about clearer websites, content, and AI-assisted marketing.`
 
 ## Contact Page Styling
 

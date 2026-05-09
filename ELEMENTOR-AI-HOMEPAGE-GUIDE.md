@@ -2,6 +2,59 @@
 
 Use this as the new homepage structure in Elementor. The goal is fewer cards, stronger hierarchy, more whitespace, and a more premium consulting feel.
 
+## Front Page SEO / Yoast
+
+Use this exact focus phrase first. It matches the current homepage direction without sounding spammy.
+
+Focus keyphrase:
+
+`AI marketing for small businesses`
+
+SEO title:
+
+`AI Marketing for Small Businesses | DigitWaves`
+
+Meta description:
+
+`AI marketing for small businesses that need a clearer website, short-form content, smart customer answers, and simple lead follow-up.`
+
+Recommended slug:
+
+`/`
+
+Elementor edits that help Yoast:
+
+- H1: `AI Marketing for Small Businesses`
+- First visible body copy should include the exact keyphrase once:
+
+`AI marketing for small businesses should make it easier to get noticed, answer customer questions, and turn website visitors into real leads. DigitWaves helps with clear websites, useful content, smart website answers, and simple follow-up.`
+
+- Add one H2/subheading that supports the keyphrase without repeating the hero:
+
+`Practical Marketing Support for Busy Local Teams`
+
+- Add alt text to the main homepage marketing image:
+
+`AI marketing for small businesses with website content, customer answers, and lead follow-up`
+
+Internal links to include:
+
+- Link `View Featured Work` to `/work/`
+- Link `View Services` to `/services/`
+- Link `Book a Strategy Call` to `/contact/`
+
+Optional outbound link for Yoast:
+
+- Add a small resource link near the bottom only if needed:
+
+`Helpful resource: Google Search Central SEO Starter Guide`
+
+URL:
+
+`https://developers.google.com/search/docs/fundamentals/seo-starter-guide`
+
+Do not over-repeat the keyphrase. Use it in the H1, intro, one subheading, image alt text, SEO title, and meta description. That should be enough.
+
 ## Section Order
 
 1. Hero
@@ -95,6 +148,14 @@ Classes:
 - Each column/widget: `dw-stat`
 
 Copy:
+
+Section heading:
+
+`Practical Marketing Support for Busy Local Teams`
+
+Intro:
+
+`AI marketing for small businesses should make it easier to get noticed, answer customer questions, and turn website visitors into real leads.`
 
 Title 1:
 
