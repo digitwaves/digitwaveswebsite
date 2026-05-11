@@ -13,6 +13,13 @@
 - Continue front page SEO and copy/design tightening from the top down.
 - Continue the same SEO/copy/design pass across the other interior pages.
 
+## Medium Priority
+
+- Point remaining `Book a Strategy Call` CTAs to the Google Calendar booking page: `https://calendar.app.google/9zMzaHNicay1Za1GA`.
+- Create a business lead generation system for DigitWaves: define target niches, capture sources, outreach flow, offer/CTA, tracking sheet fields, follow-up steps, and manual review process before automation.
+- Build the AI Makeover / AI Package centerpiece offer with Starter, Pro, and Max packages; roll it out below the homepage hero after the first-generation site makeover is more fleshed out.
+- Create interior pages for the three homepage service cards: `/web-design/`, `/ai-enabled-websites/`, and `/ugc-ads-short-videos/`.
+
 ## Lower Priority
 
 - Turn okay Yoast SEO into good Yoast SEO later on the Contact page and other pages, without adding awkward filler copy or random outbound links.
@@ -31,7 +38,7 @@
 - Wire homepage/showcase hover items and buttons to useful destinations after the main page copy and form are settled.
 - Plan AI chatbot, AI phone assistant, and AI email replier.
 - Create Digit Waves LinkedIn account.
-- Add footer LinkedIn social icon once the LinkedIn URL exists.
+- Add footer LinkedIn, Instagram, and YouTube social icons once the public profile URLs exist.
 - Redesign the surrounding Contact page layout after primary pages are tightened: improve trust copy, spacing, map/visual balance, and follow-up expectations.
 
 ## Higher Priority Later

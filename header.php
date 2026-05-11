@@ -9,7 +9,43 @@
 	gtag('js', new Date());	  
 	gtag('config', 'UA-120225500-1');	
 	</script><!-- Start of  Zendesk Widget script -->
+<script>
+	window.zESettings = {
+		webWidget: {
+			color: {
+				theme: '#20aee8',
+				launcher: '#18c9c3',
+				launcherText: '#ffffff',
+				button: '#18c9c3',
+				resultLists: '#0097a7',
+				header: '#18c9c3',
+				articleLinks: '#0097a7'
+			}
+		}
+	};
+</script>
 <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=4852a129-47b9-4601-a079-2e5337721d30"> </script>
+<script>
+	window.addEventListener('load', function() {
+		if (!window.zE) {
+			return;
+		}
+
+		window.zE('webWidget', 'updateSettings', {
+			webWidget: {
+				color: {
+					theme: '#20aee8',
+					launcher: '#18c9c3',
+					launcherText: '#ffffff',
+					button: '#18c9c3',
+					resultLists: '#0097a7',
+					header: '#18c9c3',
+					articleLinks: '#0097a7'
+				}
+			}
+		});
+	});
+</script>
 <!-- End of  Zendesk Widget script -->
 	<!--https://www.taniarascia.com/developing-a-wordpress-theme-from-scratch/	http://hub51chicago.com/-->		
 	<title><?php wp_title('|',true,'right');?>Digit Waves - Develops websites</title>			

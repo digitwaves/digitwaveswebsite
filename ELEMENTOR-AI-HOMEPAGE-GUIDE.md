@@ -41,7 +41,7 @@ Internal links to include:
 
 - Link `View Featured Work` to `/work/`
 - Link `View Services` to `/services/`
-- Link `Book a Strategy Call` to `/contact/`
+- Link `Book a Strategy Call` to `https://calendar.app.google/9zMzaHNicay1Za1GA`.
 
 Optional outbound link for Yoast:
 
@@ -130,6 +130,10 @@ Primary button:
 
 `Book a Strategy Call`
 
+Link:
+
+`https://calendar.app.google/9zMzaHNicay1Za1GA`
+
 Secondary button:
 
 `View Services`
@@ -161,6 +165,10 @@ Title 1:
 
 `Web Design That Wins Trust`
 
+Interior page:
+
+`/web-design/`
+
 Text 1:
 
 `Give people a clear, polished website that explains what you offer and makes it easy to contact you.`
@@ -169,6 +177,10 @@ Title 2:
 
 `AI-Enabled Websites`
 
+Interior page:
+
+`/ai-enabled-websites/`
+
 Text 2:
 
 `Add a smart chatbot so visitors can quickly look up services, FAQs, pricing, booking details, and next steps.`
@@ -176,6 +188,10 @@ Text 2:
 Title 3:
 
 `UGC Ads & Short Videos`
+
+Interior page:
+
+`/ugc-ads-short-videos/`
 
 Text 3:
 
@@ -211,7 +227,11 @@ Body:
 
 Button:
 
-`View Featured Work`
+`Plan My Lead Flow`
+
+Link:
+
+`/contact/`
 
 Small support line:
 

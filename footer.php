@@ -3,13 +3,13 @@
 	<div class="container2 center-bottom-footer">						
 		<div class="bottom-footer-col bottom-footer-brand">		
 			<span class="bottom-footer-eyebrow">Digit Waves</span>
-			<p class="bottom-footer-title">AI systems, automation, and modern digital operations.</p>
+			<p class="bottom-footer-title">Practical AI marketing, websites, and lead systems for local businesses.</p>
 			<p class="bottom-footer-copy">&copy;<?= date('Y');?> Digit Waves. Built with strategy, design, and implementation in mind.</p>			
 		</div>						
 		<div class="bottom-footer-col bottom-footer-social">								
 			<ul>									
-				<li><a href="https://www.facebook.com/Digit-Waves-214232226044250/" target="_blank" rel="noopener noreferrer" aria-label="Digit Waves on Facebook"><i class="fab fa-facebook-f"></i></a></li>									
-				<li class="no-padding-right"><a href="https://twitter.com/DigitWaves" target="_blank" rel="noopener noreferrer" aria-label="Digit Waves on Twitter"><i class="fab fa-twitter"></i></a></li>								
+				<li><a href="https://www.facebook.com/Digit-Waves-214232226044250/" target="_blank" rel="noopener noreferrer" aria-label="DigitWaves on Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+				<li class="no-padding-right"><a href="https://x.com/DigitWaves" target="_blank" rel="noopener noreferrer" aria-label="DigitWaves on X"><i class="fa-brands fa-x-twitter"></i></a></li>
 			</ul>											
 		</div>					
 	</div>				
@@ -74,6 +74,86 @@
         $(window).on('load scroll resize', toggleHeaderState);
 	})(jQuery);		 
 </script>		 
+<script>
+    (function(){
+        var links = ['/web-design/', '/ai-enabled-websites/', '/ugc-ads-short-videos/'];
+
+        function visibleCards() {
+            return Array.prototype.filter.call(
+                document.querySelectorAll('.home .dw-premium-trust .dw-stat'),
+                function(card) {
+                    return card.offsetParent !== null;
+                }
+            );
+        }
+
+        function cardTarget(card) {
+            if (!card) {
+                return '';
+            }
+
+            var explicit = card.getAttribute('data-market-href');
+            if (explicit) {
+                return explicit;
+            }
+
+            var cards = visibleCards();
+            var index = cards.indexOf(card);
+
+            return links[index] || '';
+        }
+
+        function bindCards() {
+            if (!document.body || !document.body.classList.contains('home')) {
+                return;
+            }
+
+            visibleCards().forEach(function(card, index) {
+                if (!links[index]) {
+                    return;
+                }
+
+                card.setAttribute('data-market-href', links[index]);
+                card.setAttribute('role', 'link');
+                card.setAttribute('tabindex', '0');
+
+                if (card.dataset.dwCardFallbackReady) {
+                    return;
+                }
+
+                card.dataset.dwCardFallbackReady = 'true';
+                card.addEventListener('click', function(event) {
+                    if (event.target.closest('a, button, input, select, textarea')) {
+                        return;
+                    }
+
+                    var target = cardTarget(card);
+                    if (target) {
+                        window.location.href = target;
+                    }
+                }, true);
+
+                card.addEventListener('keydown', function(event) {
+                    if (event.key !== 'Enter' && event.key !== ' ') {
+                        return;
+                    }
+
+                    var target = cardTarget(card);
+                    if (target) {
+                        event.preventDefault();
+                        window.location.href = target;
+                    }
+                }, true);
+            });
+        }
+
+        bindCards();
+        document.addEventListener('DOMContentLoaded', bindCards);
+        window.addEventListener('load', bindCards);
+        window.setTimeout(bindCards, 600);
+        window.setTimeout(bindCards, 1600);
+    })();
+</script>
 <?php wp_footer(); ?>	
 </body>
 </html>

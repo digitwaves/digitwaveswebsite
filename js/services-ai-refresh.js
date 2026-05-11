@@ -40,8 +40,26 @@
         'project management'
     ];
 
+    var marketingCardLinks = [
+        '/web-design/',
+        '/ai-enabled-websites/',
+        '/ugc-ads-short-videos/'
+    ];
+
+    var strategyCallBookingUrl = 'https://calendar.app.google/9zMzaHNicay1Za1GA';
+
     function normalizeText(value) {
         return (value || '').replace(/\s+/g, ' ').trim().toLowerCase();
+    }
+
+    function setButtonUrl(button, url) {
+        if (!button || !url) {
+            return;
+        }
+
+        button.setAttribute('href', url);
+        button.setAttribute('target', '_blank');
+        button.setAttribute('rel', 'noopener');
     }
 
     function getCardTitle(card) {
@@ -487,7 +505,8 @@
             return;
         }
 
-        var section = document.querySelector('.home .dw-premium-trust');
+        var firstCard = document.querySelector('.home .dw-premium-trust .dw-stat');
+        var section = firstCard ? firstCard.closest('.dw-premium-trust') : document.querySelector('.home .dw-premium-trust');
         if (!section) {
             return;
         }
@@ -513,21 +532,24 @@
             {
                 title: 'Web Design That Wins Trust',
                 description: 'Give people a clear, polished website that explains what you offer and makes it easy to contact you.',
-                iconClass: 'fas fa-laptop-code'
+                iconClass: 'fas fa-laptop-code',
+                href: marketingCardLinks[0]
             },
             {
                 title: 'AI-Enabled Websites',
                 description: 'Add a smart chatbot so visitors can quickly look up services, FAQs, pricing, booking details, and next steps.',
-                iconClass: 'fas fa-comments'
+                iconClass: 'fas fa-comments',
+                href: marketingCardLinks[1]
             },
             {
                 title: 'UGC Ads & Short Videos',
                 description: 'Create simple ad ideas, TikToks, Reels, and YouTube Shorts that help more people notice your business.',
-                iconClass: 'fas fa-video'
+                iconClass: 'fas fa-video',
+                href: marketingCardLinks[2]
             }
         ];
 
-        var stats = section.querySelectorAll('.dw-stat');
+        var stats = document.querySelectorAll('.home .dw-premium-trust .dw-stat');
         Array.prototype.forEach.call(stats, function (stat, index) {
             var copy = cards[index];
             if (!copy) {
@@ -536,6 +558,10 @@
 
             stat.classList.add('dw-market-card');
             stat.setAttribute('data-market-card', String(index + 1));
+            stat.setAttribute('data-market-href', copy.href);
+            stat.setAttribute('role', 'link');
+            stat.setAttribute('tabindex', '0');
+            stat.setAttribute('aria-label', copy.title + ' - learn more');
 
             var title = stat.querySelector('.elementor-heading-title') || stat.querySelector('h3') || stat.querySelector('h4');
             var text = stat.querySelector('.elementor-text-editor p') || stat.querySelector('.elementor-widget-text-editor p') || stat.querySelector('p');
@@ -555,6 +581,58 @@
             } else if (imageWidget && !imageWidget.querySelector('.dw-market-icon')) {
                 var container = imageWidget.querySelector('.elementor-widget-container') || imageWidget;
                 container.innerHTML = '<div class="elementor-image"><i class="' + copy.iconClass + ' dw-market-icon" aria-hidden="true"></i></div>';
+            }
+
+            var cardLink = stat.querySelector('.dw-market-card-link');
+            if (!cardLink) {
+                cardLink = document.createElement('a');
+                cardLink.className = 'dw-market-card-link';
+                stat.appendChild(cardLink);
+            }
+            cardLink.href = copy.href;
+            cardLink.setAttribute('aria-label', copy.title + ' - learn more');
+
+            var clickTargets = [
+                stat,
+                stat.querySelector(':scope > .elementor-element-populated'),
+                stat.querySelector(':scope > .elementor-column-wrap'),
+                stat.querySelector(':scope > .elementor-widget-container'),
+                stat.querySelector(':scope > .elementor-widget-wrap')
+            ];
+
+            function openCardTarget(event) {
+                if (event.target.closest('a, button, input, select, textarea') && !event.target.closest('.dw-market-card-link')) {
+                    return;
+                }
+                var href = stat.getAttribute('data-market-href');
+                if (href) {
+                    window.location.assign(href);
+                }
+            }
+
+            Array.prototype.forEach.call(clickTargets, function (target) {
+                if (!target || target.dataset.marketDirectLinkReady) {
+                    return;
+                }
+                target.dataset.marketDirectLinkReady = 'true';
+                target.setAttribute('data-market-href', copy.href);
+                target.addEventListener('click', openCardTarget, true);
+            });
+
+            if (!stat.dataset.marketLinkReady) {
+                stat.dataset.marketLinkReady = 'true';
+                stat.addEventListener('click', function (event) {
+                    if (event.target.closest('a, button, input, select, textarea')) {
+                        return;
+                    }
+                    window.location.href = stat.getAttribute('data-market-href');
+                });
+                stat.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        window.location.href = stat.getAttribute('data-market-href');
+                    }
+                });
             }
         });
     }
@@ -656,7 +734,7 @@
                 '<h2>Turn Website Visitors Into Real Leads</h2>' +
                 '<p class="dw-showcase-lede">Give people a clear offer, useful answers, strong visuals, and an easy next step before their attention disappears.</p>' +
                 '<div class="dw-showcase-actions">' +
-                    '<a class="dw-showcase-button" href="/work/">View Featured Work</a>' +
+                    '<a class="dw-showcase-button" href="/contact/">Plan My Lead Flow</a>' +
                     '<span>Website design • Short videos • Smart answers • Follow-up</span>' +
                 '</div>' +
             '</div>' +
@@ -708,6 +786,88 @@
         if (buttonText) {
             buttonText.textContent = 'Book a Strategy Call';
         }
+
+        var button = section.querySelector('a.elementor-button, .elementor-button-wrapper a');
+        setButtonUrl(button, strategyCallBookingUrl);
+    }
+
+    function setupHomepageStrategyCallButtons() {
+        if (!document.body || !document.body.classList.contains('home')) {
+            return;
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll('a.elementor-button, a.rev-btn, .n2-ss-button-container a'), function (button) {
+            var text = normalizeText(button.textContent);
+
+            if (/book a strategy call|strategy call/.test(text)) {
+                setButtonUrl(button, strategyCallBookingUrl);
+            }
+        });
+    }
+
+    function getMarketingCardTarget(card) {
+        if (!card || !card.classList || !card.classList.contains('dw-stat')) {
+            return '';
+        }
+
+        var explicitTarget = card.getAttribute('data-market-href');
+        if (explicitTarget) {
+            return explicitTarget;
+        }
+
+        var cards = Array.prototype.filter.call(
+            document.querySelectorAll('.home .dw-premium-trust .dw-stat'),
+            function (item) {
+                return item.offsetParent !== null;
+            }
+        );
+        var index = cards.indexOf(card);
+
+        return marketingCardLinks[index] || '';
+    }
+
+    function setupHomepageMarketingCardNavigation() {
+        if (window.dwMarketingCardNavigationReady) {
+            return;
+        }
+
+        window.dwMarketingCardNavigationReady = true;
+
+        document.addEventListener('click', function (event) {
+            if (!document.body || !document.body.classList.contains('home')) {
+                return;
+            }
+
+            if (event.target.closest('a, button, input, select, textarea') && !event.target.closest('.dw-stat')) {
+                return;
+            }
+
+            var card = event.target.closest('.home .dw-premium-trust .dw-stat');
+            var target = getMarketingCardTarget(card);
+
+            if (target) {
+                event.preventDefault();
+                window.location.assign(target);
+            }
+        }, true);
+
+        document.addEventListener('keydown', function (event) {
+            if (!document.body || !document.body.classList.contains('home')) {
+                return;
+            }
+
+            if (event.key !== 'Enter' && event.key !== ' ') {
+                return;
+            }
+
+            var card = event.target.closest('.home .dw-premium-trust .dw-stat');
+            var target = getMarketingCardTarget(card);
+
+            if (target) {
+                event.preventDefault();
+                window.location.assign(target);
+            }
+        }, true);
     }
 
     function boot(attempt) {
@@ -718,10 +878,12 @@
         setupWorkPage();
         setupServicesPage();
         setupContactPage();
+        setupHomepageMarketingCardNavigation();
         setupHomepageMarketingTrust();
         setupHomepageMarketingShowcase();
         setupHomepageProofSection();
         setupHomepageCtaSection();
+        setupHomepageStrategyCallButtons();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {
