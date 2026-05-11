@@ -2,23 +2,32 @@
 
 ## Current Priorities
 
+- SEO link rule: do not add or suggest new outbound/external links unless they are DigitWaves-owned or Charles explicitly approves them. Leave the already-used SBA Marketing and Sales guide link alone unless Charles asks to remove it.
 - Return to the homepage for last-minute copy, layout, CTA, and visual polish.
 - Build a clean post-submit redirect / thank-you page for contact form submissions.
 - Rebuild the Contact page form using `CONTACT-FORM-LEAD-INTAKE-GUIDE.md` so the visible fields map cleanly to the DigitWaves Leads Google Sheet.
 - Add contact form spam protection before relying on lead automation: enable WPForms anti-spam, add CAPTCHA/Turnstile if needed, and keep spam submissions out of Gmail/Sheets/message alerts.
-- After the n8n workflow is completed, fix the About page header: `/about/` currently loses the logo/menu on load and likely needs a page-specific masthead visibility/CSS correction.
 - Domain renewal reminder is set: `digitwaves.com` public RDAP expiration is `2028-01-02T07:39:50Z`; registrar is Register.com / Network Solutions, LLC; one-month reminder scheduled for December 1, 2027.
 - Set up Google Analytics for `digitwaves.com`: create/confirm GA4 property, install the tag, verify real-time traffic, and connect Search Console if available. Added to the weekday focus reminder.
 - Track DigitWaves work sessions in `PROJECT-FOCUS-LOG.md` whenever Charles types `starting now`, `taking a break`, or `ending now`.
 - Continue front page SEO and copy/design tightening from the top down.
-- Continue the same SEO/copy/design pass across the other interior pages.
 
 ## Medium Priority
 
+- Yoast cleanup pass: get remaining red/orange SEO dots to green where it makes sense, without awkward filler copy or unapproved outbound links.
+- About page: improve Yoast SEO from orange to green while preserving the current Elementor page design.
+- Articles posts page: improve Yoast SEO from red to green and keep the visible archive useful for visitors.
+- Contact page: improve Yoast SEO from orange to green without making the compact contact page feel bloated.
+- Front page / Digit Waves homepage: improve remaining Yoast SEO orange status to green after visible design polish is stable.
+- Services page: improve SEO/readability orange dots to green later; this is medium priority because the Elementor page was getting out of hand.
+- Work page: improve Yoast SEO from red to green with practical portfolio/support copy.
+- Privacy Policy draft: review only if/when it needs to be public-facing; do not prioritize above live published pages.
+- Create an n8n blog creation workflow for DigitWaves: draft posts, create categories/tags, upload/select images, set Yoast fields, save drafts for review, and publish only after approval.
 - Point remaining `Book a Strategy Call` CTAs to the Google Calendar booking page: `https://calendar.app.google/9zMzaHNicay1Za1GA`.
 - Create a business lead generation system for DigitWaves: define target niches, capture sources, outreach flow, offer/CTA, tracking sheet fields, follow-up steps, and manual review process before automation.
 - Build the AI Makeover / AI Package centerpiece offer with Starter, Pro, and Max packages; roll it out below the homepage hero after the first-generation site makeover is more fleshed out.
 - Create interior pages for the three homepage service cards: `/web-design/`, `/ai-enabled-websites/`, and `/ugc-ads-short-videos/`.
+- Social profile cleanup: confirm/update the footer Twitter/X icon and link, refresh the DigitWaves Facebook page, refresh the DigitWaves X/Twitter page, create the DigitWaves LinkedIn account, create the DigitWaves Instagram account, then add the LinkedIn and Instagram footer icons once the public URLs exist.
 
 ## Lower Priority
 
@@ -37,8 +46,6 @@
 - Explore Zendesk message automation: when someone sends a Zendesk message, capture the lead/conversation details into the DigitWaves Google Sheet and send a notification/message alert.
 - Wire homepage/showcase hover items and buttons to useful destinations after the main page copy and form are settled.
 - Plan AI chatbot, AI phone assistant, and AI email replier.
-- Create Digit Waves LinkedIn account.
-- Add footer LinkedIn, Instagram, and YouTube social icons once the public profile URLs exist.
 - Redesign the surrounding Contact page layout after primary pages are tightened: improve trust copy, spacing, map/visual balance, and follow-up expectations.
 
 ## Higher Priority Later
@@ -50,6 +57,7 @@
 ## Completed
 
 - Fixed root `.htaccess` / server rewrites so public URLs no longer need `/index.php/` before page slugs.
+- Got Yoast SEO to good for the three homepage service-card pages: `/web-design/`, `/ai-enabled-websites/`, and `/ugc-ads-short-videos/`.
 
 ## After SEO-Optimized Site
 

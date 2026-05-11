@@ -47,11 +47,11 @@ Optional outbound link for Yoast:
 
 - Add a small resource link near the bottom only if needed:
 
-`Helpful resource: Google Search Central SEO Starter Guide`
+`Helpful resource: SBA Marketing and Sales guide`
 
 URL:
 
-`https://developers.google.com/search/docs/fundamentals/seo-starter-guide`
+`https://www.sba.gov/business-guide/manage-your-business/marketing-sales`
 
 Do not over-repeat the keyphrase. Use it in the H1, intro, one subheading, image alt text, SEO title, and meta description. That should be enough.
 

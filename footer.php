@@ -40,6 +40,7 @@
         function getHeroBottomOffset() {
             var heroSelectors = [
                 '.page-id-25 .dw-services-hero',
+                '.dw-service-interior-hero',
                 '.page-id-1024 .dw-work-hero',
                 '.category-hero',
                 '.articles-hero',

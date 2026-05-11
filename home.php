@@ -7,12 +7,13 @@ get_header();
         <?php get_template_part('template-parts/breadcrumbs'); ?>
 
         <div class="articles-hero-copy">
-            <span class="articles-eyebrow">Insights, Build Notes, and Practical Systems</span>
+            <span class="articles-eyebrow">Website Strategy, AI Answers, and Lead Flow</span>
             <h1 class="articles-title">Articles</h1>
             <p class="articles-intro">
-                Practical writing on AI systems, automation, engineering workflows, implementation strategy,
-                and the technical decisions behind smarter digital operations.
+                Articles from DigitWaves help local businesses make smarter website, AI customer answer,
+                short-form content, and lead flow decisions without turning marketing into a bigger mess.
             </p>
+
         </div>
     </section>
 
@@ -20,6 +21,30 @@ get_header();
 
 <?php
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+if (1 === (int) $paged) :
+?>
+    <article class="blog-card blog-card-featured dw-articles-coming-soon">
+        <div class="post-card-body">
+            <span class="post-category">Articles</span>
+
+            <div class="post-meta">
+                <span class="author">DigitWaves</span>
+                <span class="date">Coming Soon</span>
+            </div>
+
+            <h2 class="post-title">Articles Coming Soon</h2>
+
+            <div class="post-excerpt">
+                <p>
+                    Practical posts on AI websites, web design, short-form content, lead flow,
+                    and useful marketing systems for local businesses are on the way.
+                </p>
+            </div>
+        </div>
+    </article>
+<?php
+endif;
 
 $query = new WP_Query([
     'post_type'      => 'post',

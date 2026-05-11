@@ -290,6 +290,52 @@
             addRevealClass(document.querySelector('.page-id-25 .dw-services-ai-terms'), 'dw-reveal-right', 120);
         }
 
+        if (document.querySelector('.dw-service-interior')) {
+            var interiorSections = document.querySelectorAll(
+                '.dw-service-interior-hero, ' +
+                '.dw-service-interior .dw-service-section'
+            );
+
+            Array.prototype.forEach.call(interiorSections, function (section) {
+                addRevealClass(section, 'dw-reveal-up', 0);
+            });
+
+            addRevealClass(document.querySelector('.dw-service-hero-copy'), 'dw-reveal-left', 40);
+            addRevealClass(document.querySelector('.dw-service-hero-panel'), 'dw-reveal-right', 130);
+
+            Array.prototype.forEach.call(document.querySelectorAll('.dw-service-actions .dw-service-button'), function (button, index) {
+                addRevealClass(button, 'dw-reveal-up', 160 + (index * 60));
+            });
+
+            Array.prototype.forEach.call(document.querySelectorAll('.dw-service-section-heading'), function (heading, index) {
+                addRevealClass(heading, 'dw-reveal-up', 40 + (index % 2 * 40));
+            });
+
+            Array.prototype.forEach.call(document.querySelectorAll('.dw-service-detail'), function (card, index) {
+                addRevealClass(card, 'dw-reveal-up', 70 + (index % 3 * 75));
+            });
+
+            addRevealClass(document.querySelector('.dw-service-split-grid > div:first-child'), 'dw-reveal-left', 60);
+            addRevealClass(document.querySelector('.dw-service-checklist'), 'dw-reveal-right', 130);
+
+            Array.prototype.forEach.call(document.querySelectorAll('.dw-service-process-step'), function (step, index) {
+                addRevealClass(step, index % 2 === 0 ? 'dw-reveal-left' : 'dw-reveal-right', 70 + (index * 70));
+            });
+
+            addRevealClass(document.querySelector('.dw-service-proof-copy'), 'dw-reveal-left', 60);
+            addRevealClass(document.querySelector('.dw-service-proof-visual'), 'dw-reveal-right', 130);
+
+            Array.prototype.forEach.call(document.querySelectorAll('.dw-service-related-card'), function (card, index) {
+                addRevealClass(card, 'dw-reveal-up', 80 + (index * 80));
+            });
+
+            Array.prototype.forEach.call(document.querySelectorAll('.dw-service-faq-item'), function (item, index) {
+                addRevealClass(item, 'dw-reveal-up', 70 + (index % 3 * 70));
+            });
+
+            addRevealClass(document.querySelector('.dw-service-final-cta .dw-service-narrow'), 'dw-reveal-up', 60);
+        }
+
         var revealNodes = document.querySelectorAll('.dw-reveal');
         if (!revealNodes.length) {
             return;

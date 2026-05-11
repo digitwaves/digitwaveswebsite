@@ -245,7 +245,7 @@ Helpful text block below the form:
 <p>DigitWaves helps small businesses make their marketing easier to understand, easier to find, and easier to act on. That can mean a clearer website, better content ideas, short-form video direction, smart customer answers, or a simple follow-up path so good leads do not slip away.</p>
 <p>If you are not sure what you need yet, that is fine. Send what feels messy or unclear. I will look at your website, your message, and your goals, then reply with the simplest next step.</p>
 <p>You can also review the <a href="/services/">services</a>, see recent <a href="/work/">featured work</a>, or read practical <a href="/articles/">articles</a> before reaching out.</p>
-<p>Useful resource: <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google Search Central SEO Starter Guide</a>.</p>
+<p>Useful resource: <a href="https://www.sba.gov/business-guide/manage-your-business/marketing-sales" target="_blank" rel="noopener">SBA Marketing and Sales guide</a>.</p>
 ```
 
 Optional accordion copy if Yoast still complains about text length:
@@ -269,7 +269,7 @@ Image suggestion:
 Yoast red notes:
 
 - `Text length`: Contact pages are naturally shorter, but the helpful text block above gives Yoast enough real copy without stuffing the page.
-- `Outbound links`: The Google Search Central link is enough.
+- `Outbound links`: The SBA Marketing and Sales guide link is enough.
 - `Internal links`: Link to Services, Work, and Articles.
 - `Images`: Add one relevant image with the alt text above.
 - `Keyphrase in introduction/subheading`: Use the first intro line and H2 above.
