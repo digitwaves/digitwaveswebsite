@@ -39,7 +39,7 @@ Elementor edits that help Yoast:
 
 Internal links to include:
 
-- Link `View Featured Work` to `/work/`
+- Link `View Featured Work` to `https://digitwaves.com/demos/med-spa/hero-fullscreen.html`
 - Link `View Services` to `/services/`
 - Link `Book a Strategy Call` to `https://calendar.app.google/9zMzaHNicay1Za1GA`.
 
@@ -299,7 +299,9 @@ Classes:
 
 Image:
 
-`images/home/dw-marketing-fit-visual.png`
+`images/home/website services.png`
+
+Use the med spa consultation device mockup now stored at this path.
 
 Copy:
 

@@ -56,7 +56,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">		
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway:300" rel="stylesheet">		
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">		
-	<link rel="icon" type="image/x-icon" href="https://digitwaves.com/wp-content/uploads/2022/10/favicon.png" />
+	<link rel="icon" type="image/png" href="<?php echo esc_url( get_template_directory_uri() . '/images/favicon.png' ); ?>" />
 	<?php wp_head();?>	
 </head>	
 <body <?php body_class();?>>	

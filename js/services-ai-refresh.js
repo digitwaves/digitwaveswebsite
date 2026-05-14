@@ -47,6 +47,7 @@
     ];
 
     var strategyCallBookingUrl = 'https://calendar.app.google/9zMzaHNicay1Za1GA';
+    var medSpaDemoUrl = 'https://digitwaves.com/demos/med-spa/hero-fullscreen.html';
 
     function normalizeText(value) {
         return (value || '').replace(/\s+/g, ' ').trim().toLowerCase();
@@ -851,6 +852,22 @@
         });
     }
 
+    function setupHomepageFeaturedWorkButtons() {
+        if (!document.body || !document.body.classList.contains('home')) {
+            return;
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll('a.elementor-button, a.rev-btn, .n2-ss-button-container a'), function (button) {
+            var text = normalizeText(button.textContent);
+
+            if (/view featured work|featured work/.test(text)) {
+                button.setAttribute('href', medSpaDemoUrl);
+                button.removeAttribute('target');
+                button.removeAttribute('rel');
+            }
+        });
+    }
+
     function getMarketingCardTarget(card) {
         if (!card || !card.classList || !card.classList.contains('dw-stat')) {
             return '';
@@ -930,6 +947,7 @@
         setupHomepageProofSection();
         setupHomepageCtaSection();
         setupHomepageStrategyCallButtons();
+        setupHomepageFeaturedWorkButtons();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {
