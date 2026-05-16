@@ -1,0 +1,597 @@
+/* ==========================================================================
+   Aurelle Aesthetic Studio — Multi-step Mock Booking Modal
+   Concept demo styles. Loaded after the inline <style> in hero-fullscreen.html.
+   Scoped to #concept-modal and .bk-* classes so nothing else is affected.
+   ========================================================================== */
+
+/* ----- Dialog shell overrides ----- */
+#concept-modal {
+    max-width: 560px;
+    width: 92vw;
+    padding: 0;
+    border: none;
+    border-radius: 16px;
+    background: #F4F1EA;
+    color: #2A2E28;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+}
+
+#concept-modal::backdrop {
+    background: rgba(26, 29, 26, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+#concept-modal[open] {
+    animation: bkFadeScale 250ms ease;
+}
+
+@keyframes bkFadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bkFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes bkStepIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ----- Layout ----- */
+.bk-modal {
+    display: flex;
+    flex-direction: column;
+    max-height: 88vh;
+}
+
+/* ----- Header ----- */
+.bk-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 22px;
+    border-bottom: 1px solid #E8E4DC;
+    background: #F4F1EA;
+    flex-shrink: 0;
+}
+
+.bk-leaf {
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.bk-leaf svg {
+    display: block;
+    width: 18px;
+    height: 24px;
+}
+
+.bk-title {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1A1D1A;
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.2;
+}
+
+.bk-demo-pill {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2A2E28;
+    background: #A8B5A0;
+    padding: 5px 10px;
+    border-radius: 99px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.bk-close {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #4A4E48;
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+.bk-close:hover {
+    background: #E8E4DC;
+    color: #1A1D1A;
+}
+
+.bk-close:focus-visible {
+    outline: 2px solid #8FA88A;
+    outline-offset: 2px;
+    background: #E8E4DC;
+    color: #1A1D1A;
+}
+
+/* ----- Progress indicator ----- */
+.bk-progress {
+    display: flex;
+    gap: 6px;
+    padding: 14px 22px 0;
+    flex-shrink: 0;
+}
+
+.bk-progress-seg {
+    flex: 1;
+    height: 4px;
+    border-radius: 99px;
+    background: #E8E4DC;
+    transition: background-color 250ms ease;
+}
+
+.bk-progress-seg.filled {
+    background: #8FA88A;
+}
+
+/* ----- Body ----- */
+.bk-body {
+    padding: 18px 22px 22px;
+    overflow-y: auto;
+}
+
+.bk-step {
+    animation: bkStepIn 200ms ease;
+}
+
+.bk-step-heading {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: #1A1D1A;
+    margin: 0 0 16px;
+    line-height: 1.25;
+}
+
+/* ----- Selectable service cards ----- */
+.bk-card-list,
+.bk-prac-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bk-card,
+.bk-prac {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #FFFFFF;
+    border: 1.5px solid #E8E4DC;
+    border-radius: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.bk-card:hover,
+.bk-prac:hover {
+    border-color: #A8B5A0;
+}
+
+.bk-card:focus-visible,
+.bk-prac:focus-visible {
+    outline: 2px solid #8FA88A;
+    outline-offset: 2px;
+}
+
+.bk-card.selected,
+.bk-prac.selected {
+    border-color: #8FA88A;
+    border-width: 2px;
+    background: rgba(168, 181, 160, 0.14);
+}
+
+.bk-card-name {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1A1D1A;
+    margin-bottom: 3px;
+}
+
+.bk-card-desc {
+    display: block;
+    font-size: 13px;
+    color: #4A4E48;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.bk-card-price {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8FA88A;
+    letter-spacing: 0.3px;
+}
+
+.bk-prac {
+    font-size: 14px;
+    color: #2A2E28;
+}
+
+.bk-prac strong {
+    font-weight: 700;
+    color: #1A1D1A;
+}
+
+/* ----- Calendar ----- */
+.bk-cal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.bk-cal-month {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1A1D1A;
+}
+
+.bk-cal-nav {
+    width: 38px;
+    height: 38px;
+    border: 1.5px solid #E8E4DC;
+    background: #FFFFFF;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #2A2E28;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 150ms ease;
+}
+
+.bk-cal-nav:hover:not(:disabled) {
+    border-color: #A8B5A0;
+}
+
+.bk-cal-nav:focus-visible {
+    outline: 2px solid #8FA88A;
+    outline-offset: 2px;
+}
+
+.bk-cal-nav:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.bk-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.bk-cal-dow {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #A0A39C;
+    padding: 4px 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bk-cal-day {
+    aspect-ratio: 1 / 1;
+    border: 1px solid transparent;
+    background: #FFFFFF;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #2A2E28;
+    cursor: pointer;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.bk-cal-day:hover:not(:disabled) {
+    border-color: #A8B5A0;
+}
+
+.bk-cal-day:focus-visible {
+    outline: 2px solid #8FA88A;
+    outline-offset: 1px;
+}
+
+.bk-cal-day.selected {
+    background: #8FA88A;
+    color: #1A1D1A;
+    border-color: #8FA88A;
+    font-weight: 700;
+}
+
+.bk-cal-day:disabled {
+    color: #C9C5BC;
+    background: transparent;
+    cursor: not-allowed;
+}
+
+.bk-cal-day.booked {
+    text-decoration: line-through;
+    color: #C9C5BC;
+}
+
+.bk-cal-day.empty {
+    background: transparent;
+    border: none;
+    cursor: default;
+}
+
+/* ----- Time slots ----- */
+.bk-slot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.bk-slot {
+    background: #FFFFFF;
+    border: 1.5px solid #E8E4DC;
+    border-radius: 10px;
+    padding: 14px 6px;
+    font-size: 14px;
+    color: #2A2E28;
+    cursor: pointer;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.bk-slot:hover:not(:disabled) {
+    border-color: #A8B5A0;
+}
+
+.bk-slot:focus-visible {
+    outline: 2px solid #8FA88A;
+    outline-offset: 2px;
+}
+
+.bk-slot.selected {
+    border-color: #8FA88A;
+    border-width: 2px;
+    background: rgba(168, 181, 160, 0.14);
+}
+
+.bk-slot:disabled {
+    color: #C9C5BC;
+    cursor: not-allowed;
+    background: #F4F1EA;
+}
+
+.bk-slot small {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+/* ----- Details form ----- */
+.bk-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.bk-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bk-field label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4A4E48;
+    letter-spacing: 0.4px;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.bk-field input {
+    border: 1.5px solid #E8E4DC;
+    border-radius: 8px;
+    padding: 11px 12px;
+    font-size: 14px;
+    background: #FFFFFF;
+    color: #2A2E28;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+.bk-field input:focus {
+    outline: 2px solid #8FA88A;
+    outline-offset: 1px;
+    border-color: #A8B5A0;
+}
+
+.bk-form-note {
+    font-size: 12px;
+    color: #A0A39C;
+    font-style: italic;
+    margin: 2px 0 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* ----- Reveal step ----- */
+.bk-reveal {
+    text-align: center;
+    padding: 8px 0;
+}
+
+.bk-reveal-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(168, 181, 160, 0.22);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.bk-reveal-mark svg {
+    width: 28px;
+    height: 28px;
+}
+
+.bk-reveal .bk-step-heading {
+    margin-bottom: 12px;
+}
+
+.bk-reveal p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4A4E48;
+    margin: 0 0 20px;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* ----- Action row + buttons ----- */
+.bk-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.bk-actions.end {
+    justify-content: flex-end;
+}
+
+.bk-btn {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 12px 24px;
+    min-height: 44px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 150ms ease, opacity 150ms ease, color 150ms ease;
+}
+
+.bk-btn-primary {
+    background: #A8B5A0;
+    color: #1A1D1A;
+}
+
+.bk-btn-primary:hover:not(:disabled) {
+    background: #8FA88A;
+}
+
+.bk-btn-primary:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.bk-btn-primary:focus-visible {
+    outline: 2px solid #8FA88A;
+    outline-offset: 2px;
+}
+
+.bk-btn-ghost {
+    background: transparent;
+    color: #4A4E48;
+}
+
+.bk-btn-ghost:hover {
+    color: #1A1D1A;
+}
+
+.bk-btn-ghost:focus-visible {
+    outline: 2px solid #8FA88A;
+    outline-offset: 2px;
+}
+
+/* ----- Reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+    #concept-modal[open] {
+        animation: bkFade 200ms ease;
+    }
+
+    .bk-step {
+        animation: none;
+    }
+
+    .bk-card,
+    .bk-prac,
+    .bk-slot,
+    .bk-cal-day,
+    .bk-cal-nav,
+    .bk-close,
+    .bk-btn {
+        transition: none;
+    }
+}
+
+/* ----- Small screens ----- */
+@media (max-width: 480px) {
+    .bk-header {
+        padding: 14px 16px;
+        gap: 8px;
+    }
+
+    .bk-title {
+        font-size: 16px;
+    }
+
+    .bk-demo-pill {
+        font-size: 9px;
+        padding: 4px 7px;
+        letter-spacing: 0.5px;
+    }
+
+    .bk-progress {
+        padding: 12px 16px 0;
+    }
+
+    .bk-body {
+        padding: 16px 16px 18px;
+    }
+
+    .bk-step-heading {
+        font-size: 20px;
+    }
+
+    .bk-slot-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bk-btn {
+        padding: 12px 18px;
+    }
+}

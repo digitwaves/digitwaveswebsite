@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aurelle Aesthetic Studio - fictional med spa concept website by DigitWaves">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex, nofollow">
+    <title>Aurelle Aesthetic Studio - Med Spa Website Concept by DigitWaves</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQQK2JJFKX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HQQK2JJFKX');
+    </script>
+    <link rel="icon" href="images/logo-horizontal.svg" type="image/svg+xml">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: "Segoe UI Light", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            color: #2A2E28;
+            background-color: #F4F1EA;
+            overflow-x: hidden;
+        }
+
+        /* Skip to main content link */
+        .skip-to-main {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #2A2E28;
+            color: #F4F1EA;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 1000;
+        }
+
+        .skip-to-main:focus {
+            top: 0;
+        }
+
+        /* Disclaimer banner */
+        .disclaimer-banner {
+            background-color: #8FA88A;
+            color: #1A1D1A;
+            padding: 14px 32px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.4;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            z-index: 999;
+        }
+
+        .disclaimer-banner a {
+            color: #1A1D1A;
+            font-weight: 500;
+            text-decoration: underline;
+            margin-left: 4px;
+            transition: opacity 0.3s ease;
+        }
+
+        .disclaimer-banner a:hover,
+        .disclaimer-banner a:focus {
+            opacity: 0.85;
+            outline: none;
+        }
+
+        /* Modal styles */
+        dialog {
+            border: none;
+            border-radius: 8px;
+            padding: 48px 40px;
+            max-width: 500px;
+            background: #F4F1EA;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        dialog h2 {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            font-size: 32px;
+            color: #1A1D1A;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        dialog p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #2A2E28;
+            margin-bottom: 24px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+        }
+
+        .modal-actions a,
+        .modal-actions button {
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .modal-actions a {
+            background-color: #A8B5A0;
+            color: #1A1D1A;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-actions a:hover,
+        .modal-actions a:focus {
+            background-color: #8FA88A;
+            outline: 3px solid #A8B5A0;
+            outline-offset: 2px;
+        }
+
+        .modal-actions button {
+            background-color: transparent;
+            color: #2A2E28;
+            border: 2px solid #8FA88A;
+            min-height: 44px;
+        }
+
+        .modal-actions button:hover,
+        .modal-actions button:focus {
+            background-color: #F4F1EA;
+            border-color: #A8B5A0;
+            outline: 3px solid #A8B5A0;
+            outline-offset: 2px;
+        }
+
+        /* Footer */
+        .site-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(244, 241, 234, 0.95);
+            padding: 14px 32px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2A2E28;
+            letter-spacing: 0.3px;
+            z-index: 100;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .site-footer a {
+            color: #2A2E28;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 200ms ease, color 200ms ease, opacity 200ms ease;
+            cursor: pointer;
+        }
+
+        .site-footer a:hover,
+        .site-footer a:focus {
+            opacity: 0.95;
+            border-bottom-color: #2A2E28;
+            text-decoration: underline;
+            outline: none;
+        }
+
+        .site-footer .footer-dismiss {
+            position: absolute;
+            right: 16px;
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #4A4E48;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 200ms ease;
+        }
+
+        .site-footer .footer-dismiss:hover,
+        .site-footer .footer-dismiss:focus {
+            color: #1A1D1A;
+            outline: none;
+        }
+
+        .site-footer.dismissed {
+            transform: translateY(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        body.footer-hidden .hero-content {
+            padding-bottom: 32px;
+        }
+
+        body.footer-hidden .video-control {
+            bottom: 32px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        .hero-media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-video {
+            display: block;
+        }
+
+        .hero-video.hidden {
+            display: none;
+        }
+
+        /* Gradient overlay */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1));
+            z-index: 2;
+        }
+
+        /* Hero content */
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 3;
+            padding: 32px 32px 152px;
+            padding-top: 24px;
+        }
+
+        /* Navigation */
+        .hero-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .nav-logo {
+            display: inline-flex;
+            align-items: center;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #F4F1EA;
+            text-decoration: none;
+            letter-spacing: 2px;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-logo svg {
+            display: block;
+            width: auto;
+            height: 52px;
+            fill: currentColor;
+            stroke: currentColor;
+        }
+
+        .nav-logo:hover,
+        .nav-logo:focus-visible {
+            opacity: 0.88;
+        }
+
+        .nav-logo:focus-visible {
+            outline: 3px solid #F4F1EA;
+            outline-offset: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-menu a {
+            color: #F6F4EA;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color 180ms ease, opacity 0.3s ease, border-bottom-color 0.3s ease;
+            padding: 6px 8px;
+            border-radius: 6px;
+            border-bottom: 2px solid transparent;
+            min-height: 44px;
+            line-height: 1.2;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a:focus {
+            background-color: rgba(244, 241, 234, 0.15);
+            opacity: 1;
+            border-bottom-color: transparent;
+        }
+
+        .nav-menu a:focus-visible {
+            outline: 3px solid #F4F1EA;
+            outline-offset: 4px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex-shrink: 0;
+        }
+
+        .nav-phone {
+            color: #F4F1EA;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: opacity 0.3s ease;
+            min-height: 44px;
+            line-height: 1.2;
+        }
+
+        .nav-phone:hover,
+        .nav-phone:focus {
+            opacity: 0.8;
+            border-bottom-color: #A8B5A0;
+            outline: none;
+        }
+
+        .book-btn {
+            background-color: #A8B5A0;
+            color: #1A1D1A;
+            padding: 14px 34px;
+            border-radius: 32px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.75px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            min-height: 44px;
+            min-width: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-btn:hover,
+        .book-btn:focus {
+            background-color: #8FA88A;
+            outline: 3px solid #A8B5A0;
+            outline-offset: 2px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            position: relative;
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            border: none;
+            background-color: rgba(244, 241, 234, 0.92);
+            color: #2A2E28;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: background-color 150ms ease, outline 150ms ease, box-shadow 150ms ease;
+        }
+
+        .mobile-menu-toggle:hover,
+        .mobile-menu-toggle:focus {
+            background-color: rgba(244, 241, 234, 1);
+            outline: 1.5px solid #000;
+            outline-offset: 2px;
+        }
+
+        .mobile-menu-toggle:focus-visible {
+            background-color: rgba(244, 241, 234, 1);
+            outline: 1.5px solid #000;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 3px rgba(168, 181, 160, 0.5);
+        }
+
+        .mobile-menu-toggle span,
+        .mobile-menu-toggle span::before,
+        .mobile-menu-toggle span::after {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: #2A2E28;
+            border-radius: 2px;
+            position: relative;
+            transition: transform 200ms ease, opacity 200ms ease;
+        }
+
+        .mobile-menu-toggle span::before,
+        .mobile-menu-toggle span::after {
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+
+        .mobile-menu-toggle span::before {
+            top: -5px;
+        }
+
+        .mobile-menu-toggle span::after {
+            top: 5px;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(168, 181, 160, 0.98);
+            backdrop-filter: blur(12px);
+            transform: translateX(100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 300ms ease, opacity 300ms ease;
+            z-index: 999;
+        }
+
+        .mobile-menu-overlay.open {
+            transform: translateX(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 44px;
+            height: 44px;
+            border: none;
+            background: rgba(244, 241, 234, 0.95);
+            color: #2A2E28;
+            border-radius: 14px;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-close:focus {
+            outline: 3px solid rgba(168, 181, 160, 0.5);
+            outline-offset: 2px;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+            text-align: center;
+            padding: 0 24px;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .mobile-menu-links a,
+        .mobile-menu-links button {
+            color: #2A2E28;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 31px;
+            font-weight: 600;
+            text-decoration: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        .mobile-menu-links a:hover,
+        .mobile-menu-links a:focus,
+        .mobile-menu-links button:hover,
+        .mobile-menu-links button:focus {
+            opacity: 0.85;
+            outline: none;
+        }
+
+        .mobile-menu-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(42, 46, 40, 0.12);
+            margin: 24px 0;
+        }
+
+        .mobile-menu-phone {
+            color: #2A2E28;
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu-cta {
+            background-color: #F4F1EA;
+            color: #1A1D1A;
+            padding: 16px 28px;
+            border-radius: 32px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border: none;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        /* Main content section */
+        .hero-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            max-width: 60%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-main {
+                max-width: 85%;
+            }
+        }
+
+        .hero-tag {
+            background-color: rgba(168, 181, 160, 0.15);
+            backdrop-filter: blur(8px);
+            color: #F4F1EA;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid rgba(168, 181, 160, 0.3);
+        }
+
+        h1 {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 700;
+            color: #F4F1EA;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        h1 em {
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .hero-subhead {
+            font-size: clamp(16px, 2vw, 20px);
+            line-height: 1.6;
+            color: #F4F1EA;
+            font-weight: 400;
+            max-width: 500px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .primary-cta {
+            background-color: #A8B5A0;
+            color: #1A1D1A;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+        }
+
+        .primary-cta:hover,
+        .primary-cta:focus {
+            background-color: #8FA88A;
+            outline: 3px solid #A8B5A0;
+            outline-offset: 2px;
+        }
+
+        .secondary-cta {
+            color: #F4F1EA;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 2px solid #F4F1EA;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 44px;
+        }
+
+        .secondary-cta:hover,
+        .secondary-cta:focus {
+            color: #A8B5A0;
+            border-bottom-color: #A8B5A0;
+            outline: none;
+        }
+
+        .arrow {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .secondary-cta:hover .arrow,
+        .secondary-cta:focus .arrow {
+            transform: translateX(4px);
+        }
+
+        /* Vogue pull-quote */
+        .vogue-quote {
+            position: absolute;
+            bottom: 140px;
+            right: 24px;
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            padding: 24px;
+            border-left: 3px solid #A8B5A0;
+            border-radius: 12px;
+            max-width: 300px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .vogue-quote p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #F4F1EA;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .vogue-quote-source {
+            font-size: 11px;
+            color: #A8B5A0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .vogue-quote .video-control {
+            position: relative;
+            bottom: auto;
+            right: auto;
+            align-self: flex-end;
+            margin: 0;
+            background-color: rgba(244, 241, 234, 0.9);
+            border: 1px solid #A0A39C;
+            border-radius: 99px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 110;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            font-family: "Inter", Arial, sans-serif;
+            color: #2A2E28;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 10px 16px;
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .video-control.hidden {
+            display: none !important;
+        }
+
+        .video-control:hover,
+        .video-control:focus {
+            background-color: #A8B5A0;
+            outline: 3px solid rgba(168, 181, 160, 0.4);
+            outline-offset: 2px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-video {
+                display: none !important;
+            }
+
+            .hero-media {
+                object-fit: cover;
+            }
+
+            .nav-menu a,
+            .nav-phone,
+            .book-btn,
+            .primary-cta,
+            .secondary-cta,
+            .video-control {
+                transition: none;
+            }
+
+            .secondary-cta:hover .arrow {
+                transform: none;
+            }
+
+            .video-control {
+                display: none !important;
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 1064px) {
+            .hero-content {
+                padding: 24px 24px 144px;
+                padding-top: 16px;
+            }
+
+            .hero-nav {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .nav-menu,
+            .nav-phone {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-right {
+                width: auto;
+                justify-content: flex-end;
+                gap: 12px;
+            }
+
+            .book-btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .hero-main {
+                max-width: 90%;
+            }
+
+            .vogue-quote {
+                bottom: 140px;
+                right: 24px;
+                max-width: 260px;
+                padding: 20px;
+            }
+
+            .video-control {
+                bottom: 80px;
+                right: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 20px 20px 108px;
+                padding-top: 12px;
+            }
+
+            .hero-nav {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .nav-logo svg {
+                height: 40px;
+            }
+
+            .book-btn {
+                padding: 12px 22px;
+                font-size: 14px;
+            }
+
+            .hero-main {
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: clamp(40px, 13vw, 72px);
+            }
+
+            .hero-subhead {
+                font-size: 16px;
+                max-width: 90vw;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                width: 100%;
+            }
+
+            .primary-cta,
+            .secondary-cta {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-tag {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+
+            .vogue-quote {
+                position: absolute;
+                bottom: 24px;
+                left: 50%;
+                transform: translateX(-50%);
+                right: auto;
+                max-width: 260px;
+                padding: 16px;
+            }
+
+            .video-control {
+                bottom: 64px;
+                right: 16px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero-content {
+                padding: 16px 16px 96px;
+                justify-content: flex-start;
+                padding-top: 12px;
+            }
+
+            .hero-nav {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .nav-logo svg {
+                height: 36px;
+            }
+
+            .book-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .hero-main {
+                max-width: 95%;
+                gap: 14px;
+            }
+
+            h1 {
+                font-size: clamp(36px, 11vw, 56px);
+            }
+
+            .hero-subhead {
+                font-size: 14px;
+                max-width: 100%;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                width: 100%;
+            }
+
+            .primary-cta,
+            .secondary-cta {
+                font-size: 14px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-tag {
+                font-size: 10px;
+                padding: 5px 10px;
+            }
+
+            .vogue-quote {
+                display: none;
+            }
+
+            .video-control {
+                width: 44px;
+                height: 44px;
+                bottom: 56px;
+                right: 12px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 12px 16px 96px;
+            }
+
+            .mobile-menu-toggle {
+                right: 16px;
+            }
+
+            .site-footer {
+                padding: 10px 16px;
+            }
+
+            .site-footer .footer-dismiss {
+                right: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .mobile-menu-overlay {
+                transition: opacity 200ms ease;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="booking-modal.css">
+    <link rel="stylesheet" href="treatments-section.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <div class="disclaimer-banner">
+        Concept website demo by DigitWaves. Aurelle Aesthetic Studio is fictional and not an operating medical spa. <a href="https://digitwaves.com/demos/med-spa/">Build yours &rarr;</a>
+    </div>
+
+    <section class="hero">
+        <img 
+            class="hero-media" 
+            src="images/med-spa-hero-consultation-upscaled.png" 
+            alt="Aesthetic medicine consultation - warm, serene spa environment"
+        >
+        <video
+            class="hero-video hero-media"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-hidden="true"
+            poster="images/med-spa-hero-consultation-upscaled.png"
+        >
+            <source src="images/hero-video-2.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <header class="hero-nav">
+                <a href="/" class="nav-logo" aria-label="Aurelle Aesthetic Studio — return to home page">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" role="img" aria-hidden="true" focusable="false">
+                        <title>Aurelle Aesthetic Studio</title>
+                        <desc>Refined wordmark logo for Aurelle Aesthetic Studio.</desc>
+                        <g transform="translate(8, 18)" aria-hidden="true">
+                            <line x1="22" y1="0" x2="22" y2="6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                            <path d="M 22 6 C 32 10, 35 20, 33 32 C 31 44, 25 52, 22 52 C 19 52, 13 44, 11 32 C 9 20, 12 10, 22 6 Z" fill="currentColor"/>
+                            <line x1="22" y1="10" x2="22" y2="50" stroke="currentColor" stroke-width="0.7" opacity="0.45" stroke-linecap="round"/>
+                        </g>
+                        <text x="62" y="54" font-family="'Cormorant Garamond', 'Cormorant', 'Times New Roman', Georgia, serif" font-size="42" font-weight="500" letter-spacing="3" fill="currentColor">Aurelle</text>
+                        <text x="64" y="72" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" letter-spacing="4.5" fill="currentColor" opacity="0.6">AESTHETIC STUDIO</text>
+                    </svg>
+                </a>
+                <nav class="nav-menu">
+                    <a href="https://digitwaves.com/demos/med-spa/">Treatments</a>
+                    <a href="https://digitwaves.com/demos/med-spa/">The Studio</a>
+                    <a href="https://digitwaves.com/demos/med-spa/">Practitioners</a>
+                    <a href="https://digitwaves.com/demos/med-spa/">Membership</a>
+                    <a href="https://digitwaves.com/demos/med-spa/">Journal</a>
+                </nav>
+                <div class="nav-right">
+                    <span class="nav-phone">Aurelle Demo</span>
+                    <button type="button" class="book-btn open-booking-modal" aria-label="Book a consultation — opens concept demo dialog">Book</button>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <span></span>
+                    </button>
+                </div>
+            </header>
+
+            <main id="main-content" class="hero-main">
+                <div class="hero-tag">Fictional med spa concept site</div>
+                <h1>Radiance, <em>Redefined.</em></h1>
+                <p class="hero-subhead">Consultation-led aesthetic care presented with calm service education, clear treatment paths, and a premium online experience built for trust.</p>
+                <div class="cta-group">
+                    <button type="button" class="primary-cta open-booking-modal" aria-label="Book a consultation — opens concept demo dialog">Book a Consultation</button>
+                    <a href="https://digitwaves.com/work/" class="secondary-cta" target="_blank" rel="noopener noreferrer" aria-label="Explore Digit Waves portfolio work (opens in new tab)">Explore Treatments <span class="arrow">&rarr;</span></a>
+                </div>
+            </main>
+
+            <div class="vogue-quote">
+                <p>"A static concept homepage showing how a premium med spa can frame trust, services, and consultation flow."</p>
+                <div class="vogue-quote-source">Aurelle Concept</div>
+                <button class="video-control" id="video-toggle" aria-label="Pause hero video" title="Pause the background video">⏸ Pause video</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="treatments-section" id="treatments" aria-labelledby="treatments-heading">
+      <div class="treatments-inner">
+        <div class="treatments-intro reveal-on-scroll" data-stagger="0">
+          <span class="treatments-eyebrow">Considered care</span>
+          <h2 id="treatments-heading" class="treatments-heading">A studio for <em>refined</em> aesthetic medicine.</h2>
+          <p class="treatments-lede">Five treatment domains, each delivered with the same calm rigor — skin science, injectable artistry, energy-based refinement, body contouring, and regenerative therapies.</p>
+        </div>
+        <div class="treatments-grid">
+
+          <!-- Card 01 — Skin Therapies (dark hero card, cols 1–7, rows 1–2) -->
+          <article class="treatment-card reveal-on-scroll" data-stagger="1" aria-labelledby="treatment-heading-1">
+            <span class="treatment-num-display" aria-hidden="true">01</span>
+            <div class="treatment-card-content">
+              <h3 class="treatment-name" id="treatment-heading-1">Skin Therapies</h3>
+              <p class="treatment-desc">Facials, peels, dermaplaning, and resurfacing rituals tailored to your skin's current architecture. Each protocol begins with a thorough skin analysis and ends with an at-home regimen mapped to your biology and lifestyle.</p>
+              <span class="treatment-price">from $180</span>
+              <button type="button" class="treatment-cta open-booking-modal" aria-label="Learn more about Skin Therapies — opens concept booking demo">Learn more →</button>
+            </div>
+          </article>
+
+          <!-- Card 02 — Injectable Refinement (ivory + sage left border, col 8–12, row 1) -->
+          <article class="treatment-card reveal-on-scroll" data-stagger="2" aria-labelledby="treatment-heading-2">
+            <span class="treatment-num-display" aria-hidden="true">02</span>
+            <div class="treatment-card-content">
+              <h3 class="treatment-name" id="treatment-heading-2">Injectable Refinement</h3>
+              <p class="treatment-desc">Neuromodulators and dermal volume restoration delivered with restraint and proportion.</p>
+              <span class="treatment-price">from $350</span>
+              <button type="button" class="treatment-cta open-booking-modal" aria-label="Learn more about Injectable Refinement — opens concept booking demo">Learn more →</button>
+            </div>
+          </article>
+
+          <!-- Card 03 — Energy & Laser (stone + diagonal texture, cols 8–12, row 2) -->
+          <article class="treatment-card reveal-on-scroll" data-stagger="3" aria-labelledby="treatment-heading-3">
+            <span class="treatment-num-display" aria-hidden="true">03</span>
+            <div class="treatment-card-content">
+              <h3 class="treatment-name" id="treatment-heading-3">Energy &amp; Laser</h3>
+              <p class="treatment-desc">Morpheus8, BBL, IPL, and laser hair removal — clinical-grade tools, considered application.</p>
+              <span class="treatment-price">from $420</span>
+              <button type="button" class="treatment-cta open-booking-modal" aria-label="Learn more about Energy &amp; Laser — opens concept booking demo">Learn more →</button>
+            </div>
+          </article>
+
+          <!-- Card 04 — Body Contouring (muted sage background, cols 1–6, row 3) -->
+          <article class="treatment-card reveal-on-scroll" data-stagger="4" aria-labelledby="treatment-heading-4">
+            <span class="treatment-num-display" aria-hidden="true">04</span>
+            <div class="treatment-card-content">
+              <h3 class="treatment-name" id="treatment-heading-4">Body Contouring</h3>
+              <p class="treatment-desc">Non-invasive sculpting and skin tightening for subtle, durable contour change.</p>
+              <span class="treatment-price">from $300</span>
+              <button type="button" class="treatment-cta open-booking-modal" aria-label="Learn more about Body Contouring — opens concept booking demo">Learn more →</button>
+            </div>
+          </article>
+
+          <!-- Card 05 — Regenerative Aesthetics (white + dashed border, cols 7–12, row 3) -->
+          <article class="treatment-card reveal-on-scroll" data-stagger="5" aria-labelledby="treatment-heading-5">
+            <span class="treatment-num-display" aria-hidden="true" data-centered="true">05</span>
+            <div class="treatment-card-content">
+              <h3 class="treatment-name" id="treatment-heading-5">Regenerative Aesthetics</h3>
+              <p class="treatment-desc">PRP, exosome therapy, and IV wellness infusions — the long view on radiance.</p>
+              <span class="treatment-price">from $250</span>
+              <button type="button" class="treatment-cta open-booking-modal" aria-label="Learn more about Regenerative Aesthetics — opens concept booking demo">Learn more →</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div id="mobile-menu" class="mobile-menu-overlay" role="navigation" aria-label="Mobile navigation menu" aria-hidden="true">
+        <button class="mobile-menu-close" aria-label="Close navigation menu">✕</button>
+        <nav class="mobile-menu-links">
+            <a href="https://digitwaves.com/demos/med-spa/">Treatments</a>
+            <a href="https://digitwaves.com/demos/med-spa/">The Studio</a>
+            <a href="https://digitwaves.com/demos/med-spa/">Practitioners</a>
+            <a href="https://digitwaves.com/demos/med-spa/">Membership</a>
+            <a href="https://digitwaves.com/demos/med-spa/">Journal</a>
+            <div class="mobile-menu-divider"></div>
+            <span class="mobile-menu-phone">Aurelle Demo</span>
+            <button type="button" class="mobile-menu-cta open-booking-modal" aria-label="Book a consultation — opens concept demo dialog">Book a Consultation</button>
+        </nav>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.hero-video');
+            const videoToggle = document.getElementById('video-toggle');
+            const modal = document.getElementById('concept-modal');
+            const modalOpenButtons = document.querySelectorAll('.open-booking-modal');
+            const modalCloseButton = document.getElementById('close-modal');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a, .mobile-menu-links button');
+            const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+            let lastFocusedElement = null;
+            let menuOpen = false;
+
+            // Mobile menu functions
+            function openMobileMenu() {
+                menuOpen = true;
+                mobileMenu.classList.add('open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                lastFocusedElement = mobileMenuToggle;
+                const focusableItems = Array.from(mobileMenu.querySelectorAll(focusableSelectors));
+                if (focusableItems.length) {
+                    focusableItems[0].focus();
+                }
+            }
+
+            function closeMobileMenu() {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('menu-open');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus();
+                }
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    if (menuOpen) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                });
+            }
+
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', closeMobileMenu);
+            }
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
+            });
+
+            const footerDismiss = document.querySelector('.footer-dismiss');
+            const siteFooter = document.querySelector('.site-footer');
+
+            if (footerDismiss && siteFooter) {
+                footerDismiss.addEventListener('click', function() {
+                    siteFooter.classList.add('dismissed');
+                    document.body.classList.add('footer-hidden');
+                });
+            }
+
+            if (mobileMenu) {
+                mobileMenu.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        event.preventDefault();
+                        closeMobileMenu();
+                    }
+                    if (event.key === 'Tab') {
+                        const focusable = Array.from(mobileMenu.querySelectorAll(focusableSelectors));
+                        if (!focusable.length) return;
+
+                        const firstElement = focusable[0];
+                        const lastElement = focusable[focusable.length - 1];
+
+                        if (event.shiftKey) {
+                            if (document.activeElement === firstElement) {
+                                event.preventDefault();
+                                lastElement.focus();
+                            }
+                        } else if (document.activeElement === lastElement) {
+                            event.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                });
+            }
+
+            // Reduce mobile menu animation if prefers-reduced-motion
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                mobileMenu.style.transition = 'opacity 200ms ease';
+            }
+
+            function getConnection() {
+                return navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            }
+
+            function loadBasedOnConnection() {
+                const connection = getConnection();
+                if (connection && (connection.effectiveType === '2g' || connection.effectiveType === 'slow-2g')) {
+                    if (video) {
+                        video.classList.add('hidden');
+                    }
+                    return;
+                }
+
+                if (video) {
+                    video.classList.remove('hidden');
+                }
+            }
+
+            function updateVideoToggleState(isPlaying) {
+                if (!videoToggle) return;
+                if (isPlaying) {
+                    videoToggle.textContent = '⏸ Pause video';
+                    videoToggle.setAttribute('aria-label', 'Pause hero video');
+                    videoToggle.setAttribute('title', 'Pause the background video');
+                } else {
+                    videoToggle.textContent = '▶ Play video';
+                    videoToggle.setAttribute('aria-label', 'Play hero video');
+                    videoToggle.setAttribute('title', 'Play the background video');
+                }
+            }
+
+            function getFocusableElements(container) {
+                return Array.from(container.querySelectorAll(focusableSelectors)).filter(el => !el.hasAttribute('disabled'));
+            }
+
+            function trapFocus(event) {
+                if (!modal || !modal.open) return;
+                const focusable = getFocusableElements(modal);
+                if (!focusable.length) return;
+
+                const firstElement = focusable[0];
+                const lastElement = focusable[focusable.length - 1];
+
+                if (event.shiftKey) {
+                    if (document.activeElement === firstElement) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    }
+                } else if (document.activeElement === lastElement) {
+                    event.preventDefault();
+                    firstElement.focus();
+                }
+            }
+
+            function openModal(trigger) {
+                if (!modal) return;
+                lastFocusedElement = trigger instanceof HTMLElement ? trigger : document.activeElement;
+                if (typeof modal.showModal === 'function') {
+                    modal.showModal();
+                } else {
+                    modal.setAttribute('open', '');
+                }
+                const focusable = getFocusableElements(modal);
+                if (focusable.length) {
+                    focusable[0].focus();
+                }
+            }
+
+            function closeModal() {
+                if (!modal || !modal.open) return;
+                modal.close();
+                if (lastFocusedElement instanceof HTMLElement) {
+                    lastFocusedElement.focus();
+                }
+            }
+
+            if (modalOpenButtons.length) {
+                modalOpenButtons.forEach(button => {
+                    button.addEventListener('click', () => openModal(button));
+                });
+            }
+
+            if (modalCloseButton) {
+                modalCloseButton.addEventListener('click', closeModal);
+            }
+
+            if (modal) {
+                modal.addEventListener('keydown', function(event) {
+                    if (event.key === 'Tab') {
+                        trapFocus(event);
+                    }
+                    if (event.key === 'Escape') {
+                        event.preventDefault();
+                        closeModal();
+                    }
+                });
+
+                modal.addEventListener('cancel', function(event) {
+                    event.preventDefault();
+                    closeModal();
+                });
+
+                modal.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            if (videoToggle && video) {
+                videoToggle.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+
+                video.addEventListener('play', function() {
+                    updateVideoToggleState(true);
+                });
+
+                video.addEventListener('pause', function() {
+                    updateVideoToggleState(false);
+                });
+            }
+
+            loadBasedOnConnection();
+            const reducedMotionActive = checkReducedMotion();
+
+            if (!reducedMotionActive && video && !video.paused) {
+                updateVideoToggleState(true);
+            } else if (video) {
+                updateVideoToggleState(false);
+            }
+
+            const connection = getConnection();
+            if (connection && typeof connection.addEventListener === 'function') {
+                connection.addEventListener('change', loadBasedOnConnection);
+            }
+
+            const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (typeof reducedMotionQuery.addEventListener === 'function') {
+                reducedMotionQuery.addEventListener('change', checkReducedMotion);
+            }
+
+            function checkReducedMotion() {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    if (video) {
+                        video.pause();
+                        video.classList.add('hidden');
+                    }
+                    if (videoToggle) {
+                        videoToggle.classList.add('hidden');
+                    }
+                    return true;
+                }
+                if (videoToggle) {
+                    videoToggle.classList.remove('hidden');
+                }
+                return false;
+            }
+        });
+    </script>
+
+    <dialog id="concept-modal" aria-modal="true" aria-labelledby="modal-title">
+        <h2 id="modal-title">This is a Concept Site</h2>
+        <p>To build a website like this for your business, contact Aurelle.</p>
+        <div class="modal-actions">
+            <a href="https://digitwaves.com/demos/med-spa/">Contact Aurelle</a>
+            <button id="close-modal" type="button">Close</button>
+        </div>
+    </dialog>
+
+    <div class="site-footer">
+        Designed and built by <a href="https://digitwaves.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Digit Waves agency homepage (opens in new tab)">DigitWaves</a> &middot; <a href="https://digitwaves.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Digit Waves agency homepage (opens in new tab)">digitwaves.com</a> &middot; This is a portfolio concept, not a live business.
+        <button type="button" class="footer-dismiss" aria-label="Dismiss disclaimer">✕</button>
+    </div>
+
+    <script src="booking-modal.js" defer></script>
+    <script src="treatments-section.js" defer></script>
+</body>
+</html>

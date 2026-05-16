@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luma Aesthetics Studio - fictional med spa concept website by DigitWaves">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex, nofollow">
+    <title>Luma Aesthetics Studio - Med Spa Website Concept by DigitWaves</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQQK2JJFKX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HQQK2JJFKX');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: "Segoe UI Light", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            color: #2A2E28;
+            background-color: #F4F1EA;
+            overflow-x: hidden;
+        }
+
+        /* Skip to main content link */
+        .skip-to-main {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #2A2E28;
+            color: #F4F1EA;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 1000;
+        }
+
+        .skip-to-main:focus {
+            top: 0;
+        }
+
+        /* Disclaimer banner */
+        .disclaimer-banner {
+            background-color: #8FA88A;
+            color: #F4F1EA;
+            padding: 12px 32px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            z-index: 999;
+        }
+
+        .disclaimer-banner a {
+            color: #F4F1EA;
+            text-decoration: underline;
+            margin-left: 4px;
+            transition: opacity 0.3s ease;
+        }
+
+        .disclaimer-banner a:hover,
+        .disclaimer-banner a:focus {
+            opacity: 0.85;
+            outline: none;
+        }
+
+        /* Modal styles */
+        dialog {
+            border: none;
+            border-radius: 8px;
+            padding: 48px 40px;
+            max-width: 500px;
+            background: #F4F1EA;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        dialog h2 {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            font-size: 32px;
+            color: #1A1D1A;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        dialog p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #2A2E28;
+            margin-bottom: 24px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+        }
+
+        .modal-actions a,
+        .modal-actions button {
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .modal-actions a {
+            background-color: #A8B5A0;
+            color: #1A1D1A;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-actions a:hover,
+        .modal-actions a:focus {
+            background-color: #8FA88A;
+            outline: 3px solid #A8B5A0;
+            outline-offset: 2px;
+        }
+
+        .modal-actions button {
+            background-color: transparent;
+            color: #2A2E28;
+            border: 2px solid #8FA88A;
+            min-height: 44px;
+        }
+
+        .modal-actions button:hover,
+        .modal-actions button:focus {
+            background-color: #F4F1EA;
+            border-color: #A8B5A0;
+            outline: 3px solid #A8B5A0;
+            outline-offset: 2px;
+        }
+
+        /* Footer */
+        .site-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(244, 241, 234, 0.95);
+            padding: 12px 32px;
+            text-align: center;
+            font-size: 12px;
+            color: #A0A39C;
+            letter-spacing: 0.3px;
+            z-index: 100;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .site-footer a {
+            color: #A0A39C;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: opacity 0.3s ease;
+        }
+
+        .site-footer a:hover,
+        .site-footer a:focus {
+            opacity: 0.8;
+            border-bottom-color: #A0A39C;
+            outline: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        .hero-media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-video {
+            display: block;
+        }
+
+        .hero-video.hidden {
+            display: none;
+        }
+
+        /* Gradient overlay */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1));
+            z-index: 2;
+        }
+
+        /* Hero content */
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 3;
+            padding: 32px;
+            padding-top: 24px;
+        }
+
+        /* Navigation */
+        .hero-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .nav-logo {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #F4F1EA;
+            text-decoration: none;
+            letter-spacing: 2px;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-menu a {
+            color: #F4F1EA;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: opacity 0.3s ease;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a:focus {
+            opacity: 0.8;
+            border-bottom-color: #A8B5A0;
+            outline: none;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex-shrink: 0;
+        }
+
+        .nav-phone {
+            color: #F4F1EA;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-phone:hover,
+        .nav-phone:focus {
+            opacity: 0.8;
+            border-bottom-color: #A8B5A0;
+            outline: none;
+        }
+
+        .book-btn {
+            background-color: #A8B5A0;
+            color: #1A1D1A;
+            padding: 12px 28px;
+            border-radius: 32px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-height: 44px;
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-btn:hover,
+        .book-btn:focus {
+            background-color: #8FA88A;
+            outline: 3px solid #A8B5A0;
+            outline-offset: 2px;
+        }
+
+        /* Main content section */
+        .hero-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            max-width: 60%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-main {
+                max-width: 85%;
+            }
+        }
+
+        .hero-tag {
+            background-color: rgba(168, 181, 160, 0.15);
+            backdrop-filter: blur(8px);
+            color: #F4F1EA;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid rgba(168, 181, 160, 0.3);
+        }
+
+        h1 {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 700;
+            color: #F4F1EA;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        h1 em {
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .hero-subhead {
+            font-size: clamp(16px, 2vw, 20px);
+            line-height: 1.6;
+            color: #F4F1EA;
+            font-weight: 400;
+            max-width: 500px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .primary-cta {
+            background-color: #A8B5A0;
+            color: #1A1D1A;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+        }
+
+        .primary-cta:hover,
+        .primary-cta:focus {
+            background-color: #8FA88A;
+            outline: 3px solid #A8B5A0;
+            outline-offset: 2px;
+        }
+
+        .secondary-cta {
+            color: #F4F1EA;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 2px solid #F4F1EA;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 44px;
+        }
+
+        .secondary-cta:hover,
+        .secondary-cta:focus {
+            color: #A8B5A0;
+            border-bottom-color: #A8B5A0;
+            outline: none;
+        }
+
+        .arrow {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .secondary-cta:hover .arrow,
+        .secondary-cta:focus .arrow {
+            transform: translateX(4px);
+        }
+
+        /* Vogue pull-quote */
+        .vogue-quote {
+            position: absolute;
+            bottom: 60px;
+            right: 40px;
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            border-left: 3px solid #A8B5A0;
+            border-radius: 4px;
+            max-width: 280px;
+            z-index: 10;
+        }
+
+        .vogue-quote p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #F4F1EA;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .vogue-quote-source {
+            font-size: 11px;
+            color: #A8B5A0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Play/Pause button */
+        .video-control {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            width: 48px;
+            height: 48px;
+            background-color: rgba(168, 181, 160, 0.9);
+            border: 2px solid #F4F1EA;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            color: #1A1D1A;
+            font-weight: bold;
+            min-width: 48px;
+            min-height: 48px;
+        }
+
+        .video-control:hover,
+        .video-control:focus {
+            background-color: #A8B5A0;
+            outline: 3px solid rgba(168, 181, 160, 0.4);
+            outline-offset: 2px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-video {
+                display: none !important;
+            }
+
+            .hero-media {
+                object-fit: cover;
+            }
+
+            .nav-menu a,
+            .nav-phone,
+            .book-btn,
+            .primary-cta,
+            .secondary-cta,
+            .video-control {
+                transition: none;
+            }
+
+            .secondary-cta:hover .arrow {
+                transform: none;
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                padding: 24px;
+                padding-top: 16px;
+            }
+
+            .hero-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+
+            .nav-menu {
+                gap: 16px;
+                justify-content: flex-start;
+            }
+
+            .nav-right {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .hero-main {
+                max-width: 90%;
+            }
+
+            .vogue-quote {
+                bottom: 120px;
+                right: 24px;
+                max-width: 240px;
+                padding: 16px;
+            }
+
+            .video-control {
+                bottom: 80px;
+                right: 24px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero-content {
+                padding: 16px;
+                justify-content: flex-start;
+                padding-top: 12px;
+            }
+
+            .hero-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 32px;
+            }
+
+            .nav-logo {
+                font-size: 24px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            .nav-menu a {
+                font-size: 13px;
+            }
+
+            .nav-right {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 12px;
+            }
+
+            .nav-phone {
+                font-size: 13px;
+            }
+
+            .book-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .hero-main {
+                max-width: 95%;
+                gap: 16px;
+            }
+
+            h1 {
+                font-size: clamp(36px, 7vw, 56px);
+            }
+
+            .hero-subhead {
+                font-size: 14px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                width: 100%;
+            }
+
+            .primary-cta,
+            .secondary-cta {
+                font-size: 14px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .vogue-quote {
+                display: none;
+            }
+
+            .video-control {
+                width: 44px;
+                height: 44px;
+                bottom: 20px;
+                right: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <div class="disclaimer-banner">
+        Concept website demo by DigitWaves. Luma Aesthetics Studio is fictional and not an operating medical spa. <a href="https://digitwaves.com/demos/med-spa/">Build yours &rarr;</a>
+    </div>
+
+    <section class="hero">
+        <img 
+            class="hero-media" 
+            src="images/med-spa-hero-consultation-upscaled.png" 
+            alt="Aesthetic medicine consultation - warm, serene spa environment"
+        >
+        <video
+            class="hero-video hero-media"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-hidden="true"
+            poster="images/med-spa-hero-consultation-upscaled.png"
+        >
+            <source src="images/hero-video-2.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <header class="hero-nav">
+                <a href="https://digitwaves.com/demos/med-spa/" class="nav-logo">Luma</a>
+                <nav class="nav-menu">
+                    <a href="https://digitwaves.com/demos/med-spa/">Treatments</a>
+                    <a href="https://digitwaves.com/demos/med-spa/">The Studio</a>
+                    <a href="https://digitwaves.com/demos/med-spa/">Practitioners</a>
+                    <a href="https://digitwaves.com/demos/med-spa/">Membership</a>
+                    <a href="https://digitwaves.com/demos/med-spa/">Journal</a>
+                </nav>
+                <div class="nav-right">
+                    <span class="nav-phone">DigitWaves Demo</span>
+                    <a class="book-btn" href="https://digitwaves.com/demos/med-spa/">Book</a>
+                </div>
+            </header>
+
+            <main id="main-content" class="hero-main">
+                <div class="hero-tag">Fictional med spa concept site</div>
+                <h1>Radiance, <em>Redefined.</em></h1>
+                <p class="hero-subhead">Consultation-led aesthetic care presented with calm service education, clear treatment paths, and a premium online experience built for trust.</p>
+                <div class="cta-group">
+                    <a class="primary-cta" href="https://digitwaves.com/demos/med-spa/">Book a Consultation</a>
+                    <a href="https://digitwaves.com/demos/med-spa/" class="secondary-cta">Explore Treatments <span class="arrow">&rarr;</span></a>
+                </div>
+            </main>
+
+            <div class="vogue-quote">
+                <p>"A static concept homepage showing how a premium med spa can frame trust, services, and consultation flow."</p>
+                <div class="vogue-quote-source">DigitWaves Concept</div>
+            </div>
+
+            <button class="video-control" id="video-toggle" aria-label="Pause video playback">Pause</button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.hero-video');
+            const videoToggle = document.getElementById('video-toggle');
+            let videoIsPlaying = true;
+
+            function getConnection() {
+                return navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            }
+
+            function loadBasedOnConnection() {
+                const connection = getConnection();
+                if (connection && (connection.effectiveType === '2g' || connection.effectiveType === 'slow-2g')) {
+                    if (video) {
+                        video.classList.add('hidden');
+                    }
+                    return;
+                }
+
+                if (video) {
+                    video.classList.remove('hidden');
+                }
+            }
+
+            function checkReducedMotion() {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches && video) {
+                    video.pause();
+                    video.classList.add('hidden');
+                    videoIsPlaying = false;
+                    if (videoToggle) {
+                        videoToggle.textContent = 'Play';
+                        videoToggle.setAttribute('aria-label', 'Play video');
+                    }
+                }
+            }
+
+            if (videoToggle && video) {
+                videoToggle.addEventListener('click', function() {
+                    if (videoIsPlaying) {
+                        video.pause();
+                        videoToggle.textContent = 'Play';
+                        videoToggle.setAttribute('aria-label', 'Play video');
+                    } else {
+                        video.play();
+                        videoToggle.textContent = 'Pause';
+                        videoToggle.setAttribute('aria-label', 'Pause video');
+                    }
+                    videoIsPlaying = !videoIsPlaying;
+                });
+
+                video.addEventListener('play', function() {
+                    videoToggle.textContent = 'Pause';
+                    videoToggle.setAttribute('aria-label', 'Pause video');
+                    videoIsPlaying = true;
+                });
+
+                video.addEventListener('pause', function() {
+                    videoToggle.textContent = 'Play';
+                    videoToggle.setAttribute('aria-label', 'Play video');
+                    videoIsPlaying = false;
+                });
+            }
+
+            loadBasedOnConnection();
+            checkReducedMotion();
+
+            const connection = getConnection();
+            if (connection) {
+                connection.addEventListener('change', loadBasedOnConnection);
+            }
+
+            const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (typeof reducedMotionQuery.addEventListener === 'function') {
+                reducedMotionQuery.addEventListener('change', checkReducedMotion);
+            }
+        });
+    </script>
+
+    <dialog id="concept-modal" aria-modal="true" aria-labelledby="modal-title">
+        <h2 id="modal-title">This is a Concept Site</h2>
+        <p>To build a website like this for your business, contact DigitWaves.</p>
+        <div class="modal-actions">
+            <a href="https://digitwaves.com/demos/med-spa/">Contact DigitWaves</a>
+            <button id="close-modal" type="button">Close</button>
+        </div>
+    </dialog>
+
+    <div class="site-footer">
+        Designed and built by <a href="https://digitwaves.com/demos/med-spa/">DigitWaves</a> &middot; digitwaves.com &middot; This is a portfolio concept, not a live business.
+    </div>
+
+</body>
+</html>
