@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - Vanguard Roofing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar solid-nav">
+        <a href="index.html" class="logo" style="text-decoration: none;">Vanguard Roofing</a>
+        <div class="nav-links">
+            <a href="index.html">Services</a>
+            <a href="portfolio.html" class="active">Projects</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a href="#" class="btn btn-quote-nav">Get a Free Quote</a>
+    </nav>
+
+    <!-- Portfolio Header -->
+    <header class="portfolio-header animate-on-scroll slide-in-up">
+        <div class="tag-pill">OUR WORK</div>
+        <h1 class="section-title">Architectural <span class="gradient-text">Masterpieces</span></h1>
+        <p class="section-subtitle">Explore our gallery of completed premium roofing projects, showcasing our commitment to structural excellence and aesthetic perfection.</p>
+    </header>
+
+    <!-- Before / After Interactive Slider -->
+    <section class="ba-section animate-on-scroll slide-in-up">
+        <div class="ba-header">
+            <h2 class="section-title" style="font-size: 2rem;">The Vanguard <span class="gradient-text">Transformation</span></h2>
+            <p class="section-subtitle">Drag the slider to reveal the difference between a failing roof and a Vanguard engineered system.</p>
+        </div>
+        <div class="ba-slider-container">
+            <img class="ba-image-after" src="https://images.unsplash.com/photo-1623625434462-e5e42318ae49?q=80&w=2071&auto=format&fit=crop" alt="Vanguard New Roof">
+            <img class="ba-image-before" id="baBeforeImg" src="https://images.unsplash.com/photo-1511216113906-8f57bb83e776?q=80&w=2070&auto=format&fit=crop" alt="Old Damaged Roof">
+            
+            <div class="ba-labels">
+                <div class="ba-label">BEFORE</div>
+                <div class="ba-label">AFTER</div>
+            </div>
+
+            <input type="range" min="0" max="100" value="50" class="ba-slider" id="baSlider" aria-label="Percentage of before photo shown">
+            <div class="ba-slider-line" id="baSliderLine">
+                <div class="ba-slider-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: -8px;">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid-section">
+        <div class="portfolio-grid">
+            <div class="portfolio-item animate-on-scroll slide-in-up"
+                 data-title="The Alpine Residence"
+                 data-category="Metal Roofing"
+                 data-desc="Complete tear-off and installation of a premium standing seam metal roof. Included custom flashing around chimneys and skylights, and advanced underlayment for extreme weather protection. Designed to withstand heavy snow loads and high winds."
+                 data-image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">The Alpine Residence</h3>
+                    <p class="portfolio-category">Metal Roofing</p>
+                </div>
+            </div>
+            <div class="portfolio-item animate-on-scroll slide-in-up" style="transition-delay: 0.1s;"
+                 data-title="Modern Estates"
+                 data-category="Architectural Shingle"
+                 data-desc="Installation of high-definition architectural shingles on a complex roof geometry. We integrated an enhanced ventilation system to improve energy efficiency and prolong the lifespan of the decking."
+                 data-image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Modern Estates</h3>
+                    <p class="portfolio-category">Architectural Shingle</p>
+                </div>
+            </div>
+            <div class="portfolio-item animate-on-scroll slide-in-up" style="transition-delay: 0.2s;"
+                 data-title="Lakeside Retreat"
+                 data-category="Slate Tile"
+                 data-desc="A luxury historic restoration utilizing premium natural slate tiles. This project required structural reinforcement of the framing to support the massive weight, resulting in a roof that will last over a century."
+                 data-image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Lakeside Retreat</h3>
+                    <p class="portfolio-category">Slate Tile</p>
+                </div>
+            </div>
+            <div class="portfolio-item animate-on-scroll slide-in-up"
+                 data-title="Heritage Restoration"
+                 data-category="Custom Repair"
+                 data-desc="Targeted repair of a historic property. We perfectly color-matched the aged materials, repaired extensive water damage in the underlying structure, and restored the original architectural aesthetic without needing a full replacement."
+                 data-image="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Heritage Restoration</h3>
+                    <p class="portfolio-category">Custom Repair</p>
+                </div>
+            </div>
+            <div class="portfolio-item animate-on-scroll slide-in-up" style="transition-delay: 0.1s;"
+                 data-title="The Glass House"
+                 data-category="Flat Roof System"
+                 data-desc="Commercial-grade TPO flat roof system installed on a modern residential property. Included a fully integrated gutter system and tapered insulation to ensure perfect drainage and high thermal resistance."
+                 data-image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">The Glass House</h3>
+                    <p class="portfolio-category">Flat Roof System</p>
+                </div>
+            </div>
+            <div class="portfolio-item animate-on-scroll slide-in-up" style="transition-delay: 0.2s;"
+                 data-title="Suburban Excellence"
+                 data-category="Complete Replacement"
+                 data-desc="A massive 8,000 square foot complete replacement following severe hail damage. We worked directly with the insurance company and upgraded the homeowner to impact-resistant Class 4 shingles."
+                 data-image="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Suburban Excellence</h3>
+                    <p class="portfolio-category">Complete Replacement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">Vanguard Roofing</div>
+                <p class="footer-desc">Engineering shields for your most valuable investment with architectural precision and unyielding protection.</p>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Services</a></li>
+                    <li><a href="portfolio.html">Projects</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="footer-heading">Contact</h4>
+                <p>1-800-VANGUARD</p>
+                <p>info@vanguardroofing.com</p>
+                <p>123 Summit Way, Elevation City, EC 90210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vanguard Roofing. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <button class="fab-btn btn-quote-main" id="fabBtn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+            <path d="M19 22H12"></path>
+        </svg>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-agent">
+                <div class="chat-avatar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                </div>
+                <div>
+                    <h4 style="margin:0; font-size:1rem; color:#111;">Vanguard Support</h4>
+                    <span style="font-size:0.75rem; color:#444;">Typically replies in minutes</span>
+                </div>
+            </div>
+            <button class="close-chat" id="closeChat">&times;</button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message agent">
+                Hi there! 👋 How can we help you with your roofing project today?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" placeholder="Type your message..." class="chat-input">
+            <button class="chat-send">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Quote Modal -->
+    <div class="modal-overlay" id="quoteModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2 class="modal-title">Request a <span class="gradient-text">Quote</span></h2>
+            <p class="modal-subtitle">Fill out the form below and our Vanguard team will get back to you within 24 hours.</p>
+            <form class="quote-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" required>
+                        <option value="">Select a service...</option>
+                        <option value="replacement">Complete Roof Replacement</option>
+                        <option value="repair">Precision Repair</option>
+                        <option value="storm">Storm Damage Restoration</option>
+                        <option value="other">Other / Not Sure</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-quote-main" style="width: 100%; margin-top: 1rem;">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Details Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content project-modal-content">
+            <button class="close-modal" id="closeProjectModal">&times;</button>
+            <div class="project-modal-grid">
+                <div class="project-modal-details">
+                    <div class="tag-pill" id="modalCategory" style="margin-bottom: 1rem;">Category</div>
+                    <h2 class="modal-title" id="modalTitle">Project Title</h2>
+                    <p class="modal-subtitle" style="margin-bottom: 1.5rem;">Project Overview</p>
+                    <p class="project-modal-desc" id="modalDesc">Detailed description of what was done on this roofing project goes here.</p>
+                    
+                    <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-main); font-size: 1.1rem;">Value Delivered:</h4>
+                    <ul class="service-features" style="margin-bottom: 0;">
+                        <li>Structural Assessment</li>
+                        <li>Premium Materials</li>
+                        <li>Lifetime Workmanship</li>
+                    </ul>
+                </div>
+                <div class="project-modal-image-wrapper">
+                    <img src="" alt="Project" id="modalImage" class="project-modal-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Modal Logic (Quote)
+            const modal = document.getElementById('quoteModal');
+            const quoteBtns = document.querySelectorAll('.btn-quote-nav, .btn-quote-main:not(.fab-btn)');
+            const closeBtn = document.getElementById('closeModal');
+
+            quoteBtns.forEach(btn => {
+                if(btn.type !== 'submit') {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (modal) modal.classList.add('active');
+                    });
+                }
+            });
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                    }
+                });
+            }
+
+            // Project Modal Logic
+            const projectModal = document.getElementById('projectModal');
+            const closeProjectModal = document.getElementById('closeProjectModal');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            const modalTitle = document.getElementById('modalTitle');
+            const modalCategory = document.getElementById('modalCategory');
+            const modalDesc = document.getElementById('modalDesc');
+            const modalImage = document.getElementById('modalImage');
+
+            portfolioItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Populate data
+                    modalTitle.textContent = item.getAttribute('data-title');
+                    modalCategory.textContent = item.getAttribute('data-category');
+                    modalDesc.textContent = item.getAttribute('data-desc');
+                    modalImage.src = item.getAttribute('data-image');
+                    
+                    // Show modal
+                    if (projectModal) projectModal.classList.add('active');
+                });
+            });
+
+            if (closeProjectModal) {
+                closeProjectModal.addEventListener('click', () => {
+                    projectModal.classList.remove('active');
+                });
+            }
+
+            if (projectModal) {
+                projectModal.addEventListener('click', (e) => {
+                    if (e.target === projectModal) {
+                        projectModal.classList.remove('active');
+                    }
+                });
+            }
+
+            // Before / After Slider Logic
+            const baSlider = document.getElementById('baSlider');
+            const baBeforeImg = document.getElementById('baBeforeImg');
+            const baSliderLine = document.getElementById('baSliderLine');
+
+            if (baSlider && baBeforeImg && baSliderLine) {
+                baSlider.addEventListener('input', (e) => {
+                    const val = e.target.value;
+                    baBeforeImg.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+                    baSliderLine.style.left = `${val}%`;
+                });
+            }
+
+            // Chat Logic
+            const fabBtn = document.getElementById('fabBtn');
+            const chatWindow = document.getElementById('chatWindow');
+            const closeChat = document.getElementById('closeChat');
+            
+            if (fabBtn && chatWindow) {
+                fabBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    chatWindow.classList.toggle('active');
+                });
+            }
+            if (closeChat) {
+                closeChat.addEventListener('click', () => {
+                    chatWindow.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
