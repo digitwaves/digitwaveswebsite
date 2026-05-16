@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">	
 <head>	
-	<!-- Global site tag (gtag.js) - Google Analytics -->	
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120225500-1"></script>	
-	<script>	  
-	window.dataLayer = window.dataLayer || [];	  
-	function gtag(){dataLayer.push(arguments);}	  
-	gtag('js', new Date());	  
-	gtag('config', 'UA-120225500-1');	
-	</script><!-- Start of  Zendesk Widget script -->
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQQK2JJFKX"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-HQQK2JJFKX');
+	</script>
+	<!-- Start of Zendesk Widget script -->
 <script>
 	window.zESettings = {
 		webWidget: {

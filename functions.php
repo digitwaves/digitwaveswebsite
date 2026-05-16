@@ -83,6 +83,40 @@ function digitwaves_stylesheets(){
 }
 add_action('wp_enqueue_scripts','digitwaves_stylesheets');
 
+function digitwaves_work_page_disable_cache() {
+    if ( is_page( 'work' ) ) {
+        do_action( 'litespeed_control_set_nocache', 'DigitWaves Work page is managed from the theme during active portfolio updates.' );
+
+        if ( ! headers_sent() ) {
+            header( 'Cache-Control: no-cache, no-store, must-revalidate, max-age=0' );
+            header( 'Pragma: no-cache' );
+        }
+    }
+}
+add_action( 'template_redirect', 'digitwaves_work_page_disable_cache', 0 );
+
+function digitwaves_work_page_meta_description( $description ) {
+    if ( is_page( 'work' ) ) {
+        return 'Explore DigitWaves concept websites and local business use-case demos built around trust, service clarity, AI-enabled lead flows, and clearer paths to calls, bookings, consultations, or quote requests.';
+    }
+
+    return $description;
+}
+add_filter( 'wpseo_metadesc', 'digitwaves_work_page_meta_description' );
+add_filter( 'wpseo_opengraph_desc', 'digitwaves_work_page_meta_description' );
+add_filter( 'wpseo_twitter_description', 'digitwaves_work_page_meta_description' );
+
+function digitwaves_work_page_meta_title( $title ) {
+    if ( is_page( 'work' ) ) {
+        return 'Work Built for Local Businesses - Digit Waves';
+    }
+
+    return $title;
+}
+add_filter( 'wpseo_title', 'digitwaves_work_page_meta_title' );
+add_filter( 'wpseo_opengraph_title', 'digitwaves_work_page_meta_title' );
+add_filter( 'wpseo_twitter_title', 'digitwaves_work_page_meta_title' );
+
 // AJAX handler
 function load_more_posts() {
     $paged = intval($_POST['page']);
