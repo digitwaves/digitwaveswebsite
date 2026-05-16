@@ -46,6 +46,33 @@
         '/ugc-ads-short-videos/'
     ];
 
+    var homepageServices = [
+        {
+            number: '01',
+            title: 'Web Design',
+            description: 'Fast, polished pages that make your offer clear and make it easier for visitors to trust you.',
+            href: '/web-design/'
+        },
+        {
+            number: '02',
+            title: 'AI-Enabled Websites',
+            description: 'Smart website answers, guided intake, and helpful next steps built around how customers actually ask questions.',
+            href: '/ai-enabled-websites/'
+        },
+        {
+            number: '03',
+            title: 'UGC Ads & Short Videos',
+            description: 'Short-form creative direction for Reels, TikToks, Shorts, and ad concepts that help people notice the business.',
+            href: '/ugc-ads-short-videos/'
+        },
+        {
+            number: '04',
+            title: 'Lead Flow',
+            description: 'Simple forms, calls to action, and follow-up paths that turn interested visitors into cleaner conversations.',
+            href: '/contact/'
+        }
+    ];
+
     var strategyCallBookingUrl = 'https://calendar.app.google/9zMzaHNicay1Za1GA';
     var medSpaDemoUrl = 'https://digitwaves.com/demos/med-spa/hero-fullscreen.html';
 
@@ -237,6 +264,14 @@
             var buttons = section.querySelectorAll('.elementor-button-wrapper, .dw-premium-button, .dw-premium-button-outline');
             Array.prototype.forEach.call(buttons, function (item, index) {
                 addRevealClass(item, 'dw-reveal-up', 120 + (index * 60));
+            });
+
+            var homeServicesHeading = section.querySelector('.dw-home-services-heading');
+            addRevealClass(homeServicesHeading, 'dw-reveal-up', 40);
+
+            var homeServiceRows = section.querySelectorAll('.dw-home-service-row');
+            Array.prototype.forEach.call(homeServiceRows, function (item, index) {
+                addRevealClass(item, 'dw-reveal-up', 90 + (index * 75));
             });
         });
 
@@ -809,6 +844,53 @@
             '</div>';
     }
 
+    function setupHomepageServicesBelowHero() {
+        if (!document.body || !document.body.classList.contains('home')) {
+            return;
+        }
+
+        if (document.querySelector('.dw-home-services-strip')) {
+            return;
+        }
+
+        var hero = document.querySelector('.home .dw-premium-hero') ||
+            document.querySelector('.home .elementor-top-section:first-of-type') ||
+            document.querySelector('.home rs-module-wrap') ||
+            document.querySelector('.home .rev_slider_wrapper');
+
+        if (!hero || !hero.parentNode) {
+            return;
+        }
+
+        var section = document.createElement('section');
+        section.className = 'dw-home-services-strip dw-premium-section';
+        section.setAttribute('aria-labelledby', 'dw-home-services-title');
+
+        section.innerHTML =
+            '<div class="dw-home-services-inner">' +
+                '<div class="dw-home-services-heading">' +
+                    '<p class="dw-home-services-eyebrow">Services</p>' +
+                    '<h2 id="dw-home-services-title">What DigitWaves Can Build Next</h2>' +
+                    '<p>Pick the piece your business needs most right now, then connect it into one clear path from attention to inquiry.</p>' +
+                '</div>' +
+                '<div class="dw-home-services-list">' +
+                    homepageServices.map(function (service) {
+                        return '' +
+                            '<a class="dw-home-service-row" href="' + service.href + '">' +
+                                '<span class="dw-home-service-number">' + service.number + '</span>' +
+                                '<span class="dw-home-service-copy">' +
+                                    '<strong>' + service.title + '</strong>' +
+                                    '<span>' + service.description + '</span>' +
+                                '</span>' +
+                                '<span class="dw-home-service-action" aria-hidden="true">View</span>' +
+                            '</a>';
+                    }).join('') +
+                '</div>' +
+            '</div>';
+
+        hero.insertAdjacentElement('afterend', section);
+    }
+
     function setupHomepageCtaSection() {
         if (!document.body || !document.body.classList.contains('home')) {
             return;
@@ -936,6 +1018,7 @@
     function boot(attempt) {
         var isReady = updateServicesSection();
 
+        setupHomepageServicesBelowHero();
         setupScrollReveal();
         setupMobileMenuRefinement();
         setupWorkPage();
