@@ -133,6 +133,7 @@ $work_tiles = array(
 	<section class="dw-work-gallery-toolbar">
 		<div class="dw-work-gallery-head">
 			<div class="dw-work-gallery-title">
+				<p class="dw-work-gallery-eyebrow">DigitWaves Work</p>
 				<h1>Work</h1>
 			</div>
 			<div class="dw-work-gallery-controls">

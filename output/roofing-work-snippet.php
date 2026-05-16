@@ -464,7 +464,7 @@ add_action( 'template_redirect', function () {
 
 	.dw-work-gallery-toolbar {
 		width: 100%;
-		padding: clamp(88px, 7.5vw, 104px) clamp(18px, 3.4vw, 44px) 12px;
+		padding: clamp(116px, 8vw, 132px) clamp(6px, 1vw, 14px) 18px;
 		background: #f4f7f8;
 	}
 
@@ -472,7 +472,7 @@ add_action( 'template_redirect', function () {
 		width: 100%;
 		margin-left: 0;
 		margin-right: 0;
-		padding: clamp(88px, 7.5vw, 104px) clamp(18px, 3.4vw, 44px) 12px !important;
+		padding: clamp(116px, 8vw, 132px) clamp(6px, 1vw, 14px) 18px !important;
 	}
 
 	.dw-work-gallery-toolbar .dw-work-gallery-head {
@@ -480,12 +480,34 @@ add_action( 'template_redirect', function () {
 		grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
 		align-items: end;
 		gap: 16px;
-		width: min(100%, 1380px);
+		width: min(100%, 1460px);
 		margin: 0 auto;
+		padding: 0 clamp(6px, 1vw, 14px);
 	}
 
 	.dw-work-gallery-toolbar .dw-work-gallery-title {
 		max-width: 650px;
+	}
+
+	.dw-work-gallery-toolbar .dw-work-gallery-eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		margin: 0 0 9px;
+		color: rgba(8, 27, 43, 0.62);
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	.dw-work-gallery-toolbar .dw-work-gallery-eyebrow::before {
+		content: "";
+		width: 38px;
+		height: 2px;
+		border-radius: 999px;
+		background: linear-gradient(90deg, var(--dw-accent), var(--dw-accent-soft));
 	}
 
 	.dw-work-gallery-toolbar .dw-work-gallery-title h1 {
@@ -561,7 +583,7 @@ add_action( 'template_redirect', function () {
 
 	@media (max-width: 640px) {
 		.dw-work-gallery-toolbar {
-			padding-top: 96px;
+			padding-top: 108px;
 		}
 
 		.dw-work-gallery-toolbar .dw-work-gallery-title h1 {
@@ -573,6 +595,7 @@ add_action( 'template_redirect', function () {
 	<section class="dw-work-gallery-toolbar">
 		<div class="dw-work-gallery-head">
 			<div class="dw-work-gallery-title">
+				<p class="dw-work-gallery-eyebrow">DigitWaves Work</p>
 				<h1>Work</h1>
 			</div>
 			<div class="dw-work-gallery-controls">
