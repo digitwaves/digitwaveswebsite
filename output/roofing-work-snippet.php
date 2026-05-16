@@ -614,7 +614,7 @@ add_action( 'template_redirect', function () {
 	<section class="dw-work-gallery-grid-wrap" aria-label="DigitWaves visual work examples">
 		<div class="dw-work-gallery-grid">
 			<?php foreach ( $work_tiles as $tile ) : ?>
-				<a class="dw-work-tile dw-work-tile-<?php echo esc_attr( $tile['style'] ); ?>" href="<?php echo esc_url( $tile['url'] ); ?>" data-dw-work-card data-type="<?php echo esc_attr( $tile['type'] ); ?>">
+				<a class="dw-work-tile dw-work-tile-<?php echo esc_attr( $tile['style'] ); ?>" href="<?php echo esc_url( $tile['url'] ); ?>" target="_blank" rel="noopener noreferrer" data-dw-work-card data-type="<?php echo esc_attr( $tile['type'] ); ?>">
 					<?php if ( ! empty( $tile['image'] ) ) : ?>
 						<span class="dw-work-art dw-work-art-image" aria-hidden="true">
 							<img class="dw-work-image" src="<?php echo esc_url( $tile['image'] ); ?>" alt="" loading="lazy">

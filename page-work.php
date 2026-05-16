@@ -155,6 +155,8 @@ $work_tiles = array(
 				<a
 					class="dw-work-tile dw-work-tile-<?php echo esc_attr( $tile['style'] ); ?>"
 					href="<?php echo esc_url( $tile['url'] ); ?>"
+					target="_blank"
+					rel="noopener noreferrer"
 					data-dw-work-card
 					data-type="<?php echo esc_attr( $tile['type'] ); ?>"
 				>
