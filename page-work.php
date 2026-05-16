@@ -26,9 +26,9 @@ $work_tiles = array(
 		'image' => 'images/work/teacup-doggy-square.jpg',
 	),
 	array(
-		'type'  => 'hero',
+		'type'  => 'roofing',
 		'style' => 'roofing-hero',
-		'label' => 'Hero Demo',
+		'label' => 'Roofing',
 		'title' => 'Roofing Website Hero',
 		'copy'  => 'A cinematic roofing homepage concept built around trust, curb appeal, and quote requests.',
 		'url'   => $roofing_demo,
@@ -130,20 +130,20 @@ $work_tiles = array(
 ?>
 
 <main class="dw-work-gallery">
-	<section class="dw-work-hero dw-work-gallery-hero">
+	<section class="dw-work-gallery-toolbar">
 		<div class="dw-work-gallery-head">
+			<div class="dw-work-gallery-title">
+				<h1>Work</h1>
+			</div>
 			<div class="dw-work-gallery-controls">
 				<label for="dw-work-type-filter">Type</label>
 				<select id="dw-work-type-filter" class="browser-default" data-dw-work-filter>
 					<option value="all">All work</option>
+					<option value="roofing">Roofing</option>
 					<option value="hero">Hero demos</option>
 					<option value="med-spa">Med spa</option>
 					<option value="misc">Misc</option>
 				</select>
-			</div>
-			<div class="dw-work-gallery-title">
-				<p>DigitWaves Work</p>
-				<h1>Visual demos for local business websites and lead flows.</h1>
 			</div>
 		</div>
 	</section>

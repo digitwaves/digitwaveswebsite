@@ -319,9 +319,9 @@ add_action( 'template_redirect', function () {
 			'image' => 'https://digitwaves.com/wp-content/themes/DigitWaves/images/work/teacup-doggy-square.jpg',
 		),
 		array(
-			'type'  => 'hero',
+			'type'  => 'roofing',
 			'style' => 'roofing-hero',
-			'label' => 'Hero Demo',
+			'label' => 'Roofing',
 			'title' => 'Roofing Website Hero',
 			'copy'  => 'A cinematic roofing homepage concept built around trust, curb appeal, and quote requests.',
 			'url'   => 'https://digitwaves.com/demos/roofing/',
@@ -423,21 +423,167 @@ add_action( 'template_redirect', function () {
 
 	get_header();
 	?>
+<script>
+	document.body.classList.add('dw-work-page-live');
+</script>
+<style id="dw-work-toolbar-live">
+	body.dw-work-page-live #wrapper > header,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) #wrapper > header {
+		background: rgba(255, 255, 255, 0.96) !important;
+		backdrop-filter: blur(14px) !important;
+		box-shadow: 0 10px 28px rgba(8, 24, 36, 0.08) !important;
+		border-bottom: 1px solid rgba(10, 29, 47, 0.06) !important;
+	}
+
+	body.dw-work-page-live #wrapper > header .container2,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) #wrapper > header .container2 {
+		padding: 2px 10px 4px !important;
+	}
+
+	body.dw-work-page-live .menu-item a,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item a,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item.current-menu-item > a,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item.current_page_item > a {
+		color: #10263a !important;
+		text-shadow: none !important;
+	}
+
+	body.dw-work-page-live .menu-item a:hover,
+	body.dw-work-page-live .menu-item.current-menu-item > a,
+	body.dw-work-page-live .menu-item.current_page_item > a,
+	body.dw-work-page-live .menu-item.current-menu-ancestor > a,
+	body.dw-work-page-live .menu-item.current-page-ancestor > a,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item a:hover,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item a:focus-visible,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item.current-menu-item > a,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item.current_page_item > a,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item.current-menu-ancestor > a,
+	body.page-id-1024.dw-work-page-live:not(.dw-header-solid) .menu-item.current-page-ancestor > a {
+		color: var(--dw-accent) !important;
+	}
+
+	.dw-work-gallery-toolbar {
+		width: 100%;
+		padding: clamp(88px, 7.5vw, 104px) clamp(18px, 3.4vw, 44px) 12px;
+		background: #f4f7f8;
+	}
+
+	.page-id-1024 .dw-work-gallery-toolbar {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		padding: clamp(88px, 7.5vw, 104px) clamp(18px, 3.4vw, 44px) 12px !important;
+	}
+
+	.dw-work-gallery-toolbar .dw-work-gallery-head {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
+		align-items: end;
+		gap: 16px;
+		width: min(100%, 1380px);
+		margin: 0 auto;
+	}
+
+	.dw-work-gallery-toolbar .dw-work-gallery-title {
+		max-width: 650px;
+	}
+
+	.dw-work-gallery-toolbar .dw-work-gallery-title h1 {
+		max-width: 650px;
+		margin: 0;
+		color: #081b2b;
+		font-family: "Roboto Condensed", "Roboto", sans-serif;
+		font-size: clamp(2.2rem, 4.4vw, 4rem);
+		font-weight: 800;
+		letter-spacing: 0;
+		line-height: 0.95;
+	}
+
+	.dw-work-gallery-toolbar .dw-work-gallery-controls {
+		display: grid;
+		gap: 8px;
+		justify-self: end;
+		width: min(100%, 260px);
+		min-width: min(100%, 220px);
+		padding: 0;
+		border: 0;
+		border-radius: 8px;
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.dw-work-gallery-toolbar .dw-work-gallery-controls label {
+		color: rgba(8, 27, 43, 0.62);
+		font-size: 0.76rem;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.dw-work-gallery-toolbar .dw-work-gallery-controls select {
+		width: 100%;
+		min-height: 48px;
+		padding: 0 42px 0 16px;
+		border: 1px solid rgba(15, 93, 106, 0.32);
+		border-radius: 8px;
+		background:
+			linear-gradient(45deg, transparent 50%, #0f5d6a 50%),
+			linear-gradient(135deg, #0f5d6a 50%, transparent 50%),
+			#ffffff;
+		background-position:
+			calc(100% - 20px) 20px,
+			calc(100% - 14px) 20px,
+			0 0;
+		background-size:
+			6px 6px,
+			6px 6px,
+			100% 100%;
+		background-repeat: no-repeat;
+		color: #081b2b;
+		font-size: 0.98rem;
+		font-weight: 800;
+		appearance: none;
+		box-shadow: 0 12px 28px rgba(8, 24, 36, 0.08);
+	}
+
+	@media (max-width: 980px) {
+		.dw-work-gallery-toolbar .dw-work-gallery-head {
+			grid-template-columns: 1fr;
+			gap: 18px;
+		}
+
+		.dw-work-gallery-toolbar .dw-work-gallery-controls {
+			justify-self: start;
+			width: min(100%, 360px);
+		}
+	}
+
+	@media (max-width: 640px) {
+		.dw-work-gallery-toolbar {
+			padding-top: 96px;
+		}
+
+		.dw-work-gallery-toolbar .dw-work-gallery-title h1 {
+			font-size: clamp(2.2rem, 16vw, 3.6rem);
+		}
+	}
+</style>
 <main class="dw-work-gallery">
-	<section class="dw-work-hero dw-work-gallery-hero">
+	<section class="dw-work-gallery-toolbar">
 		<div class="dw-work-gallery-head">
+			<div class="dw-work-gallery-title">
+				<h1>Work</h1>
+			</div>
 			<div class="dw-work-gallery-controls">
 				<label for="dw-work-type-filter">Type</label>
 				<select id="dw-work-type-filter" class="browser-default" data-dw-work-filter>
 					<option value="all">All work</option>
+					<option value="roofing">Roofing</option>
 					<option value="hero">Hero demos</option>
 					<option value="med-spa">Med spa</option>
 					<option value="misc">Misc</option>
 				</select>
-			</div>
-			<div class="dw-work-gallery-title">
-				<p>DigitWaves Work</p>
-				<h1>Visual demos for local business websites and lead flows.</h1>
 			</div>
 		</div>
 	</section>
