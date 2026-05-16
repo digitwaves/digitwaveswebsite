@@ -5088,6 +5088,18 @@ h3.elementor-image-box-title a:hover{color: #006E75 !important;}
     line-height: 1.72 !important;
 }
 
+.dw-home-services-visual {
+    width: min(100%, 430px);
+    margin-top: clamp(26px, 3.5vw, 42px);
+}
+
+.dw-home-services-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: saturate(1.04) drop-shadow(0 22px 36px rgba(8, 24, 36, 0.12));
+}
+
 .dw-home-services-list {
     display: grid;
     gap: 0;
@@ -5183,8 +5195,13 @@ h3.elementor-image-box-title a:hover{color: #006E75 !important;}
     }
 
     .dw-home-services-heading h2,
-    .dw-home-services-heading > p:last-child {
+    .dw-home-services-heading > p:last-child,
+    .dw-home-services-visual {
         max-width: 760px;
+    }
+
+    .dw-home-services-visual {
+        width: min(100%, 560px);
     }
 }
 
@@ -5204,6 +5221,10 @@ h3.elementor-image-box-title a:hover{color: #006E75 !important;}
 
     .dw-home-service-action {
         justify-self: start;
+    }
+
+    .dw-home-services-visual {
+        margin-top: 24px;
     }
 }
 

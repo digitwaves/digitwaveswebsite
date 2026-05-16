@@ -230,10 +230,15 @@
         document.body.classList.add('dw-reveal-ready');
 
         var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var sections = document.querySelectorAll('.home .dw-premium-section');
+        var sections = document.querySelectorAll(
+            '.home .dw-premium-section, ' +
+            '.home .elementor-top-section:not(:first-of-type), ' +
+            '.home .dw-home-services-strip'
+        );
 
-        Array.prototype.forEach.call(sections, function (section) {
-            addRevealClass(section, 'dw-reveal-up', 0);
+        Array.prototype.forEach.call(sections, function (section, sectionIndex) {
+            var sectionVariant = sectionIndex % 2 === 0 ? 'dw-reveal-left' : 'dw-reveal-right';
+            addRevealClass(section, sectionVariant, 0);
 
             var heading = section.querySelector('.elementor-widget-heading');
             var intro = section.querySelector('.elementor-widget-text-editor');
@@ -269,9 +274,23 @@
             var homeServicesHeading = section.querySelector('.dw-home-services-heading');
             addRevealClass(homeServicesHeading, 'dw-reveal-up', 40);
 
+            var homeServicesVisual = section.querySelector('.dw-home-services-visual');
+            addRevealClass(homeServicesVisual, 'dw-reveal-left', 90);
+
             var homeServiceRows = section.querySelectorAll('.dw-home-service-row');
             Array.prototype.forEach.call(homeServiceRows, function (item, index) {
-                addRevealClass(item, 'dw-reveal-up', 90 + (index * 75));
+                addRevealClass(item, index % 2 === 0 ? 'dw-reveal-right' : 'dw-reveal-left', 90 + (index * 75));
+            });
+
+            var homepageColumns = section.querySelectorAll(
+                '.dw-showcase-copy, .dw-showcase-ui, ' +
+                '.dw-featured-proof-media, .dw-featured-proof-copy, ' +
+                '.dw-service-proof-copy, .dw-service-proof-visual, ' +
+                '.elementor-top-column, .elementor-column'
+            );
+
+            Array.prototype.forEach.call(homepageColumns, function (item, index) {
+                addRevealClass(item, index % 2 === 0 ? 'dw-reveal-left' : 'dw-reveal-right', 80 + (index * 75));
             });
         });
 
@@ -872,6 +891,9 @@
                     '<p class="dw-home-services-eyebrow">Services</p>' +
                     '<h2 id="dw-home-services-title">What DigitWaves Can Build Next</h2>' +
                     '<p>Pick the piece your business needs most right now, then connect it into one clear path from attention to inquiry.</p>' +
+                    '<div class="dw-home-services-visual" aria-hidden="true">' +
+                        '<img src="' + getThemeAssetUrl('images/home/website services.png') + '" alt="">' +
+                    '</div>' +
                 '</div>' +
                 '<div class="dw-home-services-list">' +
                     homepageServices.map(function (service) {
@@ -1018,8 +1040,6 @@
     function boot(attempt) {
         var isReady = updateServicesSection();
 
-        setupHomepageServicesBelowHero();
-        setupScrollReveal();
         setupMobileMenuRefinement();
         setupWorkPage();
         setupServicesPage();
@@ -1031,6 +1051,8 @@
         setupHomepageCtaSection();
         setupHomepageStrategyCallButtons();
         setupHomepageFeaturedWorkButtons();
+        setupHomepageServicesBelowHero();
+        setupScrollReveal();
 
         if (!isReady && attempt < 24) {
             window.setTimeout(function () {

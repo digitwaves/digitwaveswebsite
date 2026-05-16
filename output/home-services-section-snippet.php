@@ -81,6 +81,18 @@ add_action( 'wp_head', function () {
 		line-height: 1.72 !important;
 	}
 
+	.dw-home-services-visual {
+		width: min(100%, 430px);
+		margin-top: clamp(26px, 3.5vw, 42px);
+	}
+
+	.dw-home-services-visual img {
+		display: block;
+		width: 100%;
+		height: auto;
+		filter: saturate(1.04) drop-shadow(0 22px 36px rgba(8, 24, 36, 0.12));
+	}
+
 	.dw-home-services-list {
 		display: grid;
 		gap: 0;
@@ -176,8 +188,13 @@ add_action( 'wp_head', function () {
 		}
 
 		.dw-home-services-heading h2,
-		.dw-home-services-heading > p:last-child {
+		.dw-home-services-heading > p:last-child,
+		.dw-home-services-visual {
 			max-width: 760px;
+		}
+
+		.dw-home-services-visual {
+			width: min(100%, 560px);
 		}
 	}
 
@@ -198,6 +215,10 @@ add_action( 'wp_head', function () {
 		.dw-home-service-action {
 			justify-self: start;
 		}
+
+		.dw-home-services-visual {
+			margin-top: 24px;
+		}
 	}
 </style>
 	<?php
@@ -216,19 +237,19 @@ add_action( 'wp_footer', function () {
 			['03', 'UGC Ads & Short Videos', 'Short-form creative direction for Reels, TikToks, Shorts, and ad concepts that help people notice the business.', '/ugc-ads-short-videos/'],
 			['04', 'Lead Flow', 'Simple forms, calls to action, and follow-up paths that turn interested visitors into cleaner conversations.', '/contact/']
 		];
+		var serviceImage = '<?php echo esc_js( get_template_directory_uri() . '/images/home/website%20services.png' ); ?>';
 
-		function addReveal(node, delay) {
+		function addReveal(node, delay, variant) {
 			if (!node) {
 				return;
 			}
 
-			node.classList.add('dw-reveal', 'dw-reveal-up');
+			node.classList.remove('dw-reveal-up', 'dw-reveal-left', 'dw-reveal-right');
+			node.classList.add('dw-reveal', variant || 'dw-reveal-up');
 			node.style.setProperty('--dw-reveal-delay', delay + 'ms');
 		}
 
-		function observe(section) {
-			var nodes = section.querySelectorAll('.dw-reveal');
-
+		function observeNodes(nodes) {
 			if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 				Array.prototype.forEach.call(nodes, function (node) {
 					node.classList.add('is-visible');
@@ -259,6 +280,34 @@ add_action( 'wp_footer', function () {
 			});
 		}
 
+		function setupFrontPageFlyins() {
+			if (!document.body || !document.body.classList.contains('home') || document.body.classList.contains('dw-live-front-flyins-ready')) {
+				return;
+			}
+
+			document.body.classList.add('dw-live-front-flyins-ready');
+
+			var sections = document.querySelectorAll(
+				'.home .elementor-top-section:not(:first-of-type), ' +
+				'.home .dw-premium-section, ' +
+				'.home .dw-home-services-strip'
+			);
+
+			Array.prototype.forEach.call(sections, function (section, index) {
+				addReveal(section, 0, index % 2 === 0 ? 'dw-reveal-left' : 'dw-reveal-right');
+
+				Array.prototype.forEach.call(section.querySelectorAll(
+					'.dw-home-services-heading, .dw-home-services-visual, .dw-home-service-row, ' +
+					'.dw-showcase-copy, .dw-showcase-ui, .dw-featured-proof-media, .dw-featured-proof-copy, ' +
+					'.dw-stat, .dw-process-step, .elementor-top-column, .elementor-column'
+				), function (item, itemIndex) {
+					addReveal(item, 70 + (itemIndex * 70), itemIndex % 2 === 0 ? 'dw-reveal-left' : 'dw-reveal-right');
+				});
+			});
+
+			observeNodes(document.querySelectorAll('.home .dw-reveal'));
+		}
+
 		function init() {
 			if (!document.body || !document.body.classList.contains('home') || document.querySelector('.dw-home-services-strip')) {
 				return;
@@ -282,6 +331,7 @@ add_action( 'wp_footer', function () {
 						'<p class="dw-home-services-eyebrow">Services</p>' +
 						'<h2 id="dw-home-services-title">What DigitWaves Can Build Next</h2>' +
 						'<p>Pick the piece your business needs most right now, then connect it into one clear path from attention to inquiry.</p>' +
+						'<div class="dw-home-services-visual" aria-hidden="true"><img src="' + serviceImage + '" alt=""></div>' +
 					'</div>' +
 					'<div class="dw-home-services-list">' +
 						services.map(function (service) {
@@ -295,11 +345,12 @@ add_action( 'wp_footer', function () {
 				'</div>';
 
 			hero.insertAdjacentElement('afterend', section);
-			addReveal(section.querySelector('.dw-home-services-heading'), 40);
+			addReveal(section.querySelector('.dw-home-services-heading'), 40, 'dw-reveal-left');
+			addReveal(section.querySelector('.dw-home-services-visual'), 90, 'dw-reveal-left');
 			Array.prototype.forEach.call(section.querySelectorAll('.dw-home-service-row'), function (row, index) {
-				addReveal(row, 90 + (index * 75));
+				addReveal(row, 90 + (index * 75), index % 2 === 0 ? 'dw-reveal-right' : 'dw-reveal-left');
 			});
-			observe(section);
+			setupFrontPageFlyins();
 		}
 
 		if (document.readyState === 'loading') {
@@ -309,6 +360,9 @@ add_action( 'wp_footer', function () {
 		}
 
 		window.addEventListener('load', init);
+		window.addEventListener('load', function () {
+			window.setTimeout(setupFrontPageFlyins, 400);
+		});
 	})();
 </script>
 	<?php
